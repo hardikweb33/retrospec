@@ -367,7 +367,8 @@
           "sections-1592410318615",
           "sections-1592410272428"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "product-story-sections": {
         "type": "product-story-sections",
@@ -455,7 +456,8 @@
           "1592410318615",
           "1592410272428"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "page-sections-template": {
         "type": "page-sections-template",
@@ -573,7 +575,8 @@
       },
       "collection-header": {
         "type": "collection-header",
-        "settings": {}
+        "settings": {
+        }
       },
       "collection-sidebar": {
         "type": "collection-sidebar",
@@ -830,7 +833,8 @@
       },
       "1601863102938": {
         "type": "homepage-need-help",
-        "settings": {}
+        "settings": {
+        }
       },
       "help-me-choose-collection": {
         "type": "help-me-choose-collection",
@@ -875,19 +879,23 @@
       },
       "product-benefits": {
         "type": "product-benefits",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-additional-info": {
         "type": "product-additional-info",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-accordion": {
         "type": "product-accordion",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-upsell": {
         "type": "product-upsell",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-recommendations": {
         "type": "product-recommendations",
@@ -1005,7 +1013,8 @@
       },
       "product-reviews": {
         "type": "product-reviews",
-        "settings": {}
+        "settings": {
+        }
       },
       "page-finance": {
         "type": "page-finance",
@@ -1061,7 +1070,8 @@
           "e3d67287-a2c7-4723-aab0-6c65cbc1b35f",
           "ff3b3615-f31c-4764-b278-f482510ee51e"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "page-rental-bike": {
         "type": "page-rental-bike",
@@ -1184,7 +1194,8 @@
           "aa5bb146-13c6-4677-8703-1ebbb6f6b4ec",
           "d27128b3-431a-44c0-9b7a-d72034b549b2"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "page-contact-template": {
         "type": "page-contact-template",
@@ -1233,7 +1244,8 @@
       },
       "product-quick-specs": {
         "type": "product-quick-specs",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-press-logo": {
         "type": "product-press-logo",
@@ -1273,7 +1285,8 @@
       },
       "product-benefit-2": {
         "type": "product-benefit-2",
-        "settings": {}
+        "settings": {
+        }
       },
       "product-heavy-section": {
         "type": "product-heavy-section",
@@ -1341,7 +1354,8 @@
           "99107fe8-9c62-40d7-b132-2262fb1092b0",
           "64b0ef5c-aab5-420f-a7d1-33b47281a692"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "1626888944f7b008a6": {
         "type": "text-and-video",
@@ -1446,7 +1460,8 @@
       },
       "electric-product-benefits2": {
         "type": "electric-product-benefits2",
-        "settings": {}
+        "settings": {
+        }
       },
       "electric-easy-shopping-section": {
         "type": "electric-easy-shopping-section",
@@ -1729,7 +1744,8 @@
           "eab941ef-feff-478f-8edf-64a19f41035d",
           "eb058393-1aea-48c7-8e65-c865169d1540"
         ],
-        "settings": {}
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -1895,7 +1911,8 @@
             "1494292487693",
             "1494301487048"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "collection-template": {
           "type": "collection-template",
@@ -1949,19 +1966,23 @@
           "blocks": {
             "1499789718857-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1499789718857-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1499789718857-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1499789718857-3": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -2071,7 +2092,8 @@
             "sections-1592410318615",
             "sections-1592410272428"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "product-story-sections": {
           "type": "product-story-sections",
@@ -2155,14 +2177,16 @@
             "1592410318615",
             "1592410272428"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "page-sections-template": {
           "type": "page-sections-template",
           "blocks": {
             "page-image-hero": {
               "type": "image-hero",
-              "settings": {}
+              "settings": {
+              }
             },
             "page-rich-text": {
               "type": "rich-text",
@@ -2174,7 +2198,8 @@
             },
             "page-text-columns": {
               "type": "text-columns",
-              "settings": {}
+              "settings": {
+              }
             },
             "page-background-image-text": {
               "type": "background-image-text",
@@ -2209,7 +2234,8 @@
         },
         "newsletter-popup": {
           "type": "newsletter-popup",
-          "settings": {}
+          "settings": {
+          }
         },
         "1524769873765": {
           "type": "slideshow",
@@ -2256,18 +2282,21 @@
         },
         "collection-header": {
           "type": "collection-header",
-          "settings": {}
+          "settings": {
+          }
         },
         "collection-sidebar": {
           "type": "collection-sidebar",
           "blocks": {
             "1524772785241": {
               "type": "subcollections",
-              "settings": {}
+              "settings": {
+              }
             },
             "1524772580942": {
               "type": "tags_all",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -2298,7 +2327,8 @@
         },
         "1525118065355": {
           "type": "map",
-          "settings": {}
+          "settings": {
+          }
         },
         "1525295772132": {
           "type": "featured-collection",
@@ -2750,7 +2780,8 @@
             "sections-1592410318615",
             "sections-1592410272428"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "product-story-sections": {
           "type": "product-story-sections",
@@ -2834,7 +2865,8 @@
             "1592410318615",
             "1592410272428"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "page-sections-template": {
           "type": "page-sections-template",
@@ -2934,7 +2966,8 @@
         },
         "collection-header": {
           "type": "collection-header",
-          "settings": {}
+          "settings": {
+          }
         },
         "collection-sidebar": {
           "type": "collection-sidebar",
@@ -3652,7 +3685,8 @@
           "blocks": {
             "1524768779513": {
               "type": "logo",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -3672,7 +3706,8 @@
           "blocks": {
             "1494292487693": {
               "type": "newsletter",
-              "settings": {}
+              "settings": {
+              }
             },
             "1526406521795": {
               "type": "menu",
@@ -3693,7 +3728,8 @@
             "1526406521795",
             "1525444454442"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "collection-template": {
           "type": "collection-template",
@@ -3827,7 +3863,8 @@
             "sections-1592410318615",
             "sections-1592410272428"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "product-story-sections": {
           "type": "product-story-sections",
@@ -3911,7 +3948,8 @@
             "1592410318615",
             "1592410272428"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "page-sections-template": {
           "type": "page-sections-template",
@@ -3926,7 +3964,8 @@
             },
             "page-text-columns": {
               "type": "text-columns",
-              "settings": {}
+              "settings": {
+              }
             },
             "page-background-image-text": {
               "type": "background-image-text",
@@ -3959,7 +3998,8 @@
         },
         "newsletter-popup": {
           "type": "newsletter-popup",
-          "settings": {}
+          "settings": {
+          }
         },
         "1524768368258": {
           "type": "slideshow",
@@ -3988,18 +4028,21 @@
         },
         "collection-header": {
           "type": "collection-header",
-          "settings": {}
+          "settings": {
+          }
         },
         "collection-sidebar": {
           "type": "collection-sidebar",
           "blocks": {
             "1524772785241": {
               "type": "subcollections",
-              "settings": {}
+              "settings": {
+              }
             },
             "1524772580942": {
               "type": "tags_all",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -4018,15 +4061,18 @@
           "blocks": {
             "1525290496166-0": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1525290496166-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1525290496166-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -4369,7 +4415,8 @@
             "1558299839935",
             "1558299930148"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "block_order": [
           "1584524987849",
@@ -4384,7 +4431,8 @@
           "1584528066455",
           "1584525987813"
         ],
-        "settings": {}
+        "settings": {
+        }
       },
       "content_for_index": [
         "1524768368258",
