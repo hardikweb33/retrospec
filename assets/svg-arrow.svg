@@ -1,0 +1,10 @@
+<svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                        <g id="icon/arrow" transform="translate(1.000000, 1.000000)" stroke="#000000" stroke-width="1.2">
+                            <g id="Right-Arrow">
+                                <polyline id="Path-Copy" transform="translate(7.560660, 5.000000) rotate(-45.000000) translate(-7.560660, -5.000000) " points="11.0606602 1.5 11.0606602 8.5 4.06066017 8.5"></polyline>
+                                <line x1="1.5959456e-16" y1="5.10355339" x2="12" y2="5.10355339" id="Line-2-Copy"></line>
+                            </g>
+                        </g>
+                    </g>
+                </svg>

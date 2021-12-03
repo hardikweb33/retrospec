@@ -1,0 +1,73 @@
+
+
+{% for addon_data in shop.metafields.add_ons.tag %}
+{% if product.tags contains shop.metafields.add_ons.tag[forloop.index0] %}
+{% if shop.metafields.add_ons.display[forloop.index0] == 'true' %}
+  <div class="product-addon-v2" id="{{shop.metafields.add_ons.unique_id[forloop.index0]}}" {% unless product.available %}style="display:none;"{% endunless%}>		
+{% assign addon_product = all_products[shop.metafields.add_ons.product[forloop.index0]] %}
+      {% assign count = 0 %}
+      {% assign total_available = 0 %}
+       {% for variant in addon_product.variants %}
+      {% if variant.available %}
+      {% assign total_available = total_available | plus:1 %}
+      {% endif %}
+      {% endfor %}
+{% if total_available > 0 %}
+<div class="variant-wrapper variant-wrapper--button js addon-variant-wrapper-v3" data-current-price="{{current_variant.price}}">
+  <div class="style-toggle-wrapper addon-toggle-wrapper-v3">
+    <div class="addon-selected-value-v3">{{shop.metafields.add_ons.label[forloop.index0]}} - {{addon_product.price | money}} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+    </div>
+  </div>
+  
+<fieldset class="addon-input-wrap-v3  style-wrapper " data-addon-price="{{addon_product.price}}" name="addon-Size-v3" data-index="addonoption2-v3" id="ProductSelect-{{addon_product.id}}-{{forloop.index0}}" style="display: none;">
+  <div class="variant-input  style-input " data-index="addonoption2-v3" data-value="{{variant.title}}">
+    <div class="addon-block-wrapper-v3">
+      {% for variant in addon_product.variants %}
+      {% if variant.available and count < 3 %}
+      <div class="addon-block-v3 {% if total_available == 1 %} single-addon{% endif %}">
+        <input type="radio" value="{{variant.id}}" data-index="addonoption2-v3" name="addon-Size-v3" class="" id="ProductSelect-{{product.id}}-{{variant.id}}">
+        <label data-id="{{variant.id}}"for="ProductSelect-{{product.id}}-{{variant.id}}"data-price="{{variant.price}}" class="variant__button-label {% if total_available == 1 %}addon-active-v3{% endif %}" data-option="{{variant.title}}">
+        <div class="bike-style-content"{% if total_available == 1 %}style="border:none;"{% endif %}>
+          {% if variant.image %}
+          <img data-src="{{variant.image | img_url:'original'}}" class="lazyload" alt="{{ variant.title }}" />
+          {% endif %}
+          <div class="addon-variant-title-v3">{{variant.title}}</div>
+        </div>
+        </label>
+      </div>
+      {% assign count = count | plus:1 %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="variant-input style-input">
+    <div class="addon-desc-wrapper-v3">
+      <h6>{{addon_product.title}} <span class="addon-price-v3"> - {{addon_product.price | money}}</span></h6>
+      <div class="addon-product-description-v3 rte">
+        {{shop.metafields.add_ons.short_description[forloop.index0]}}
+      </div>
+      <a href="{{addon_product.url}}" class="add-on_learn-more" target="_blank">Learn More</a>
+      <div class="addon-btn-wrapper">
+        <a href="javascript:void(0)" class="btn text-link addon-addtocart">Add to Bag<span class="right-arrow"><svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+            <g id="icon/arrow" transform="translate(1.000000, 1.000000)" stroke="#000000" stroke-width="1.2">
+              <g id="Right-Arrow">
+                <polyline id="Path-Copy" transform="translate(7.560660, 5.000000) rotate(-45.000000) translate(-7.560660, -5.000000) " points="11.0606602 1.5 11.0606602 8.5 4.06066017 8.5"></polyline>
+                <line x1="1.5959456e-16" y1="5.10355339" x2="12" y2="5.10355339" id="Line-2-Copy"></line>
+              </g>
+            </g>
+          </g>
+          </svg></span></a>
+      </div>
+    </div>
+   
+  </div>
+  </fieldset>
+</div>
+{% endif %}
+    </div>
+{% break %}
+
+{% endif %}
+{% endif %}
+{% endfor%}

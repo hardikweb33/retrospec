@@ -1,0 +1,14 @@
+<div class="product-accordion-assembly">
+  {% for pdf in product.metafields.owners_manual.instructions %}
+  <a class="btn btn--secondary assembly-download" target="_blank" href="{{ product.metafields.owners_manual.instructions[forloop.index0][0].src }}">
+    {% if product.metafields.owners_manual.button_label[forloop.index0] != blank %}
+    {{ product.metafields.owners_manual.button_label[forloop.index0] }}
+    {% else %}
+    Download Owner's Manual
+    {% endif %}
+    <span class="right-arrow">
+      {%- render 'icon-arrow' -%}
+    </span>
+  </a>
+  {% endfor %}
+</div>

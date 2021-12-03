@@ -1,0 +1,136 @@
+{%- assign blog = blogs[section.settings.blog] -%}
+<style type="text/css">
+  .homepage-blog-heighlights .slick-dots li, .homepage-blog-heighlights.slick-slider .slick-dots li.slick-active {
+    width: {{ 100 | divided_by: section.settings.post_limit }}%;
+  }
+</style>
+<div class="page-width ">
+  <div class="grid grid--uniform">
+    <div class="grid__item medium-up--one-half">
+      {%- if section.settings.title != blank -%}
+      <header class="section-header">
+        <h3 class="section-header__title">
+          {{ section.settings.title | escape }}
+        </h3>
+        <p>{{ section.settings.description }}</p>
+        <div class="navigation blognavigation">
+          <div class="bprev">{% render 'right-arrow' %}</div>
+          <!--div class="dots">
+          {%- for article in blog.articles limit: section.settings.post_limit  -%}
+          <span class="dot dot-{{forloop.index0}} {% if forloop.first %}active{% endif %}"></span>
+          {% endfor %}
+          </div-->
+          <div class="bnext">{% render 'right-arrow' %}</div>
+
+        </div>
+        <a href="{{ blog.url }}" class="btn btn--secondary section-header__link home_blog_desktop">More from our blog <span class="right-arrow">{% render 'right-arrow' %}</span></a>
+      </header>
+      {%- endif -%}
+
+    </div>
+
+    <div class="grid__item medium-up--one-half">
+      <div class="grid homepage-blog-heighlights">
+        {%- for article in blog.articles limit: section.settings.post_limit -%}
+        {%- assign fixed_aspect_ratio = false -%}
+        <div class="grid-wrapper">
+          <div class="grid__item medium-up--one-whole" data-aos="row-of-{{ per_row }}">
+            {%- if article.image -%}
+            <a href="{{ article.url }}" class="article__grid-image" aria-label="{{ article.title | escape }}">
+              {%- if fixed_aspect_ratio -%}
+              <div class="image-wrap">
+                <div
+                     class="grid__image-ratio grid__image-ratio--cover grid__image-ratio--{{ image_size }} lazyload"
+                     data-bgset="{% render 'bgset', image: article.image %}"
+                     data-sizes="auto">
+                </div>
+                <noscript>
+                  <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
+                </noscript>
+              </div>
+              {%- else -%}
+              <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;">
+                {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                <img class="lazyload"
+                     data-src="{{ img_url }}"
+                     data-widths="[180, 360, 540, 720, 900, 1080]"
+                     data-aspectratio="{{ article.image.aspect_ratio }}"
+                     data-sizes="auto"
+                     alt="{{ article.image.alt | escape }}">
+                <noscript>
+                  <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
+                </noscript>
+              </div>
+              {%- endif -%}
+            </a>
+            {%- else -%}
+            <div class="article__grid-image">
+              {%- if fixed_aspect_ratio -%}
+              <div class="image-wrap">
+                <div
+                     class="grid__image-ratio grid__image-ratio--cover grid__image-ratio--{{ image_size }} lazyload">
+                </div>
+              </div>
+              {%- endif -%}
+            </div>
+            {%- endif -%}
+            <div class="article__grid-meta">
+              <a href="{{ article.url }}" class="h6 article__title">{{ article.title }}</a>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+        
+      </div>
+    </div>
+    <div class="home_blog_mobile">
+      <a href="{{ blog.url }}" class="btn btn--secondary section-header__link home_blog_mobile_btn">More from our blog <span class="right-arrow">{% render 'right-arrow' %}</span></a>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Blog Highlight",
+    "class": "index-section bloghegh",
+    "settings": [
+      {
+        "id": "blog",
+        "type": "blog",
+        "label": "Blog"
+      },
+	  {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Be an insider outside"
+      },
+	  {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "Tips and tricks that make nature second-nature"
+      },
+      {
+        "type": "range",
+        "id": "post_limit",
+        "label": "Posts",
+        "default": 3,
+        "min": 3,
+        "max": 7,
+        "step": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "Blog Highlight",
+        "category": "Custom",
+        "settings": {
+          "blog": "News",
+          "post_limit": 3
+        }
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,124 @@
+{%- assign swatch_file_extension = 'png' -%}
+{% if option.name contains 'Motor' or option.name contains 'motor' %}
+{% assign is_motor = true %}
+{% endif %}
+<div class="variant-wrapper variant-wrapper--{{ settings.variant_type }} js {% if newdesign and is_color %}variant-color-wrapper{% endif %}">
+  <label class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless settings.variant_labels_enable %} hidden-label{% endunless %}"
+    for="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}">
+    {{ option.name }}{%- if is_color -%}{% if option.values.size > 1 %}s{% endif %}{% endif %}
+ {%- if is_color -%}
+      <span class="variant__label-info">
+        &mdash;
+        <span
+          id="VariantColorLabel-{{ section_id }}-{{ forloop.index0 }}"
+          data-option-index="{{ color_option_index }}">
+          {{ option.selected_value }}
+        </span>
+      </span>
+    {% if product.tags contains 'goggles' or product.tags contains 'Goggles' %}
+    <span><a class="sizing-chart trigger-tab" href="#product-goggle" data-tabtitle="VLT%"><span class="sizing_help">VLT%</span></a></span>
+    {% endif %}
+    {%- endif -%}
+    {% unless is_motor %}
+    {% if show_sizing_help and product.metafields.sizing.size-reference != blank %}
+    <span><a class="sizing-chart trigger-tab" href="#product-sizing" data-tabtitle="sizing"><span class="help-icon"></span><span class="sizing_help">Sizing Help</span>{% if template contains "page" %}{% include "icon-chevron-down" %}{% endif %}</a>{% if product.tags contains 'All Bikes' %}<div class="question-mark-wrapper"><div class="question-mark">?</div><div class="question-content">If you're in between sizes, go down a size for the better fit.</div></div>{% endif %}</span>
+    {% elsif show_sizing_help and product.tags contains 'Helmets' %}
+    <span><a class="sizing-chart trigger-tab" href="#product-sizing" data-tabtitle="sizing"><span class="help-icon"></span><span class="sizing_help">Sizing Help</span>{% if template contains "page" %}{% include "icon-chevron-down" %}{% endif %}</a></span>
+    {% endif %}
+    {% else %}
+    <span><a class="sizing-chart trigger-tab" href="#product-specs" data-tabtitle="View Specs"><span class="sizing_help">View Specs</span></a></span>
+    {% endunless %}
+    
+  </label>
+   {% if is_size %}
+  <div class="size-toggle-wrapper" {% if option.values.size == 1 %} style="display:none;"{% endif %}>
+    <div class="size-selected-value"><span class="selected-size-value">{{option.selected_value}}</span> <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"/></svg>
+    </div>
+  </div>
+  {% endif %}
+  {%- assign option_index = forloop.index -%}
+  <fieldset class="variant-input-wrap {% if is_size %} size-wrapper{% endif %} {%- if is_color -%}has-color-variants{% endif %}"
+    name="{{ option.name }}"
+    data-index="option{{ option_index }}"
+    id="ProductSelect-{{ section_id }}-option-{{ forloop.index0 }}"{% if is_size and option.values.size > 1 %} style="display:none;"{% elsif option.values.size == 1 %}style="pointer-events:none;"{% endif %}>
+    {%- for value in option.values -%}
+      {%- liquid
+        assign product_available = true
+        if product.options.size == 1
+          assign product_available = product.variants[forloop.index0].available
+        endif
+      -%}
+      <div
+        class="variant-input {% if option.name == 'Size'%} size-input {% endif %}"
+        data-index="option{{ option_index }}"
+        data-value="{{ value | escape }}">
+        <input type="radio"
+          {% if option.selected_value == value %} checked="checked"{% endif %}
+          value="{{ value | escape }}"
+          data-index="option{{ option_index }}"
+          name="{{ option.name }}"
+          class="variant__input-{{ section_id }}{% unless product_available %} soldout{% endunless %}{% if is_color %} variant__input--color-swatch-{{ section_id }}{% endif %}"
+          {% if is_color %} data-color-name="{{ value | escape }}"{% endif %}
+          {% if is_color %} data-color-index="{{ color_option_index }}"{% endif %}
+          id="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}">
+        {%- if is_color -%}
+          {%- liquid
+            assign color_image = value | handle | append: '.' | append: swatch_file_extension | asset_img_url: '51x' | prepend: 'https:' | split: '?' | first
+            assign color_swatch_fallback = value | split: ' ' | last | handle
+          -%}
+          {%- assign color_image = value | handle | append: '.' | append: swatch_file_extension | file_img_url: '51x' | prepend: 'https:' | split: '?' | first -%}
+          {%- assign color_swatch_fallback = value | split: ' ' | last | handle -%}
+          {%- assign color_count = color_count | plus: 1 -%}
+          <label
+            for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+            class="{%- if is_color -%} color-label{% endif %} variant__button-label color-swatch--small color-swatch color-swatch--{{ value | handle }}{% unless product_available %} disabled{% endunless %}"
+            style="background-image: url({{ color_image }}); background-color: {{ color_swatch_fallback }};"
+             data-option="{{value  | escape}}"
+          >
+            {{ value | escape }}
+          </label>
+        {%- else -%}
+          <label
+            for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+                 class="   {% if is_size %}{% if option.selected_value == value and option.values.size > 1 %}size-active {% endif %}{% endif %}variant__button-label{% unless product_available %} soldout{% endunless %}" data-option="{{value  | escape}}">{{ value | escape }} <span class="soldout-text">(Sold Out)</span>
+        {% if is_size %}
+            {% if value contains ' - '%}
+            {% assign metafield_compare = value | split:' - ' | last %}
+            {% else %}
+            {% assign metafield_compare = value %}
+            {% endif %}
+            {% for sizevalue in product.metafields.sizing.size-reference %}
+            {% if product.metafields.sizing.size-reference[forloop.index0] != blank and product.metafields.sizing.size-reference[forloop.index0] == metafield_compare %}
+            <div class="bike-size-content">
+              {% if product.metafields.sizing.frame[forloop.index0] != blank %}
+              <div class="bike-content-metafield">
+                <p class="eyebrow-font">Frame Size</p>
+                <span>{{product.metafields.sizing.frame[forloop.index0]}}</span>
+              </div>
+              {% endif %}
+               {% if product.metafields.sizing.standover[forloop.index0] != blank %}
+              <div class="bike-content-metafield">
+                <p class="eyebrow-font">Standover Height</p>
+                <span>{{product.metafields.sizing.standover[forloop.index0]}}</span>
+              </div>
+              {% endif %}
+               {% if product.metafields.sizing.rider[forloop.index0] != blank %}
+              <div class="bike-content-metafield">
+                <p class="eyebrow-font">Rider Height</p>
+                <span>{{product.metafields.sizing.rider[forloop.index0]}}</span>
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+         {% endif %}
+        
+        </label>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </fieldset>
+  {% if is_size %}
+  <span class="error"></span>
+  {% endif %}
+</div>

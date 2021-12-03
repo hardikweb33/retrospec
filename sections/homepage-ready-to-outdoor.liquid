@@ -1,0 +1,139 @@
+<div class="custom_second" data-section="homepage-ready-to-outdoor">
+  <div class="feature-row">
+    <div class="custom_second_wrapper">
+      <div class="img_wrpr img1">
+        {%- if section.settings.image_1_link -%}
+        <a href="{{ section.settings.image_1_link }}">
+        {%- endif -%}
+        <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image_1.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image_1 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540]"
+               data-aspectratio="{{ section.settings.image_1.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image_1.alt }}">
+          <noscript>
+            <img class="lazyloaded" src="{{ section.settings.image_1 | img_url: '540x' }}" alt="{{section.settings.image_1.alt }}">
+          </noscript>
+        </div>
+        <div class="illustration cloud_1">
+          {% render 'illustration-cloud' %}
+        </div>
+        <div class="illustration cloud_birds">
+          {% render 'illustration-birds' %}
+        </div>
+       	{%- if section.settings.image_1_link -%}
+        </a>
+        {%- endif -%}
+      </div>
+      <div class="img_wrpr img2">
+        {%- if section.settings.image_2_link -%}
+        <a href="{{ section.settings.image_2_link }}">
+        {%- endif -%}
+         <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image_2.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image_2 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540]"
+               data-aspectratio="{{ section.settings.image_2.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image_2.alt }}">
+          <noscript>
+            <img class="lazyloaded" src="{{ section.settings.image_2 | img_url: '540x' }}" alt="{{section.settings.image_2.alt }}">
+          </noscript>
+        </div>
+        {%- if section.settings.image_2_link -%}
+        </a>
+        {%- endif -%}
+      </div>
+      <div class="img_wrpr img3">
+        {%- if section.settings.image_3_link -%}
+        <a href="{{ section.settings.image_3_link }}">
+        {%- endif -%}
+        <div class="image-wrap " style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image_3.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image_3 | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[360, 540]"
+               data-aspectratio="{{ section.settings.image_3.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image_3.alt }}">
+          <noscript>
+            <img class="lazyloaded" src="{{ section.settings.image_3 | img_url: '540x' }}" alt="{{section.settings.image_3.alt }}">
+          </noscript>
+        </div>
+        <div class="illustration cloud_sun">
+          {% render 'illustration-sun' %}
+        </div>
+        {%- if section.settings.image_3_link -%}
+        </a>
+        {%- endif -%}
+      </div>
+      <div class="center_content">
+        <h2>{{ section.settings.title }}</h2>
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Ready To Outdoor",
+	"class": "ready-to-outdoor",
+    "settings": [
+	  {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image Top"
+      },
+      {
+        "type": "url",
+        "id": "image_1_link",
+        "label": "Image Top Link"
+      },
+	  {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image Middle"
+      },
+      {
+        "type": "url",
+        "id": "image_2_link",
+        "label": "Image Middle Link"
+      },
+	  {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image Bottom"
+      },
+      {
+        "type": "url",
+        "id": "image_3_link",
+        "label": "Image Bottom Link"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Ready-to-outdoor"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Our gear gets you ready for the outdoors in no time. No useless features. No unnecessary fuss. Just expertly designed, durably crafted, accessibly priced gear that gets you under the sun.</p>"
+      }
+	],
+	"presets": [{
+        "name": "Ready To Outdoor",
+        "category": "Custom"
+	 }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

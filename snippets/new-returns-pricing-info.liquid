@@ -1,0 +1,58 @@
+{%- if product.metafields.info.traditional_retail -%}
+<div class="pricing-info-wrapper">
+  <div class="question-normal-content bg-sand">
+    <div class="grid normal-shipping-content">
+      <div class="grid__item three-quarters retail-price text-left" >
+        {% assign cart_free_ship = shop.metafields.globals.free_shipping_threshold | times:100.0 %}
+        {% assign current_price_shipping = current_variant.price %}
+        {% if cart.total_price >= cart_free_ship or current_price_shipping >= cart_free_ship %}
+        {% assign message = 'Free Shipping' %}
+        {% else %}
+        {% assign message = settings.cart_shipping_note %}
+        {% endif %}
+        <span class="delivery-time narvar-edd" data-new="true"></span>
+        <span class="shipping-zip-wrapper">
+        
+        <span class="free-shipping text-left free-shipping-product" data-currentprice="{{current_price_shipping}}">{{message}}</span>
+        <span class="user-zip-code narvar-edd"></span>
+        </span>
+       
+        <div class="bottom-question-wrapper">
+         {%- if shop.metafields.globals.edd_note != blank -%}
+            <div class="question-mark-wrapper">
+                <div class="question-mark">?</div> 
+                <div class="question-content">{{shop.metafields.globals.edd_note}}</div>
+            </div>
+            {%- endif -%}
+            <div class="returns-text">50 Day Returns</div>
+        </div>
+      </div> 
+      <div class="grid__item one-quarter product-retail-compare text-right">
+        <div class="illustration-underline-wrapper">
+          <span class="h4 retail-price-compare">${{ product.metafields.info.traditional_retail }}</span>
+          <span class="illustration-underline">{% render 'illustration-underline' %}</span>
+        </div>
+        <div class="traditional-text">Traditional Retail</div>
+      </div>
+    </div>
+    <div class="grid narvar-shipping-content delivery-time-structure"  style="display:none;"  data-variant="{{current_variant.available}}">
+      <div class="grid__item">
+      <div class="inner-narvar-form">
+        <a href="#" class="change-zip-btn hide">Change zip</a>
+          <div class="zip-input-wrapper">
+          <h5 class="narvar-ship-heading">Shipping time calculator 
+          <span class="narvar-close">
+            {% render 'enavi-icons' , name:'icon-close',class:'icon icon-close',width:'15px',height:'15px',color:'none'  %}
+          </span>
+          </h5>
+          <div class="zip-input-inner">
+          <input type="number" id="zip-input-field" title="zip" />
+          <a href="#" class="btn-apply-zip"><span class="right-arrow">{% render 'icon-arrow'%}</span></a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}

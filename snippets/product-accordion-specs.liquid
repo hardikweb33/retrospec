@@ -1,0 +1,54 @@
+<div class="product-accordion-specs">
+  <div class="grid">
+    {% capture odd %}
+    {% for specs in product.metafields.specs.list %}
+    {% assign index = forloop.index | modulo:2 %}
+    {% if index == 1 %}
+    <div class=" specs-blocks">
+      <span class="eyebrow-font">{{product.metafields.specs.header[forloop.index0]}}</span>
+      {% assign specs_list = product.metafields.specs.list[forloop.index0] | split:'|' %}
+      <ul>
+        {% for list in specs_list %}
+        {% if list != blank %}
+        {% if list contains '=' %}
+        <li><span class="spec-part">{{list | split:"=" | first}}</span><span class="spec-info">{{list | split:"=" | last}}</span></li>
+        {% else %}
+        <li><span class="spec-info">{{list}}</span></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endcapture %}
+    {% capture even %}
+    {% for specs in product.metafields.specs.list %}
+    {% assign index = forloop.index | modulo:2 %}
+    {% if index == 0 %}
+    <div class=" specs-blocks">
+      <span class="eyebrow-font">{{product.metafields.specs.header[forloop.index0]}}</span>
+      {% assign specs_list = product.metafields.specs.list[forloop.index0] | split:'|' %}
+      <ul>
+        {% for list in specs_list %}
+        {% if list != blank %}
+        {% if list contains '=' %}
+        <li><span class="spec-part">{{list | split:"=" | first}}</span><span class="spec-info">{{list | split:"=" | last}}</span></li>
+        {% else %}
+        <li><span class="spec-info">{{list}}</span></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endcapture %}
+    <div class="odd-grid grid__item medium-up--one-half">
+    {{odd}}
+    </div>
+    <div class="even-grid grid__item medium-up--one-half">
+      {{even}}
+    </div>
+  </div>
+</div>

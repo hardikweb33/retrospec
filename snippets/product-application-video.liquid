@@ -1,0 +1,12 @@
+{% if product.metafields.accentuate.video != blank %}
+<div class="index-section">
+  <div class="product-application-video page-width page-content">
+    <div class="embed-container">
+    {% if product.metafields.accentuate.video contains 'youtube.com' %}
+    {% assign video_id = product.metafields.accentuate.video | split:'https://www.youtube.com/watch?v=' | last %}
+    <iframe title="vimeo-player" src="https://www.youtube.com/embed/{{video_id}}" allowfullscreen width="560" height="315"></iframe>
+    {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

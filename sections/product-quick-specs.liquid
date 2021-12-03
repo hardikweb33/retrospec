@@ -1,0 +1,31 @@
+{% assign grid_item_width = 'medium-up--one-quarter small--one-half' %}
+<div class="footer-promotions product-quick-specs text-center page-content bg-sand">
+  <div class="page-width">
+  {% if product.metafields.quick_specs.title != blank %}
+  <h5 class="section-header">{{ product.metafields.quick_specs.title }}</h5>
+  {% endif %}
+  <div class="grid grid--flush-bottom">
+    {%- for icon in product.metafields.quick_specs.icon -%}
+    <div class="grid__item {{ grid_item_width }}"data-aos="row-of-3">
+      {% for image in product.metafields.quick_specs.icon[forloop.index0] %}<span class="quick-specs-icons">{{ image.media_inline }}</span>{% endfor %}
+      {%- if product.metafields.quick_specs.text[forloop.index0] != blank -%}
+      <div class="rte">{{ product.metafields.quick_specs.text[forloop.index0] }}</div>
+      {%- endif -%}
+    </div>
+    {%- endfor -%}
+  </div>
+    <a href="#product-specs" class="btn trigger-tab text-link">Specs<span class="right-arrow">{% render 'icon-arrow'%}</span></a>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Product quick specs",
+"settings": []
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

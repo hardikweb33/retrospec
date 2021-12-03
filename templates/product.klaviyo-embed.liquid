@@ -1,0 +1,17 @@
+{% section 'product-template' %}
+{% section 'product-benefits' %}
+{% section 'product-additional-info' %}
+{% section 'product-accordion' %}
+{% section 'product-upsell' %}
+{% section 'product-recommendations' %}
+{% section 'product-reviews' %}
+{% comment %}
+{% if collection %}
+  <div class="text-center page-content page-content--bottom">
+    <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
+    </a>
+  </div>
+{% endif %}
+{% render 'klaviyo_bis' %}
+{% endcomment %}

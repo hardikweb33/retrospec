@@ -1,0 +1,59 @@
+{% if template contains 'index' %}
+<script type="text/javascript">
+var google_tag_params = {
+ecomm_pagetype: 'home',
+};
+</script>
+{% elsif template contains 'collection' %}
+<script type="text/javascript">
+var google_tag_params = {
+ecomm_pagetype: 'category',
+};
+</script>
+{% elsif template contains 'product' %}
+<script type="text/javascript">
+var google_tag_params = {
+ecomm_prodid: '{{ product.id }}',
+ecomm_pagetype: 'product',
+ecomm_totalvalue: {{ product.price | money_without_currency | remove: ',' }}
+};
+</script>
+{% elsif template contains 'cart' %}
+<script type="text/javascript">
+var google_tag_params = {
+ecomm_prodid: [{% for item in cart.items %}'{{item.product.id}}'{% unless forloop.last %},{% endunless %}{% endfor %}],
+ecomm_pagetype: 'cart',
+ecomm_totalvalue: {{cart.total_price | money_without_currency | remove: ','}}
+}
+</script>
+{% elsif template contains 'search' %}
+<script type="text/javascript">
+var google_tag_params = {
+ecomm_pagetype: 'searchresults'
+}
+</script>
+{% else %}
+<script type="text/javascript">
+var google_tag_params = {
+ecomm_pagetype: 'other',
+};
+</script>
+{% endif %}
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 827465095;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/827465095/?guid=ON&amp;script=0"/>
+</div>
+</noscript>

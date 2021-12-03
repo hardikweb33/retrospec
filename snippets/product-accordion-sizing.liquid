@@ -1,0 +1,120 @@
+{% if product.tags contains 'Bike' %}
+<div class="product-accordion-sizing">
+  <div class="grid">
+    <div class="grid__item widescreen--one-half sizing-left-content">
+      {% if shop.metafields.sizing.image[0] != blank %}
+      {% for image in shop.metafields.sizing.image[0] %}
+      {% assign image_url = image.original_src %}
+      {% assign image_aspect_ratio = image.aspect_ratio %}
+      {% assign image_alt = image.alt %}
+      {% capture image_sizes %}
+      {{ image.cloudinary_src | append: 'w_360' | append:' 360w'}}, {{ image.cloudinary_src | append: 'w_540' | append:' 540w'}}, {{ image.cloudinary_src | append: 'w_720' | append:' 720w'}}, {{ image.cloudinary_src | append: 'w_900' | append:' 900w'}}, {{ image.cloudinary_src | append: 'w_1080' | append:' 1080w'}}, {{ image.cloudinary_src | append: 'w_1260' | append:' 1260w'}}, {{ image.cloudinary_src | append: 'w_1440' | append:' 1440w'}}, {{ image.cloudinary_src | append: 'w_1620' | append:' 1620w'}}, {{ image.cloudinary_src | append: 'w_1800' | append:' 1800w'}}, {{ image.cloudinary_src | append: 'w_1980' | append:' 1980w'}}, {{ image.cloudinary_src | append: 'w_2160' | append:' 2160w'}}
+      {% endcapture %}
+      {% endfor %}
+      <div class="size-graphic">
+        <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: image_aspect_ratio }}%;">
+          <img class="feature-row__image lazyload"
+               data-src="{{image_url}}"
+               data-srcset="{{ image_sizes }}"
+               data-widths="[180, 360, 540, 720, 900, 1080]"
+               data-aspectratio="{{ image_aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ image_alt }}">
+        </div>
+      </div>
+      {% endif %}
+      <div class="size-graphic-key">
+        <div class="small--one-whole one-third key-list-wrapper">
+          <li class="key-list">
+            <span class="key-header">A.</span><span>Rider Height</span>
+          </li>
+        </div>
+        <div class="small--one-whole one-third key-list-wrapper">
+          <li class="key-list">
+            <span class="key-header">B.</span><span>Inseam</span>
+          </li>
+        </div>
+        <div class="small--one-whole one-third key-list-wrapper">
+          <li class="key-list">
+            <span class="key-header">C.</span><span>Top Tube</span>
+          </li>
+        </div>
+      </div>
+    </div>
+    <div class="grid__item widescreen--one-half">
+       <table class="chart-table">
+        <tbody>
+          <tr class="chart-row chart-row-header">
+            <td class="chart-row-data chart-column-size">Size</td><td class="chart-row-data chart-column-height_range">Height Range</td><td class="chart-row-data chart-column-standover_height">Standover Height</td>
+          </tr>
+          {% for table_data in product.metafields.sizing.frame %}
+          <tr class="chart-row">
+            <td class="chart-row-data chart-column-size">
+              <span class="chart-row-header">{{ product.metafields.sizing.frame[forloop.index0] }}{% unless product.metafields.sizing.frame[forloop.index0] == product.metafields.sizing.size-reference[forloop.index0] %}{% if product.metafields.sizing.size-reference[forloop.index0] != blank %} - {{product.metafields.sizing.size-reference[forloop.index0]}}{% endif %}{% endunless %}</span>
+            </td>
+            <td class="chart-row-data chart-column-height_range">{{product.metafields.sizing.rider[forloop.index0]}}</td>
+            <td class="chart-row-data chart-column-standover_height">{{product.metafields.sizing.standover[forloop.index0]}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% if shop.metafields.sizing.info[0] != blank %}
+      {{shop.metafields.sizing.info[0]}}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% elsif product.tags contains 'Helmets' or product.tags contains 'snow-helmets' %}
+<div class="product-accordion-sizing other-than-bike">
+  <div class="grid">
+    {% for info in shop.metafields.sizing.info %}
+    {% if product.tags contains shop.metafields.sizing.product_tag[forloop.index0] %}
+    <div class="grid__item medium-up--one-half sizing-left-content">
+      {% if shop.metafields.sizing.info[forloop.index0] != blank %}
+      <div class="rte sizing-info">
+        {{shop.metafields.sizing.info[forloop.index0]}}
+      </div>
+      {% endif %}
+      {% for image in shop.metafields.sizing.image[forloop.index0] %}
+      {% if image != blank %}
+      <div class="helmet-images">
+        <img data-src="{{image.src}}" class="lazyload"/>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="grid__item medium-up--one-half sizing-right-content">
+      {% for table_data in product.metafields.sizing.size-reference %}
+      {% if table_data != blank %}
+      {% assign display = 'true' %}
+      {% endif %}
+      {% endfor %}
+      {% if display == 'true' %}
+      <div class="helmet-chart">
+        <table class="chart-table">
+          <tbody>
+            <tr class="chart-row chart-row-header">
+              <td class="chart-row-data chart-column-size">Size</td><td class="chart-row-data chart-column-height_range">Head Circumference</td>
+            </tr>
+            {% for table_data in product.metafields.sizing.size-reference %}
+            <tr class="chart-row">
+              <td class="chart-row-data chart-column-size">
+                <span>{{ product.metafields.sizing.size-reference[forloop.index0] }}</span>
+              </td>
+              <td class="chart-row-data">{% assign sizes = product.metafields.sizing.helmet[forloop.index0] | split: "/" %}{% for size in sizes %}{{ size }}<br>{% endfor %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+      <div class="helmet-bottom-text">
+        <h4>How to Measure<br>Your Helmet Size</h4>
+        <p>To determine the correct helmet size, wrap a measuring tape around your head. <br/> The tape should rest just above your ears and remain level around the circumference of your head.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

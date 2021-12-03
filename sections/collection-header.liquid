@@ -1,0 +1,67 @@
+<div
+  	id="CollectionHeaderSection"
+  	class="collection-header bg-sand"
+  	data-section-id="{{ section.id }}"
+  	data-section-type="collection-header">
+    {%- if collection.metafields.imagery.hero_bg -%}
+      <div class="collection-hero bg-sand">
+        {% for my_image in collection.metafields.imagery.hero_bg %}
+        {% assign image_url = my_image.original_src %}
+        {% assign image_aspect_ratio = my_image.aspect_ratio %}
+        {% assign image_alt = my_image.alt %}
+        {% capture image_sizes %}
+        {{ my_image.cloudinary_src | append: 'w_360' | append:' 360w'}}, {{ my_image.cloudinary_src | append: 'w_540' | append:' 540w'}}, {{ my_image.cloudinary_src | append: 'w_720' | append:' 720w'}}, {{ my_image.cloudinary_src | append: 'w_900' | append:' 900w'}}, {{ my_image.cloudinary_src | append: 'w_1080' | append:' 1080w'}}, {{ my_image.cloudinary_src | append: 'w_1260' | append:' 1260w'}}, {{ my_image.cloudinary_src | append: 'w_1440' | append:' 1440w'}}, {{ my_image.cloudinary_src | append: 'w_1620' | append:' 1620w'}}, {{ my_image.cloudinary_src | append: 'w_1800' | append:' 1800w'}}, {{ my_image.cloudinary_src | append: 'w_1980' | append:' 1980w'}}, {{ my_image.cloudinary_src | append: 'w_2160' | append:' 2160w'}}
+        {% endcapture %}
+        {% endfor %}
+
+        <img class="collection-hero__image lazyload"
+             data-srcset="{{ image_sizes }}"
+             data-aspectratio="{{ image_aspect_ratio }}"
+             data-sizes="auto"
+             alt="{{ collection.title }}">
+        <noscript>
+          <img class="collection-hero__image image-fit"
+               src="{{ image_url | append: 'w_1400' | append:' 1400w' }}"
+               alt="{{ collection.title }}">
+        </noscript>
+
+      </div>
+  		{% comment %}
+      {% if collection.image %}
+      <div class="collection-hero__overlay small--hide">
+        <img class="collection-hero__product lazyload" src="{{ collection.image | img_url: '2000x' }}">
+      </div>
+      {% endif %}
+  		{% endcomment %}
+      {% if collection.description %}
+      <div class="collection-info bg-sand">
+        <header class="section-header section-header--flush text-center">
+          <h1 style="visibility: hidden;word-break: break-all;">{{ collection.title }}</h1>
+          <div class="collection-description">
+            {{ collection.description }}
+          </div>
+        </header>
+      </div>
+      {% endif %}
+  {% else %}
+    <div class="collection-info bg-sand collection-no-hero">
+      <header class="section-header section-header--flush text-center">
+        <h1 class="section-header__title">
+          {{ collection.title }}
+        </h1>
+        {% if collection.description %}
+        <div class="collection-description">
+          {{ collection.description }}
+        </div>
+        {% endif %}
+      </header>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+  {
+    "name": "Collection header",
+    "settings": []
+  }
+{% endschema %}

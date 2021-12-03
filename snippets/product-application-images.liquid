@@ -1,0 +1,22 @@
+{% if product.metafields.lifestyle-images.image != blank %}
+<div class="homepage-ugc bg-sand product-application-images">
+<div class="page-width page-content ">
+  {% if product.metafields.lifestyle-images.title != blank %}
+  <div class="grid">
+    <div class="grid__item medium-up--one-half small--text-center">
+      <h4>{{ product.metafields.lifestyle-images.title }}</h4>
+    </div>
+  </div>
+  {% endif %}
+  <div class="lifestyle-images-wrapper">
+  	{% for images in product.metafields.lifestyle-images.image %}
+      {% for image in images %}
+      <div class="lifestyle-image" data-index="{{forloop.index0}}">
+        <div class="lifestyle-bg" style="background-image:url({{image.src}});"></div>
+      </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+  </div>
+</div>
+{% endif %}

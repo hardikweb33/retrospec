@@ -1,0 +1,313 @@
+<div class="homepage-hero-bike1">
+  {%- capture image_layout -%}
+  <div class="feature-row__item">
+    <div class="homepage-hero-overflow">
+      {% for block in section.blocks %}
+        <div class="img_snippet" id="img-{{block.id}}">
+          {% if block.settings.img_sel == '1' %}
+            <img src="{{block.settings.img_pic | img_url: 'master'}}" alt="Snowflake" />
+          {% else %}
+            {{ block.settings.img_svg }}
+          {% endif %}
+        </div>
+        <style type="text/css">
+          #img-{{block.id}} {
+            position: absolute;
+            top: {{block.settings.desktop_top}};
+            right: {{block.settings.desktop_right}};
+            bottom: {{block.settings.desktop_bottom}};
+            left: {{block.settings.desktop_left}};
+            width: {{block.settings.img_width_desktop}};
+          }
+
+          {% if block.settings.tablet_top != blank %}
+          @media screen and (max-width: 991px) {
+            #img-{{block.id}} {
+              top: {{block.settings.tablet_top}};
+              right: {{block.settings.tablet_right}};
+              bottom: {{block.settings.tablet_bottom}};
+              left: {{block.settings.tablet_left}};
+              width: {{block.settings.img_width_tablet}};
+            }
+          }
+          {% endif %}
+
+          {% if block.settings.mobile_top != blank %}
+          @media screen and (max-width: 550px) {
+            #img-{{block.id}} {
+              top: {{block.settings.mobile_top}};
+              right: {{block.settings.mobile_right}};
+              bottom: {{block.settings.mobile_bottom}};
+              left: {{block.settings.mobile_left}};
+              width: {{block.settings.img_width_mobile}};
+            }
+          }
+          {% endif %}
+        </style>
+      {% endfor %}
+      <div style="margin: 0 auto; max-width: {{ section.settings.image_width }}px;">
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank %}<a href="{{ section.settings.button_link }}">{% endif -%}
+        <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="feature-row__image lazyload"
+               data-srcset="{{ img_url }}"
+               data-widths="[180, 360, 540, 720, 900, 1080]"
+               data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image.alt }}">
+        </div>
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank %}</a>{% endif -%}
+      </div>
+    </div>
+  </div>
+  {%- endcapture -%}
+
+  <div class="feature-row" data-aos>
+    {%- if section.settings.layout == 'left' -%}
+      {{ image_layout }}
+    {%- endif -%}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+      {%- if section.settings.subtitle != blank -%}
+        <p class="h5">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <p class="h3 homepage_hero_title">{{ section.settings.title | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="btn">
+          {{ section.settings.button_label }}
+          <span class="right-arrow">
+            {% include 'icon-arrow' %}
+          </span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.layout == 'right' -%}
+      {{ image_layout }}
+    {%- endif -%}
+  </div>
+</div>
+
+<style type="text/css">
+  .img_snippet {
+    z-index: 10;
+  }
+  
+  .img_snippet * {
+    width: 100%;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Main Hero",
+	"class": "homepage-heros",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "label": "Image width",
+        "default": 1000,
+        "min": 100,
+        "max": 1000,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Optional button"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "radio",
+            "label": "Select image type",
+            "options": [
+              {
+                "value": "1",
+                "label": "Use uploaded image"
+              },
+              {
+                "value": "2",
+                "label": "Use SVG code" 
+              }
+            ],
+            "id": "img_sel",
+            "default": "1"
+          },
+          {
+            "type": "image_picker",
+            "id": "img_pic", 
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "img_svg",
+            "label": "SVG code for image snippet"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Position"
+          },
+          {
+            "type": "text",
+            "id": "img_width_desktop",
+            "label": "Desktop Width",
+            "info": "px, %" 
+          },
+          {
+            "type": "text",
+            "label": "Top",
+            "id": "desktop_top",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Right",
+            "id": "desktop_right",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Bottom",
+            "id": "desktop_bottom",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Left",
+            "id": "desktop_left",
+            "info": "px, %"
+          },
+          {
+            "type": "header",
+            "content": "Tablet Position"
+          },
+          {
+            "type": "text",
+            "id": "img_width_tablet",
+            "label": "Tablet Width",
+            "info": "px, %" 
+          },
+          {
+            "type": "text",
+            "label": "Top",
+            "id": "tablet_top",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Right",
+            "id": "tablet_right",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Bottom",
+            "id": "tablet_bottom",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Left",
+            "id": "tablet_left",
+            "info": "px, %"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Position"
+          },
+          {
+            "type": "text",
+            "id": "img_width_mobile",
+            "label": "Mobile Width",
+            "info": "px, %" 
+          },
+          {
+            "type": "text",
+            "label": "Top",
+            "id": "mobile_top",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Right",
+            "id": "mobile_right",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Bottom",
+            "id": "mobile_bottom",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Left",
+            "id": "mobile_left",
+            "info": "px, %"
+          }
+        ]
+      }
+    ],
+	"presets": [{
+        "name": "Main Hero",
+        "category": "Custom"
+	 }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

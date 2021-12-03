@@ -1,0 +1,38 @@
+<div class="returns-pricing-info text-center">
+  {% assign cart_free_ship = settings.cart_free_ship | times:100.0 %}
+  {% assign current_price_shipping = current_variant.price %}
+  	{% if cart.total_price > cart_free_ship %}
+  		{% assign message = 'Free Shipping' %}
+  	{% else %}
+  		{% assign message = settings.cart_shipping_note %}
+  	{% endif %}
+  <span class="free-shipping text-left free-shipping-product">{{message}}</span>
+  |
+  <span class="returns-text text-right">50 day returns</span>
+</div>
+{%- if product.metafields.info.traditional_retail -%}
+<div class="pricing-info-wrapper">
+  <div class="question-mark-wrapper">
+    <div class="question-mark">?</div>
+    <div class="question-content">We partner directly with manufacturers to sell top-tier gear at more accessible prices than traditional retailers. Less markup.</div>
+  </div>
+  <div class="question-normal-content bg-sand">
+    <div class="pricing_info-header eyebrow-font">
+      Better quality for fewer dollars
+    </div>
+    <div class="grid">
+      <div class="grid__item one-half retail-price">
+        <span class="h4 retail-price-original">{{current_variant.price | money }}</span>
+        <div class="eyebrow-font">Retrospec</div>
+      </div> 
+      <div class="grid__item one-half product-retail-compare">
+        <div class="illustration-underline-wrapper">
+          <span class="h4 retail-price-compare">${{ product.metafields.info.traditional_retail }}</span>
+          <span class="illustration-underline">{% render 'illustration-underline' %}</span>
+        </div>
+        <div class="eyebrow-font">Traditional Retail</div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif -%}

@@ -1,0 +1,72 @@
+{% if section.blocks != blank %}
+{% assign total_blocks = section.blocks.size %}
+{%- liquid
+      assign grid_item_width = 'small--one-half medium-up--one-third'
+
+      case total_blocks
+        when 2
+          assign grid_item_width = 'medium-up--one-half'
+        when 3
+          assign grid_item_width = 'small--one-half medium-up--one-third'
+        when 4
+          assign grid_item_width = 'small--one-half medium-up--one-quarter'
+        when 5
+          assign grid_item_width = 'small--one-half medium-up--one-fifth'
+      endcase
+    -%}
+<div class="electric-easy-shopping-wrapper">
+  <div class="page-width">
+    <div class="grid-overflow-wrapper">
+      <div class="grid grid--uniform" data-aos="overflow__animation">
+        {%- for block in section.blocks  -%}
+        	{% if block.settings.product != blank %}
+        		{% render  'standard-product-card' ,
+                grid_item_width:grid_item_width,
+                product: all_products[block.settings.product],
+        		redirect_text:block.settings.btn_text
+        		%}
+        	{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Easy shopping",
+	"class": "electric-easy-shopping-section",
+    "settings": [
+      {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+      }
+	],
+    "blocks": [
+    {
+    "type": "products",
+    "limit":12,
+    "name": "Product Blocks",
+    "settings": [
+    {
+    "id": "product",
+    "type": "product",
+    "label": "Product"
+    },
+    {
+    "id": "btn_text",
+    "type": "text",
+    "label": "Button Text"
+    }
+    ]
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

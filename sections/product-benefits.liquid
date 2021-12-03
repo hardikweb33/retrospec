@@ -1,0 +1,32 @@
+{% if product.metafields.benefits.header %}  
+  <div class="page-width benefits-wrapper">
+    <div class="page-width text-center page-content bg-sand">
+      <h5>{{ product.metafields.benefits.header }}</h5>
+      {% assign benefit_list = product.metafields.benefits.list | split:'|' %}
+      <ul class="benefits-ul">
+        {% for list in benefit_list %}
+        <li>
+          <div class="benefits-list-check"><span class="checkmark-icon">{% include 'icon-handwritten-check' %}</span></div>
+          <div class="benefits-list-item">{{list | replace:'["','' | replace:'"]',''}}</div>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if product.metafields.specs.list != blank %}
+       <a href="#product-specs" class="btn trigger-tab text-link">Specs<span class="right-arrow">{% render 'icon-arrow'%}</span></a>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Product Benefits",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

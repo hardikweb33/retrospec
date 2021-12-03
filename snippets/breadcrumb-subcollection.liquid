@@ -1,0 +1,72 @@
+{% for link in linklists['breadcrumb-nav'].links %}
+	{% if link.type contains 'collection' %}
+		{% for sublink in link.links %}
+			{% if collection %}
+				{% if sublink.type contains 'collection' %}
+					{% assign products = sublink.object %}
+					{% for coll_prod in products.all_products %}
+						{% if coll_prod == product %}					
+							{% assign main_obj = link.object %}
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+				{% for sub_sublink in sublink.links %}
+					{% if sub_sublink.type contains 'collection' %}
+						{% assign collection_prods = sub_sublink.object %}
+						{% for prod in collection_prods.all_products %}
+							{% if prod == product %}
+								{% assign sub_main_obj = sublink.object %}
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				{% if sublink.type contains 'collection' %}
+					{% assign collectionmenu = sublink.object %}
+					{% for menuproduct in collectionmenu.all_products %}
+						{% if menuproduct == product %}
+							{% assign maincollection = link.object %}
+							{% assign subcollection = sublink.object %}
+						{% endif %}
+						{% for sub_sublink in sublink.links %}
+							{% if sub_sublink.type contains 'collection' %}
+								{% assign sub_collectionmenu = sub_sublink.object %}
+								{% for sub_menuproduct in sub_collectionmenu.all_products %}
+									{% if sub_menuproduct == product %}
+										{% assign sub_subcollection = sub_sublink.object %}
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+
+{% if collection %}
+	{%- capture url -%}{{ routes.collections_url }}/{{ main_obj.handle }}{%- endcapture -%}
+	{{ main_obj.title | link_to: url }}
+	{% if main_obj != blank %}
+		<span class="breadcrumb_divider" aria-hidden="true">/</span>
+	{% endif %}
+	{%- capture url -%}{{ routes.collections_url }}/{{ sub_main_obj.handle }}{%- endcapture -%}
+	{{ sub_main_obj.title | link_to: url }}
+	{% if sub_main_obj != blank %}
+		<span class="breadcrumb_divider" aria-hidden="true">/</span>
+	{% endif %}
+{% else %}
+	{%- capture url -%}{{ routes.collections_url }}/{{ maincollection.handle }}{%- endcapture -%}
+	{% if maincollection != blank %}
+		{{ maincollection.title | link_to: url }}
+		<span class="breadcrumb_divider" aria-hidden="true">/</span>
+	{% endif %}
+	{%- capture url -%}{{ routes.collections_url }}/{{ subcollection.handle }}{%- endcapture -%}
+	{{ subcollection.title | link_to: url }}
+	{% if sub_subcollection != blank %}
+	<span class="breadcrumb_divider" aria-hidden="true">/</span>
+	{% endif %}
+	{%- capture url -%}{{ routes.collections_url }}/{{ sub_subcollection.handle }}{%- endcapture -%}
+	{{ sub_subcollection.title | link_to: url }}
+{% endif %}

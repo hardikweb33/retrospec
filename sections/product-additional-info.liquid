@@ -1,0 +1,39 @@
+{% for info_block in product.metafields.info_block.width %}
+  {% if product.metafields.info_block.width[forloop.index0] == 'Full Width' %}
+    {% assign width = "100" %}
+    {% assign half_image = '' %}
+  {% endif %}
+  {% if product.metafields.info_block.width[forloop.index0] ==  '50% Image Left' %}
+    {% assign width = '50' %}
+    {% assign half_image = 'left' %}
+  {% endif %}
+  {% if product.metafields.info_block.width[forloop.index0] ==  '50% Image Right' %}
+    {% assign width = '50' %}
+    {% assign half_image = 'right' %}
+  {% endif %}
+
+  {% if half_image == 'left' or half_image == 'right' %}
+  	{% include 'product-additional-info-block-half' %}
+  {% else %}
+  	{% include 'product-additional-info-block-full' %}
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Additional Info",
+	"class":"additional-info-section",
+    "settings": [
+		{
+           "type": "paragraph",
+           "content": "Each product pulls in the additional info in the product metafields."
+        }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

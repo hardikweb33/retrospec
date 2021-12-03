@@ -1,0 +1,8 @@
+<div class="text-center affirm-widget" {% if current_variant.price <= 9999 %} style="display:none;" {% endif %}>
+    Finance starting at <span class="product-affirm-price" ></span>
+     with {% render 'enavi-icons' , name:'icon-affirm', width:'45px',height:'auto'  %}
+    <span class="affirm-learn-more">
+        <a class="trigger-tab affirm-modal-trigger" href="#product-financing" >Learn more</a>
+    </span>
+</div>
+ <span class="product-affirm affirm-as-low-as hide" data-page-type="product" data-amount="{{current_variant.price}}"></span>

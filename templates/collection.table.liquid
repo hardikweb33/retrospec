@@ -1,0 +1,77 @@
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>ID - <button class="CopyColumn" data-target=".p-id">Copy Column</button></th>
+  </tr>
+  {%- for product in collection.products -%}
+  <tr>
+    <td>{{ product.title }}</td>
+    <td class="p-id">{{ product.id }}</td>
+  </tr>
+  {%- endfor -%}
+</table>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+
+        $(".CopyColumn").click(function(){
+
+            var btn = $(this);
+
+            // Disable the button whilst the clipboard copy is performed
+            btn.prop("disabled", true);
+
+            var colData = "";
+
+            // Use a line break to seperate the column data if no separator is specified
+            var colSeparator = (btn.data("separator")===undefined) ? "\n" : btn.data("separator");
+
+            // Loop through all elements with the target class
+            $(btn.data("target")).each(function() {
+                // Collect the column data and add the separator
+                colData += $(this).text() + colSeparator;
+            });
+
+            // Copy the column data to the clipboard
+            copyToClipboard(colData.trim());
+
+            // Make a copy of the button text
+            var btn_txt = btn.html();
+
+            // Change the button text to "Copied"
+            btn.html("Copied");
+
+            // Revert the button text after 1.5 seconds
+            setTimeout(function(){
+                btn.html(btn_txt);
+                // Enable the button
+                btn.prop("disabled", false);
+            },1500);
+
+        });
+
+    });
+
+    function copyToClipboard(text) {
+        if (window.clipboardData && window.clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            return clipboardData.setData("Text", text); 
+        } else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+            var textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            } catch (ex) {
+                console.warn("Copy to clipboard failed.", ex);
+                return false;
+            } finally {
+                document.body.removeChild(textarea);
+            }
+        }
+    }
+
+</script>

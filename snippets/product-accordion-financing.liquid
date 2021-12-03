@@ -1,0 +1,96 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+<div class="product-accordion-financing">
+  <div class="affirm-widget-inner">
+    <div class="affirm-logo">
+      {% render 'affirm-icon' %}
+    </div>
+    <div class="affirm-content">
+      <h6>Make easy monthly payments over 3,6 or 12 months.</h6>
+      <span>Checking your eligibility won't affect your credit.</span>
+      <div class="affirm-dynamic-content">
+        <div class="input-affirm">Sample payments for <input type="text" value="{{current_variant.price | divided_by:100.00}}" class="affirm-input-box" title="affirm-input" /></div>
+        <div class="grid affirm-error" style="display:none;">
+          <div class="grid__item">
+            <h6>Please enter an amount larger than or equal to $100.</h6>
+          </div>
+        </div>
+        <div class="grid dynamic-affirm-wrapper">
+          <div class="grid__item one-third small--one-whole 3-month-grid">
+            <div class="dynamic-affirm-calculation">
+              <div class="affirm-price-wrapper">
+                <div class="affirm-price">$89.60/<span>month</span></div>
+                <div class="affirm-month"><span>3 months</span></div>
+              </div>
+              <div class="affirm-rest-content">
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">APR</span>
+                  <span class="affirm-apr">20.22%</span>
+                </div>
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">Interest</span>
+                  <span class="affirm-intrest">$8.81</span>
+                </div>
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">Total</span>
+                  <span class="affirm-total">$268.80</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid__item one-third small--one-whole 6-month-grid">
+            <div class="dynamic-affirm-calculation">
+              <div class="affirm-price-wrapper">
+                <div class="affirm-price">$89.60/<span>month</span></div>
+                <div class="affirm-month"><span>3 months</span></div>
+              </div>
+              <div class="affirm-rest-content">
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">APR</span>
+                  <span class="affirm-apr">20.22%</span>
+                </div>
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">Interest</span>
+                  <span class="affirm-intrest">$8.81</span>
+                </div>
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">Total</span>
+                  <span class="affirm-total">$268.80</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid__item one-third small--one-whole 12-month-grid">
+            <div class="dynamic-affirm-calculation">
+              <div class="affirm-price-wrapper">
+                <div class="affirm-price">$89.60/<span>month</span></div>
+                <div class="affirm-month"><span>3 months</span></div>
+              </div>
+              <div class="affirm-rest-content">
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">APR</span>
+                  <span class="affirm-apr">20.22%</span>
+                </div>
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">Interest</span>
+                  <span class="affirm-intrest">$8.81</span>
+                </div>
+                <div class="affirm-rest-inner">
+                  <span class="rest-content-heading">Total</span>
+                  <span class="affirm-total">$268.80</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="affirm-content-footer">
+          <div class="affirm-footer-inner">
+            Just select  <div class="affirm-logo">
+            {% render 'affirm-icon' %}
+            </div> at the checkout.
+          </div> 
+          <span>Get a real-time decision with just 5 pieces of info.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

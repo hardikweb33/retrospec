@@ -1,0 +1,171 @@
+<style type="text/css">
+  .collection-image{
+  	opacity: 1;
+  }
+</style>
+<div class="page-width collection-slider home_collection_box">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header">
+      <h3 class="section-header__title">{{ section.settings.title }}</h3>
+      <ul class="collection-checklist">
+        {% assign checks = section.settings.checklist | newline_to_br | split: '<br />' %}
+        {% for check in checks %}<li><span class="icon-handwritten-check">{% render 'icon-handwritten-check' %}</span>{{ check }}</li>{% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  <div class="collection-slider-initialize">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign collection = collections[block.settings.collection]
+        assign background_position = block.settings.focal_point
+
+        case section.settings.per_row
+          when 2
+            assign grid_item_width = 'medium-up--one-half'
+          when 3
+            assign grid_item_width = 'small--one-half medium-up--one-third'
+          when 4
+            assign grid_item_width = 'small--one-half medium-up--one-quarter'
+          when 5
+            assign grid_item_width = 'small--one-half medium-up--one-fifth'
+        endcase
+      -%}
+    
+    {%- liquid
+      unless grid_item_width
+      assign grid_item_width = 'small--one-half medium-up--one-whole'
+      endunless
+
+      unless background_position
+      assign background_position = 'center center'
+      endunless
+
+      if block.settings.title != blank
+      assign title_output = block.settings.title
+      else
+      if collection.empty?
+      assign title_output = 'home_page.onboarding.collection_title' | t
+      elsif collection_title
+      assign title_output = collection_title
+      else
+      assign title_output = collection.title | escape
+      endif
+      endif
+      -%}
+    <div class="category-wrapper category-block-{{block.id}}">
+      <div class="">
+       
+        <a href="{{ collection.url }}" class="collection-item collection-item--{{ settings.collection_grid_style }}" data-aos="row-of-{{ per_row }}">
+
+          {%- liquid
+          if collection.image
+          assign collection_image = collection.image
+          else
+          assign collection_image = collection.products.first.featured_media.preview_image
+          endif
+          -%}
+          
+          {%- liquid
+        
+          assign background_illustration = block.settings.background_illustration
+         
+         
+          -%}
+          <div class="illustration-background grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }} lazyload"
+            data-bgset="{% render 'bgset', image:background_illustration %}"
+            data-sizes="auto" data-src="{{background_illustration | img_url:'original'}}">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: collection_image.aspect_ratio }}%;">
+            {%- assign img_url = collection_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                 data-src="{{ img_url }}"
+                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                 data-aspectratio="{{ collection_image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ collection_image.alt }}">
+          </div>
+          </div>
+        </a>
+        <div class="collection_all_button">
+          <a class="btn btn--secondary" href="{{collection.url}}">
+            {{block.settings.button_text}}
+            <span class="right-arrow">
+              {% render 'icon-arrow' %}
+            </span>
+          </a>
+        </div>
+         <style>
+          .category-block-{{block.id}} .illustration-background{
+/*             background-image:url({{background_illustration | img_url:'original'}}); */
+          }
+        </style>
+      </div>
+      
+    </div>
+    {%- endfor -%}
+   </div>
+    </div>
+{% schema %}
+  {
+    "name": "Categories",
+    "class": "index-section collection-box",
+    "max_blocks": 10,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Header",
+        "default": "To ensure every product is of the highest standard, we put them all through our ReadyGo Test:"
+      },
+      {
+        "type": "textarea",
+        "id": "checklist",
+        "label": "Checklist"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gutter",
+        "label": "Add spacing",
+        "default": true
+      },
+ 	  {
+        "type": "text",
+        "id": "link_title",
+        "label": "Link Title"
+      },
+	  {
+        "type": "url",
+        "id": "link",
+        "label": "Link"  
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "id": "collection",
+            "type": "collection",
+            "label": "Collection"
+          },
+		  {
+			"type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+		  },
+          {
+            "type": "image_picker",
+            "id": "background_illustration",
+            "label": "Background Illustration"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Categories",
+      "category": "Custom"
+	 }
+   ]
+  }
+{% endschema %}

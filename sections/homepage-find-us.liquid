@@ -1,0 +1,65 @@
+<div class="page-width bg-light-green homepage-find-us">
+  <div class="page-content text-center">
+    <h4>{{ section.settings.header }}</h4>
+    <p>{{ section.settings.description }}</p>
+    <a href="{{ section.settings.button_link }}" class="btn btn--secondary hide" hide hidden>{{ section.settings.button_text }}</a>
+    <div class="form_div">
+      <form action="/pages/store-locator/" method="get" _lpchecked="1" class="cstm_dealer_locator_frm">
+        <div class="input_after_brd">
+          <input type="text" class="cstm-dealer-locator" title="Find a Dealer" class="cstm-dealer-locator" placeholder="ZIP CODE" name="zipcode" oninvalid="this.setCustomValidity('Please Enter zip code')"> 
+<!--           <div class="custom cursor">
+          </div> -->
+        </div>
+        <button type="submit" class="action_button go_button cstm-dealer-locator-submit" >
+          <span>Find a Dealer</span>
+          <span class="right-arrow">
+            {% render 'icon-arrow' %}
+          </span>
+        </button>
+      </form>
+    </div>
+    <p class="error_show text-center" style="color: red; display: none;">Enter Valid Zip Code!</p>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Find Us",
+	"class": "page-content index-section",
+    "settings": [
+	  {
+        "type": "text",
+		"id": "header",
+        "label": "Header",
+		"default": "Find us in store"
+      },
+	  {
+        "type": "text",
+		"id": "description",
+        "label": "Description",
+		"default": "Try out bikes, boards, and more in person"
+      },
+	  {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+	  {
+        "type": "text",
+		"id": "button_text",
+        "label": "Button Text",
+		"default": "Find a Dealer"
+      }
+	],
+	"presets": [{
+        "name": "Find Us",
+        "category": "Custom"
+	 }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

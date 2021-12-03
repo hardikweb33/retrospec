@@ -1,0 +1,100 @@
+<div class="bg-light-green dealers-wrapper">
+  <div class="grid dealers-grid">
+    <div class="grid__item small--one-whole">
+      <div class="dealers-background-illustration medium-up--hide">
+        {%- assign img_url = section.settings.mobile_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="lazyload"
+             src=""
+             data-src="{{ img_url }}"
+             data-aspectratio="{{ section.settings.mobile_image.aspect_ratio }}"
+             data-sizes="auto"
+             data-parent-fit="cover"
+             alt="{{ section.settings.mobile_image.alt | escape }}">
+        <noscript>
+          <img class=""
+               src="{{ section.settings.mobile_image | img_url: '1000x' }}"
+               alt="{{ section.settings.mobile_image.alt | escape }}">
+        </noscript>
+      </div>
+      <div class="dealers-background-illustration small--hide">
+        {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="lazyload"
+             src=""
+             data-src="{{ img_url }}"
+             data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+             data-sizes="auto"
+             data-parent-fit="cover"
+             alt="{{ section.settings.image.alt | escape }}">
+        <noscript>
+          <img class=""
+               src="{{ section.settings.image | img_url: '2000x' }}"
+               alt="{{ section.settings.image.alt | escape }}">
+        </noscript>
+      </div>
+    </div>
+    <div class="grid__item page-content small--one-whole dealers-text">
+      <div class="dealers-text-width page-width">
+        {%- if section.settings.title != blank -%}
+        <p class="h6">{{ section.settings.title | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+        {%- endif -%}
+        {%- if section.settings.button_label != blank -%}
+        <div class="small--text-center">
+          <a href="{{ section.settings.button_link }}" class="btn text-link">
+            {{ section.settings.button_label }}<span class="right-arrow">{% render 'icon-arrow' %}</span>
+          </a>
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Dealers",
+	"class": "about-dealers",
+    "settings": [
+	  {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      },
+  	  {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Accessible prices and local sellers"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Dealers"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

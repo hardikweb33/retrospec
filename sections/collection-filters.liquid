@@ -1,0 +1,167 @@
+{%- if section.blocks != blank -%}
+<div class="collections-questions-filter">
+  <div class="filter-structure-wrapper">
+    <div class="page-width">
+      <div class="filters-inner">
+      {%- if section.blocks != blank -%}
+      <div class="results-inner filter-by-text small--hide">
+        <p>Filter by:</p>
+      </div>
+      {%- endif -%}
+        {% for block in section.blocks %}
+        <div class="results-inner {% if block.type == 'subcollection' %} first-filter-block medium-up--hide {% endif %}">
+          <div class="results-blocks" id="filter-{{forloop.index}}">
+            <div class="collection-sidebar__group--{{ block.id }}" {{ block.shopify_attributes }}>
+               {% if block.type == 'subcollection' %}
+                {%- if block.settings.title != blank -%}
+                  <h6>{{block.settings.title }}</h6>
+                {%- endif -%}
+                    {% assign handle = collection.metafields.info.subcollections %}
+                      {% if handle != blank %}
+                        <div class="mobile-sidebar">
+                          <div class="grid-overflow-wrapper">
+                            <ul class="no-bullets tag-list">
+                              {% if linklists[handle].title contains 'Bike' %}
+                              {% if block.settings.quiz_url != blank %}
+                              <li class="link-quiz">
+                                {% unless collection.handle contains 'electric' or collection.handle contains 'e-bike' %}
+                                <a href="{{block.settings.quiz_url}}" class="no-ajax btn text-link">
+                                  {{block.settings.quiz_text}}
+                                  <span class="right-arrow">
+                                    {% render 'icon-arrow' %}
+                                  </span>
+                                </a>
+                                {% endunless %}
+                              </li>
+                              {% endif %}
+                              {% endif %}
+                              {%- for link in linklists[handle].links -%}
+                              <li class="eyebrow-font{% if link.current %} tag--active{% endif %}">
+                                <a href="{{ link.url }}" class="no-ajax">
+                                 {{ link.title }}
+                                </a>
+                              </li>
+                              {%- endfor -%}
+                            </ul>
+                          </div>
+                        </div>
+                      {% endif %}
+                  {% else %}
+                  {%- assign split_tag_list = block.settings.tag_list | newline_to_br | split:'<br />' -%}
+                  {%- assign tags_to_display = split_tag_list -%}
+                  {%- if tags_to_display -%}
+            <div class="select-filter-wrapper">
+              <span class="reset-individual" data-target="filter-dropdown-{{forloop.index0}}"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"/></svg></span>
+                <select class="filter-dropdown" id="filter-dropdown-{{forloop.index0}}">
+                  {%- assign tags_to_loop = collection.tags -%}
+                  {%- if collection.handle == 'all' and current_tags == blank -%}
+                  {%- assign tags_to_loop = collection.all_tags -%}
+                  {%- endif -%}
+                  {%- if block.settings.title != blank -%}
+                  <option value="">Select {{block.settings.title}}</option>
+                  {%- endif -%}
+                  {%- for tag in tags_to_display -%}
+                  {% if tag contains "_" %}{%- assign tag_starts_with = tag | slice: 0 -%}{% if tag_starts_with == "_" %}{% if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif %}{% continue %}{% endif %}{% endif %}
+                  {%- assign tag_name = tag | strip -%}
+                  {%- assign tag_text = tag_name -%}
+                  {%- assign show_tag = false -%}
+                  {%- if section.settings.tags_combine == true and tags_to_loop contains tag_name -%}
+                  {%- assign show_tag = true -%}
+                  {%- elsif collection.all_tags contains tag_name -%}
+                  {%- assign show_tag = true -%}
+                  {%- endif -%}
+                  {%- if show_tag -%}
+                  {%- assign tag_count = tag_count | plus: 1 -%}
+                  {%- if current_tags contains tag_name -%}
+                  <option checked value="{{ tag_text | handle}}">
+                    {{ tag_text }}
+                  </option>
+                  {%- else -%}
+                  <option value="{{ tag_text | handle}}">
+                    {{ tag_text }}
+                  </option>
+                  {%- endif -%}
+                  {%- endif -%}
+                  {%- endfor -%}
+                </select>
+            </div>
+            {%- endif -%}
+          {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      {%- if section.blocks != blank -%}
+     <div class="results-inner small--hide">
+          <a href="/collections/help-me-choose" class="btn text-link">
+          Help Me Choose
+            <span class="right-arrow">
+              <svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+                  <g id="icon/arrow" transform="translate(1.000000, 1.000000)" stroke="#000000" stroke-width="1.2">
+                    <g id="Right-Arrow">
+                        <polyline id="Path-Copy" transform="translate(7.560660, 5.000000) rotate(-45.000000) translate(-7.560660, -5.000000) " points="11.0606602 1.5 11.0606602 8.5 4.06066017 8.5"></polyline>
+                        <line x1="1.5959456e-16" y1="5.10355339" x2="12" y2="5.10355339" id="Line-2-Copy"></line>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </div>
+        {%- endif -%}
+    </div>
+  </div>
+</div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+"name": "Collection filter",
+"settings": [],
+"blocks": [
+{
+"type": "tags_group",
+"name": "Tag group",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"default": "Tag Group"
+},
+{
+"type": "textarea",
+"id": "tag_list",
+"label": "Tag list (one per line)",
+"default": "First tag \nSecond tag \nThird tag",
+"info": "Tags are case sensitive and must match your product tag exactly"
+}
+]
+},
+{
+"type": "subcollection",
+"name": "Mobile subcollection",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Heading",
+"default": "Filter by type"
+},
+{
+"type": "url",
+"id": "quiz_url",
+"label": "Quiz Url (Mobile)"
+},
+{
+"type": "text",
+"id": "quiz_text",
+"label": "Quiz Button Text (Mobile)"
+}
+]
+}
+]
+}
+{% endschema %}

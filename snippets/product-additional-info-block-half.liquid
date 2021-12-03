@@ -1,0 +1,67 @@
+<div class="page-width page-content product-info-block-half">
+  {%- capture image_layout -%}
+    <div class="feature-row__item">
+      <div style="margin: 0 auto; max-width: 500px;">
+        {% comment %}
+        {% if product.metafields.info_block.desktop_image[forloop.index0] != blank %}
+        	{% for desktop_image in product.metafields.info_block.desktop_image[forloop.index0] %}
+              {% assign image_url = desktop_image.original_src %}
+              {% assign image_aspect_ratio = desktop_image.aspect_ratio %}
+              {% assign image_alt = desktop_image.alt %}
+              {% capture desktop_image_sizes %}
+              {{ desktop_image.cloudinary_src | append: 'w_360' | append:' 360w'}}, {{ desktop_image.cloudinary_src | append: 'w_540' | append:' 540w'}}, {{ desktop_image.cloudinary_src | append: 'w_720' | append:' 720w'}}, {{ desktop_image.cloudinary_src | append: 'w_900' | append:' 900w'}}, {{ desktop_image.cloudinary_src | append: 'w_1080' | append:' 1080w'}}, {{ desktop_image.cloudinary_src | append: 'w_1260' | append:' 1260w'}}, {{ desktop_image.cloudinary_src | append: 'w_1440' | append:' 1440w'}}, {{ desktop_image.cloudinary_src | append: 'w_1620' | append:' 1620w'}}, {{ desktop_image.cloudinary_src | append: 'w_1800' | append:' 1800w'}}, {{ desktop_image.cloudinary_src | append: 'w_1980' | append:' 1980w'}}, {{ desktop_image.cloudinary_src | append: 'w_2160' | append:' 2160w'}}
+              {% endcapture %}
+        	{% endfor %}
+        <div class="image-wrap {% if product.metafields.info_block.image[forloop.index0] != blank %}mobile-hide{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: image_aspect_ratio }}%;">
+          <img class="feature-row__image lazyload"
+               data-src="{{image_url}}"
+               data-srcset="{{ desktop_image_sizes }}"
+               data-widths="[180, 360, 540, 720, 900, 1080]"
+               data-aspectratio="{{ image_aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ image_alt }}">
+        </div>
+        {% endif %}
+        {% endcomment %}
+        {% if product.metafields.info_block.image[forloop.index0] != blank %}
+          {% for my_image in product.metafields.info_block.image[forloop.index0] %}
+          {% assign image_url = my_image.original_src %}
+          {% assign image_aspect_ratio = my_image.aspect_ratio %}
+          {% assign image_alt = my_image.alt %}
+          {% capture image_sizes %}
+          {{ my_image.cloudinary_src | append: 'w_360' | append:' 360w'}}, {{ my_image.cloudinary_src | append: 'w_540' | append:' 540w'}}, {{ my_image.cloudinary_src | append: 'w_720' | append:' 720w'}}, {{ my_image.cloudinary_src | append: 'w_900' | append:' 900w'}}, {{ my_image.cloudinary_src | append: 'w_1080' | append:' 1080w'}}, {{ my_image.cloudinary_src | append: 'w_1260' | append:' 1260w'}}, {{ my_image.cloudinary_src | append: 'w_1440' | append:' 1440w'}}, {{ my_image.cloudinary_src | append: 'w_1620' | append:' 1620w'}}, {{ my_image.cloudinary_src | append: 'w_1800' | append:' 1800w'}}, {{ my_image.cloudinary_src | append: 'w_1980' | append:' 1980w'}}, {{ my_image.cloudinary_src | append: 'w_2160' | append:' 2160w'}}
+          {% endcapture %}
+          {% endfor %}
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: image_aspect_ratio }}%;">
+            <img class="feature-row__image lazyload"
+                 data-src="{{image_url}}"
+                 data-srcset="{{ image_sizes }}"
+                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                 data-aspectratio="{{ image_aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ image_alt }}">
+          </div>
+          {% endif %}
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  <div class="feature-row" data-aos>
+    {%- if half_image == 'left' -%}
+      {{ image_layout }}
+    {%- endif -%}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ half_image }} text- {{ half_image }}">
+      {%- if product.metafields.info_block.header[forloop.index0] -%}
+        <h2>{{ product.metafields.info_block.header[forloop.index0] | escape }}</h2>
+      {%- endif -%}
+      {%- if product.metafields.info_block.description[forloop.index0] -%}
+        <div class="rte featured-row__subtext">{{ product.metafields.info_block.description[forloop.index0] }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if half_image == 'right' -%}
+      {{ image_layout }}
+    {%- endif -%}
+  </div>
+</div>

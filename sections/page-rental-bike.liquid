@@ -1,0 +1,221 @@
+  {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+    {% case block.type %}
+       {% when 'image_with_text' %}
+      <div class="bg_image_with_text" style="background:{{block.settings.bg_color}};">
+        <div class="page-width">  
+          <div class="image_with_text_inner {{block.settings.image_position}}">
+            {% if block.settings.image != blank %}
+            <div class="image_cycle">
+              <img src="{{block.settings.image | img_url:"master"}}" alt="{{block.settings.image.alt}}"/>
+            </div>
+            {% endif %}
+            <div class="text_containt">
+              {% if block.settings.title != blank %}
+              <h2>{{ block.settings.title }}</h2>
+              {% endif %}
+              {% if block.settings.content != blank %}
+              {{ block.settings.content }}
+              {% endif %}
+            </div>  
+          </div>    
+        </div>
+      </div>
+       {% when 'content_block' %}
+
+      <div class="content_block">
+        <div class="page-width"> 
+          {% if block.settings.title != blank %}
+          <h3>{{ block.settings.title }}</h3>        
+          {% endif %}
+          {% if block.settings.text != blank %}
+          {{block.settings.text}}
+          {% endif %}
+        </div>  
+      </div>
+
+       {% when 'bike_block' %}
+          <div class="bike_block">
+            <div class="single_image">
+              <div class="page-width">
+                {% if block.settings.image != blank %}  
+                <img src="{{block.settings.image | img_url:"master"}}" alt="{{block.settings.image.alt}}">
+                {% endif %}        
+                
+                 {% if block.settings.image_caption != blank %}  
+                <div class="image_caption">* {{block.settings.image_caption}} *</div>   
+                {% endif %}
+              </div>
+            </div>
+            <div class="single_text bg-sand">
+              <div class="page-width">
+                {% if block.settings.title != blank %}
+                <h2>{{ block.settings.title }}</h2>        
+                {% endif %} 
+                {% if block.settings.content != blank %}
+                {{ block.settings.content }}      
+                {% endif %}
+                {% if block.settings.specifications != blank %}
+                <h3>Specification</h3>
+                {{ block.settings.specifications }}      
+                {% endif %}
+              </div> 
+            </div>   
+          </div>  
+       {% when 'footer' %}
+        <div class="dealer_program">
+    <div class="page-width">
+      <div class="dealer_program_text">
+         {% if block.settings.title != blank %}
+        <h2>{{block.settings.title }}</h2>
+        {% endif %}
+         {% if block.settings.content != blank %}
+         {{ block.settings.content }}
+        {% endif %}
+         {% if block.settings.header != blank %}
+        <h3>{{ block.settings.header }}</h3>
+        {% endif %}
+          {% if block.settings.link != blank or block.settings.btn_text!= blank %}
+        <div class="email_btn">
+          <a href="{{block.settings.link}}" class="btn btn_text_color">{{block.settings.btn_text}}</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+   {% endcase %}
+    {% endfor %}
+{% endif %}
+{% schema %}
+{
+  "name": "Page | Rental Bike",
+  "class": "page-team",
+  "max_blocks": 20,
+  "blocks": [
+      {
+      "type":"bike_block",
+      "name":"Bike Block",
+      "settings":[
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+      },
+      {
+          "type": "text",
+          "id": "image_caption",
+          "label": "Image caption"
+      },
+      {
+          "type": "text",
+          "id": "title",
+          "label": "header - text",
+          "default": "Your headline"
+       },
+       {
+          "type": "richtext",
+          "id": "content",
+          "label": "Description - Text"
+       },
+       {
+          "type": "html",
+          "id": "specifications",
+          "label": "specs - html"
+       }
+    ]
+    },
+    {
+       "type":"content_block",
+       "name":"Page Content block",
+       "settings":[
+                 {
+                  "type": "text",
+                  "id": "title",
+                  "label": "header - text",
+                  "default": "Your headline"
+                 }, 
+                 {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text"
+                 }
+                ]
+    },
+    {
+      "type": "image_with_text",
+      "name": "Image With Text",
+      "settings": [
+          {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default":"#f4f4f4"
+         },
+          {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position",
+          "options": [
+            {
+              "value": "left_image",
+              "label": "Left"
+            },
+            {
+              "value": "right_image",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+         },
+         {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Charter"
+        },
+        {
+          "type": "html",
+          "id": "content",
+          "label": "Text",
+           "default":"<h3>The ultimate rental cruiser</h3><ul><li>DurableStylish</li><li>Stylish</li><li>Affordable</li></ul>"
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "name": "Footer CTA",
+      "settings": [
+         {
+          "type": "text",
+          "id": "title",
+          "label": "Header"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Paragraph"
+        },
+         {
+          "type": "text",
+          "id": "header",
+          "label": "CTA Header"
+        },
+         {
+          "type": "url",
+          "id": "link",
+          "label": "CTA Link"
+        },
+         {
+          "type": "text",
+          "id": "btn_text",
+          "label": "CTA Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,98 @@
+<div class="page-content bg-sand">
+  {%- capture image_layout -%}
+    <div class="feature-row__item">
+      <div style="margin: 0 auto; max-width: {{ section.settings.image_width }}px;">
+        {%- if section.settings.image != blank -%}
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank %}<a href="{{ section.settings.button_link }}">{% endif -%}
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+            {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                data-srcset="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ section.settings.image.alt }}">
+          </div>
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank %}</a>{% endif -%}
+        {%- else -%}
+          <div class="image-wrap">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endcapture -%}
+
+  <div class="feature-row" data-aos>
+    {%- if section.settings.layout == 'left' -%}
+      {{ image_layout }}
+    {%- endif -%}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+      <div class="about-hero-text page-width">
+        {%- if section.settings.title != blank -%}
+          <h3>{{ section.settings.title  | newline_to_br }}</h3>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.settings.layout == 'right' -%}
+      {{ image_layout }}
+    {%- endif -%}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "About Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "label": "Image width",
+        "default": 800,
+        "min": 100,
+        "max": 800,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "Making nature<br>second-nature"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+"default": "<p>The outside is for everyone, but not everyone feels comfortable outside. So we set out to make everyone feel at-home in the open-air. We believe that all people regardless of background or experience should enjoy the life-affirming, eye-opening beauty of the outside world.</p>"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

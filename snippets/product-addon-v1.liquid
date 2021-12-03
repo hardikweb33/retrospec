@@ -1,0 +1,341 @@
+{% for addon_data in shop.metafields.add_ons.tag %}
+{% if product.tags contains shop.metafields.add_ons.tag[forloop.index0] %}
+{% assign index0 = forloop.index0 %}
+{% if shop.metafields.add_ons.display[forloop.index0]  == 'true' %}
+{% if shop.metafields.add_ons.ab_test[forloop.index0] == 'Product vs Product' and shop.metafields.add_ons.first_variant_color[forloop.index0] != 'true' %}
+
+{% assign splitted_addons = shop.metafields.add_ons.product[index0] | split:'|' %}
+{% for addons in splitted_addons %}
+{% assign addon_product = all_products[addons] %}
+{% assign addon_index = forloop.index0 %}
+<div class="product-addon-v1" id="{{shop.metafields.add_ons.unique_id[index0]}}-{{addon_index}}" {% unless product.available %} style="display:none;"{% endunless %}>
+  <div class="variant-wrapper addon variant-wrapper--button js addon-variant-wrapper" data-current-price="{{current_variant.price}}">
+    <label class="variant__label" for="ProductSelect-{{addon_product.id}}-{{index0}}">
+      {{shop.metafields.add_ons.label[index0]}}
+      <span><a class="sizing-chart" target="_blank" href="{{addon_product.url}}" data-tabtitle="sizing"><span class="help-icon"></span><span class="sizing_help">Just {{addon_product.price | money}} Learn More</span></a></span>
+    </label>
+    <div class="style-toggle-wrapper addon-toggle-wrapper">
+      <div class="no-selected-addon">Select a {{addon_product.options[0]}} {% if addon_product.options[1] != blank %} and {{addon_product.options[1]}} {% endif %} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg></div>
+      <div class="addon-selected-value">Yes - <span class="selected-style-value">{{addon_product.first_available_variant.title}}</span> <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+      </div>
+    </div>
+    <fieldset class="addon-input-wrap  style-wrapper " data-addon-price="{{addon_product.price}}" name="addon-Size" data-index="addonoption2" id="ProductSelect-{{addon_product.id}}-{{forloop.index0}}" style="display: none;">
+
+      <div class="variant-input  style-input " data-index="addonoption2" data-value="{{variant.title}}">
+        <div class="addon-block-wrapper">
+          {% assign count = 0 %}
+          {% if addon_product.options.size == 1 %}
+          {% for variant in addon_product.variants %}
+          {% if variant.available and count < 3 %}
+          <div class="addon-single-option addon-block">
+            <input type="radio" value="{{variant.id}}" data-index="addonoption2" name="addon-Size" class="" id="ProductSelect-{{product.id}}-{{variant.id}}">
+            <label data-wrapper-id="{{shop.metafields.add_ons.unique_id[index0]}}-{{addon_index}}" data-id="{{variant.id}}"for="ProductSelect-{{product.id}}-{{variant.id}}"data-price="{{variant.price}}" class="variant__button-label" data-option="{{variant.title}}">
+              <div class="bike-style-content">
+                {% if variant.image %}
+                <img data-src="{{variant.image | img_url:'original'}}" class="lazyload" alt="{{ variant.title }}" />
+                {% endif %}
+                <div class="addon-variant-title">{{variant.title}}</div>
+              </div>
+
+            </label>
+            <span class="addon-close">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+            </span>
+          </div>
+          {% assign count = count | plus:1 %}
+          {% endif %}
+          {% endfor %}
+          {% else %}
+
+          <select class="hidden-variant-data" style="display:none;">
+            {% for variant in addon_product.variants %}
+            {% capture color_images %}{% endcapture %}
+            <option value="{{variant.id}}" data-price="{{variant.price}}" data-title="{{variant.title | escape}}" data-available="{{variant.available}}"></option>
+            {% endfor %}
+          </select>
+          {% for product_option in addon_product.options_with_values %}
+          <div class="addon-option-wrapper">
+
+            {% if product_option.name contains 'Color' or product_option.name contains 'color' %}
+            <label class="variant__label addon-option-title multiple-addon-label">Select {{ product_option.name }}</label>
+            <div class="addon-option-inner-wrapper addon-option-color">
+
+              {% for value in product_option.values limit:3 %}
+              <div class="multiple-color-option addon-block">
+                <input type="radio" value="{{value | escape}}" data-index="addonoption2" name="addon-Size" class="" id="ProductSelect-{{addon_product.id}}-{{forloop.index}}">
+                <label for="ProductSelect-{{addon_product.id}}-{{variant.id}}" data-wrapper-id="{{shop.metafields.add_ons.unique_id[index0]}}-{{addon_index}}" class="variant__button-label" data-option="{{value}}">
+                  <div class="bike-style-content">
+                    {% assign color_image = '' %}
+                    {% for variant in addon_product.variants %}
+                    {% if variant.option1 contains value %}
+                    {% assign color_image = variant.image %}
+                    {% break %}
+                    {% endif %}
+                    {% endfor %}
+                    {% if color_image %}
+                    <img data-src="{{color_image | img_url:'original'}}" class="lazyload" alt="{{ variant.title }}" />
+                    {% endif %}
+                    <div class="addon-variant-title">{{value}}</div>
+                  </div>
+                </label>
+                <span class="addon-close">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+                </span>
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            <label class="variant__label addon-option-title multiple-addon-label">Select {{ product_option.name }}</label>
+            <div class="addon-option-inner-wrapper another-option-addon">
+              <select class="option-select-size addon-size-option" data-wrapper-id="{{shop.metafields.add_ons.unique_id[index0]}}-{{addon_index}}">
+                {% for value in product_option.values %}
+                <option value="{{value | escape}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      {% unless has_multiple %}
+      <div class="variant-input style-input">
+        <div class="addon-desc-wrapper">
+          <h6>{{addon_product.title}} <span class="addon-price"> - {{addon_product.price | money}}</span></h6>
+          <div class="addon-product-description rte">
+            {{shop.metafields.add_ons.short_description[index0]}}
+          </div>
+        </div>
+      </div>
+      {% endunless %}
+    </fieldset>
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="product-addon-v1" id="{{shop.metafields.add_ons.unique_id[forloop.index0]}}">
+  {% if shop.metafields.add_ons.product[forloop.index0] contains '|' %}
+  {% assign has_multiple = true %}
+  {% assign handles = shop.metafields.add_ons.product[forloop.index0] | split:'|' %}
+  {% assign total_available = 0 %}
+  {% for addon_handle in handles %}
+  {% assign addon_product = all_products[addon_handle] %}
+  {% for variant in addon_product.variants %}
+  {% if variant.available %}
+  {% assign total_available = total_available | plus:1 %}
+  {% break %}
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+  {% else %}
+  {% assign addon_product = all_products[shop.metafields.add_ons.product[forloop.index0]] %}
+  {% assign total_available = 0 %}
+  {% for variant in addon_product.variants %}
+  {% if variant.available %}
+  {% assign total_available = total_available | plus:1 %}
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% if shop.metafields.add_ons.first_variant_color[forloop.index0] == 'true' %}
+  {% assign total_available = 1 %}
+  {% endif %}
+  {% if total_available > 0 %}
+  <div class="variant-wrapper {% if has_multiple %} has-multiple-addon {% endif %} addon variant-wrapper--button js addon-variant-wrapper {% if total_available == 1 %}hide{% endif %}" data-current-price="{{current_variant.price}}">
+    <label class="variant__label" for="ProductSelect-{{addon_product.id}}-{{forloop.index0}}">
+      {{shop.metafields.add_ons.label[forloop.index0]}}
+      {% unless has_multiple %}
+      <span><a class="sizing-chart" target="_blank" href="{{addon_product.url}}" data-tabtitle="sizing"><span class="help-icon"></span><span class="sizing_help">Just {{addon_product.price | money}} Learn More</span></a></span>
+      {% endunless %}
+    </label>
+    {% if has_multiple %}
+    <div class="style-toggle-wrapper addon-toggle-wrapper">
+      <div class="no-selected-addon">Select your accessories <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg></div>
+      <div class="addon-selected-value"><span class="addon-selected-multiple-products"></span><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+      </div>
+    </div>
+    {% else %}
+    <div class="style-toggle-wrapper addon-toggle-wrapper">
+      <div class="no-selected-addon">Select a {{addon_product.options[0]}} {% if addon_product.options[1] != blank %} and {{addon_product.options[1]}} {% endif %} <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg></div>
+      <div class="addon-selected-value">Yes - <span class="selected-style-value">{{addon_product.first_available_variant.title}}</span> <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+      </div>
+    </div>
+    {% endif %}
+    <fieldset class="addon-input-wrap  style-wrapper " data-addon-price="{{addon_product.price}}" name="addon-Size" data-index="addonoption2" id="ProductSelect-{{addon_product.id}}-{{forloop.index0}}" style="display: none;">
+
+      <div class="variant-input  style-input " data-index="addonoption2" data-value="{{variant.title}}">
+        <div class="addon-block-wrapper">
+          {% assign count = 0 %}
+          {% if has_multiple %}
+          {% for addon_handle in handles %}
+          {% assign addon_product = all_products[addon_handle] %}
+          {% assign variant = addon_product.variants.first %}
+          <div class="multiple-addon-block multiple-{{addon_product.id}}">
+            {% if variant.image %}
+            <div class="variant-image">
+              <img data-src="{{variant.image | img_url:'original'}}" class="lazyload" alt="{{ variant.title }}" />
+            </div>
+            {% endif %}
+            <div class="multiple-addon-content ">
+              <p>{{addon_product.title}}</p>
+              <span><a class="sizing-chart" target="_blank" href="{{variant.url}}" data-tabtitle="sizing"><span class="help-icon"></span><span class="sizing_help">{{variant.price | money}} Learn More</span></a></span>
+              <select class="hidden-multiple-variant hide">
+              	{% for variant in addon_product.variants %}
+                <option value="{{variant.id}}" data-value="{{variant.title | escape}}" data-image="{{variant.image | img_url:'original'}}" data-price="{{variant.price | money}}" data-available="{{variant.available}}"></option>
+                {% endfor %}
+              </select>
+              {% for product_option in addon_product.options_with_values %}
+              <div class="addon-option-block">
+                {% if product_option.values.size == 1 %}
+                <span class="hidden-option-label">One {{ product_option.name }}: {{product_option.values.first | split:':' | first}}  </span>
+                {% else %}
+                <span class="hidden-option-label hide">{% if product_option.name contains 'color' or product_option.name contains 'Color' %}Select{% endif %} {{ product_option.name }}</span>
+                {% endif %}
+                <select class="addon-selectbox {% if product_option.values.size == 1 %}hide{% endif %}" data-target-product="{{addon_product.id}}">
+                  {% unless product_option.values.size == 1 %}
+                  <option value="">Select {{product_option.name}}</option>
+                  {% endunless %}
+                  {% for value in product_option.values %}
+                  <option value="{{value | escape}}">
+                    {{ value }}
+                  </option>
+                  {% endfor %}
+                </select>
+              </div>
+              {% endfor %}
+   
+              <label data-target-id="{{variant.id}}" data-price="{{variant.price}}" data-short-name="{{addon_product.metafields.info.short_name}}" class="hide variant__label multiple-product-checkbox custom-checkbox-wrapper orange-checkbox" for="ProductSelect-single-{{addon_product.id}}-{{forloop.index0}}">
+                <input type="checkbox"  class="custom-checkbox"  id="ProductSelect-single-{{addon_product.id}}-{{forloop.index0}}">
+                <span class="geekmark"></span>
+                <span class="addon-multiple-text">Add</span>
+              </label>
+
+            </div>
+          </div>
+          {% assign count = count | plus:1 %}
+          {% endfor %}
+          {% else %}
+
+          {% if addon_product.options.size == 1 %}
+          {% for variant in addon_product.variants %}
+          {% if variant.available and count < 3 %}
+          <div class="addon-single-option addon-block">
+            <input type="radio" value="{{variant.id}}" data-index="addonoption2" name="addon-Size" class="" id="ProductSelect-{{product.id}}-{{variant.id}}">
+            <label data-id="{{variant.id}}"for="ProductSelect-{{product.id}}-{{variant.id}}"data-price="{{variant.price}}" class="variant__button-label" data-option="{{variant.title}}">
+              <div class="bike-style-content">
+                {% if variant.image %}
+                <img data-src="{{variant.image | img_url:'original'}}" class="lazyload" alt="{{ variant.title }}" />
+                {% endif %}
+                <div class="addon-variant-title">{{variant.title}}</div>
+              </div>
+
+            </label>
+            <span class="addon-close">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+            </span>
+          </div>
+          {% assign count = count | plus:1 %}
+          {% endif %}
+          {% endfor %}
+          {% else %}
+
+          <select class="hidden-variant-data" style="display:none;">
+            {% for variant in addon_product.variants %}
+            {% capture color_images %}{% endcapture %}
+            <option value="{{variant.id}}" data-price="{{variant.price}}" data-title="{{variant.title | escape}}" data-available="{{variant.available}}"></option>
+            {% endfor %}
+          </select>
+          {% for product_option in addon_product.options_with_values %}
+          <div class="addon-option-wrapper">
+
+            {% if product_option.name contains 'Color' or product_option.name contains 'color' %}
+            <label class="variant__label addon-option-title multiple-addon-label">Select {{ product_option.name }}</label>
+            <div class="addon-option-inner-wrapper addon-option-color">
+
+              {% for value in product_option.values limit:3 %}
+              <div class="multiple-color-option addon-block">
+                <input type="radio" value="{{value | escape}}" data-index="addonoption2" name="addon-Size" class="" id="ProductSelect-{{addon_product.id}}-{{forloop.index}}">
+                <label for="ProductSelect-{{addon_product.id}}-{{variant.id}}" class="variant__button-label" data-option="{{value}}">
+                  <div class="bike-style-content">
+                    {% assign color_image = '' %}
+                    {% for variant in addon_product.variants %}
+                    {% if variant.option1 contains value %}
+                    {% assign color_image = variant.image %}
+                    {% break %}
+                    {% endif %}
+                    {% endfor %}
+                    {% if color_image %}
+                    <img data-src="{{color_image | img_url:'original'}}" class="lazyload" alt="{{ variant.title }}" />
+                    {% endif %}
+                    <div class="addon-variant-title">{{value}}</div>
+                  </div>
+                </label>
+                <span class="addon-close">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><path d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+                </span>
+              </div>
+              {% endfor %}
+            </div>
+            {% else %}
+            <label class="variant__label addon-option-title multiple-addon-label">Select {{ product_option.name }}</label>
+            <div class="addon-option-inner-wrapper another-option-addon">
+              <select class="option-select-size addon-size-option">
+                {% for value in product_option.values %}
+                <option value="{{value | escape}}">{{value}}</option>
+                {% endfor %}
+              </select>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+          {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      {% unless has_multiple %}
+      <div class="variant-input style-input">
+        <div class="addon-desc-wrapper">
+          <h6>{{addon_product.title}} <span class="addon-price"> - {{addon_product.price | money}}</span></h6>
+          <div class="addon-product-description rte">
+            {{shop.metafields.add_ons.short_description[index0]}}
+          </div>
+        </div>
+      </div>
+      {% endunless %}
+    </fieldset>
+  </div>
+  {% if total_available == 1 %}
+  <div class="single-variant-addon">
+    <div class="variant-wrapper single-addon-variant variant-wrapper--button addon-variant-wrapper addon variant-input-wrap" data-current-price="{{current_variant.price}}">
+      <div class="addon-image">
+        <img data-src="{{addon_product.featured_image | img_url:'original'}}" class="lazyload" alt="{{ addon_product.title }}"/>
+      </div>
+      <div class="single-content-addon">
+        <label class="variant__label single-check custom-checkbox-wrapper orange-checkbox" for="ProductSelect-single-{{addon_product.id}}-{{forloop.index0}}">
+          <input type="checkbox" class="custom-checkbox"  id="ProductSelect-single-{{addon_product.id}}-{{forloop.index0}}">
+          <span class="geekmark"></span>
+          {{shop.metafields.add_ons.label[forloop.index0]}}
+          <!--         <span><div class="question-mark-wrapper"><div class="question-mark">?</div></div></span> -->
+        </label>
+        <a class="sizing-chart" target="_blank" href="{{addon_product.url}}" data-tabtitle="sizing"><span class="help-icon"></span><span class="sizing_help">Just {{addon_product.price | money}} - Learn more</span></a>
+      </div>
+      {% comment %}
+      <div class="question-content">
+        <div class="addon-desc-wrapper">
+          <h6>{{addon_product.title}} <span class="addon-price"> - {{addon_product.price | money}}</span></h6>
+          <div class="addon-product-description rte">
+            {{shop.metafields.add_ons.short_description[index0]}}
+          </div>
+        </div>
+      </div>
+      {% endcomment %}
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+</div>
+{% break %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor%}

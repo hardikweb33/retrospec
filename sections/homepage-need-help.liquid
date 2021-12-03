@@ -1,0 +1,39 @@
+{% assign css_styling = 'medium-down--text-center' %} 
+<div class="need-help-bg desktop-help-bg grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }} lazyload "
+            data-bgset="{% render 'bgset', image:settings.need_help_bg_desktop %}"
+            data-sizes="auto">
+<div class="page-width page-content">
+  {% render 'need-help'%}
+</div>
+</div>
+{%- if settings.need_help_bg_mobile -%}
+<div class="need-help-bg medium-up--hide grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }} lazyload"
+            data-bgset="{% render 'bgset', image:settings.need_help_bg_mobile %}"
+            data-sizes="auto">
+<div class="page-width page-content">
+  {% render 'need-help'%}
+</div>
+</div>
+{% endif %}
+{% schema %}
+	{	
+    "name": "Need Help",
+	"class" : "homepage-need-help",
+    "settings": [
+	],
+    "presets": [
+      {
+        "name": "Need Help",
+        "category": "Custom",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

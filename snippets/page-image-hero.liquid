@@ -1,0 +1,185 @@
+<div
+  data-subsection
+  data-section-id="{{ section.id }}"
+  data-section-type="slideshow-section"
+  data-align-top="true"
+  class="hero-slideshow"
+  {% if section.settings.parallax %}data-parallax="true"{% endif %}>
+  <div class="slideshow-wrapper">
+    {%- assign natural_height = false -%}
+    {% if section.settings.section_height == 'natural' %}
+      {% if section.settings.image != blank %}
+        {%- assign natural_height = true -%}
+        {%- capture natural_height_ratio -%}{{ 100 | divided_by: section.settings.image.aspect_ratio }}%{% endcapture %}
+      {% endif %}
+    {% endif %}
+
+    {% if natural_height %}
+      {% style %}
+        .hero-natural--{{ section.id }} {
+          height: 0;
+          padding-bottom: {{ natural_height_ratio }};
+        }
+      {% endstyle %}
+    {% endif %}
+
+    {% if natural_height %}
+      <div class="hero-natural--{{ section.id }}">
+    {% endif %}
+      <div id="Slideshow-{{ section.id }}"
+        class="hero hero--{{ section.settings.section_height }} hero--{{ section.id }} hero--mobile--{{ section.settings.mobile_height }} loading loading--delayed"
+        {% if natural_height %}
+          data-natural="true"
+        {% endif %}
+        data-aos="hero__animation"
+        data-slide-count="1">
+        <div
+          class="slideshow__slide slideshow__slide--{{ section.id }}"
+          data-id="{{ section.id }}">
+
+          {% style %}
+            .slideshow__slide--{{ section.id }} .hero__title {
+              font-size: {{ section.settings.title_size | times: 0.5 }}px;
+              line-height: 1.15;
+            }
+            @media only screen and (min-width: 769px) {
+              .slideshow__slide--{{ section.id }} .hero__title {
+                font-size: {{ section.settings.title_size }}px;
+              }
+            }
+
+            {% if section.settings.color_accent and section.settings.color_accent != 'rgba(0,0,0,0)' %}
+              .slideshow__slide--{{ section.id }} .btn {
+                background: {{ section.settings.color_accent }} !important;
+                border-color: {{ section.settings.color_accent }} !important;
+
+                {%- assign accent_brightness = section.settings.color_accent | color_extract: 'lightness' -%}
+
+                {% if accent_brightness > 40 %}
+                  color: #000 !important;
+                {% endif %}
+              }
+
+              {% if settings.button_style == 'angled' %}
+                .slideshow__slide--{{ section.id }} .btn:before,
+                .slideshow__slide--{{ section.id }} .btn:after {
+                  background: {{ section.settings.color_accent }} !important;
+                  border-color: {{ section.settings.color_accent }} !important;
+                }
+              {% endif %}
+            {% endif %}
+          {% endstyle %}
+
+          {%- assign hero_text = false -%}
+          {%- assign link_slide = false -%}
+          {% if section.settings.title != blank or section.settings.subheading != blank or section.settings.link_text != blank %}
+            {%- assign hero_text = true -%}
+          {% endif %}
+          {% if section.settings.link != blank and section.settings.link_2 == blank %}
+            {%- assign link_slide = true -%}
+          {% endif %}
+
+          {% if section.settings.parallax %}
+            {% if section.settings.image != blank %}
+              {% style %}
+                .hero__image--{{ section.id }} {
+                  background-position: {{ section.settings.focal_point }};
+                  background-size: cover;
+                }
+              {% endstyle %}
+            {% endif %}
+            <div class="parallax-container">
+              <div class="hero__image-wrapper">
+                <div
+                  class="parallax-image hero__image hero__image--{{ section.id }}{% unless hero_text %} hero__image--no-overlay{% endunless %}{% if section.settings.image != blank %} lazyload{% else %} hero__image--svg{% endif %}"
+                  {% if section.settings.image != blank %}
+                    data-bgset="{% include 'bgset', image: section.settings.image %}"
+                    data-sizes="auto"
+                  {% endif %}>
+                {% if section.settings.image == blank %}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="hero__image-wrapper{% unless hero_text %} hero__image-wrapper--no-overlay{% endunless %}">
+              {% if section.settings.image != blank %}
+                {% style %}
+                  .hero__image--{{ section.id }} {
+                    object-position: {{ section.settings.focal_point }};
+                    font-family: "object-fit: cover; object-position: {{ section.settings.focal_point }};";
+                  }
+                {% endstyle %}
+
+                {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                <img class="image-fit hero__image hero__image--{{ section.id }} lazyload"
+                  src=""
+                  data-src="{{ img_url }}"
+                  data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                  data-sizes="auto"
+                  data-parent-fit="cover"
+                  alt="{{ section.settings.image.alt | escape }}">
+                <noscript>
+                  <img class="image-fit hero__image hero__image--{{ section.id }}"
+                    src="{{ section.settings.image | img_url: '1400x' }}"
+                    alt="{{ section.settings.image.alt | escape }}">
+                </noscript>
+              {% else %}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if link_slide %}
+            <a href="{{ section.settings.link }}" class="hero__slide-link"></a>
+          {% endif %}
+
+          {% if hero_text %}
+            <div class="hero__text-wrap">
+              <div class="page-width">
+                <div class="hero__text-content {{ section.settings.text_align }}">
+                  <div class="hero__text-shadow">
+                    {% unless section.settings.title == blank %}
+                      <h2 class="h1 hero__title">
+                        <div class="animation-cropper"><div class="animation-contents">
+                        {{ section.settings.title | newline_to_br }}
+                        </div></div>
+                      </h2>
+                    {% endunless %}
+                    {% if section.settings.subheading or section.settings.link or section.settings.link_2 %}
+                      {% unless section.settings.subheading == blank %}
+                        <div class="hero__subtitle">
+                          <div class="animation-cropper"><div class="animation-contents">
+                            {{ section.settings.subheading | escape }}
+                          </div></div>
+                        </div>
+                      {% endunless %}
+                      {% if section.settings.link_text != blank or section.settings.link_text_2 != blank %}
+                        <div class="hero__link">
+                          {% if section.settings.link_text != blank %}
+                            <a href="{{ section.settings.link }}" class="btn{% if section.settings.color_accent and section.settings.color_accent == 'rgba(0,0,0,0)' %} btn--inverse{% endif %}">
+                              {{ section.settings.link_text }}
+                            </a>
+                          {% endif %}
+                          {% if section.settings.link_text_2 != blank %}
+                            <a href="{{ section.settings.link_2 }}" class="btn{% if section.settings.color_accent and section.settings.color_accent == 'rgba(0,0,0,0)' %} btn--inverse{% endif %}">
+                              {{ section.settings.link_text_2 }}
+                            </a>
+                          {% endif %}
+                        </div>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% if natural_height %}
+      </div>
+    {% endif %}
+  </div>
+</div>

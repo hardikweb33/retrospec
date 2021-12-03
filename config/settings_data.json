@@ -1,0 +1,4403 @@
+{
+  "current": {
+    "need_help_links": "help-navigation",
+    "need_help_header": "Need help choosing a bike? <br>Start riding in no time.",
+    "need_help_bg_desktop": "shopify:\/\/shop_images\/FindABike_Desktop_89fe5a02-1e35-477a-b778-0611333bba00.png",
+    "need_help_bg_mobile": "shopify:\/\/shop_images\/FindABike_Mobile_4a6c9035-c125-47a7-b421-98d626ed1167.png",
+    "color_body_bg": "#fffdf7",
+    "color_body_text": "#202020",
+    "color_price": "#202020",
+    "color_savings_text": "#c20000",
+    "color_borders": "#e8e8e1",
+    "color_button": "#202020",
+    "color_button_text": "#ffffff",
+    "color_sale_tag": "#202020",
+    "color_sale_tag_text": "#ffffff",
+    "color_cart_dot": "#ff6e2e",
+    "color_small_image_bg": "#fffdf7",
+    "color_large_image_bg": "#fffdf7",
+    "color_header": "#fffdf7",
+    "color_header_text": "#202020",
+    "color_announcement": "#d9e1eb",
+    "color_announcement_text": "#202020",
+    "color_footer": "#ff6e2e",
+    "color_footer_text": "#202020",
+    "color_drawer_background": "#fffdf7",
+    "color_drawer_text": "#202020",
+    "color_drawer_border": "#e8e8e1",
+    "color_drawer_button": "rgba(0,0,0,0)",
+    "color_drawer_button_text": "#202020",
+    "color_modal_overlays": "#e6e6e6",
+    "color_image_text": "#ffffff",
+    "color_image_overlay": "#000000",
+    "color_image_overlay_opacity": 10,
+    "color_image_overlay_text_shadow": 20,
+    "type_header_font_family": "antique_olive_n4",
+    "type_header_spacing": "0",
+    "type_header_base_size": 38,
+    "type_header_line_height": 1,
+    "type_header_capitalize": false,
+    "type_headers_align_text": false,
+    "type_base_font_family": "futura_n4",
+    "type_base_spacing": "25",
+    "type_base_size": 16,
+    "type_base_line_height": 1.6,
+    "type_body_align_text": true,
+    "type_navigation_style": "body",
+    "type_navigation_size": 13,
+    "type_navigation_capitalize": true,
+    "type_product_style": "body",
+    "type_product_capitalize": true,
+    "type_collection_font": "body",
+    "type_collection_size": 18,
+    "button_style": "square",
+    "icon_weight": "2px",
+    "icon_linecaps": "round",
+    "vendor_enable": false,
+    "sku_enable": false,
+    "quantity_enable": false,
+    "variant_labels_enable": true,
+    "variant_type": "button",
+    "enable_payment_button": false,
+    "inventory_enable": false,
+    "inventory_threshold": 20,
+    "inventory_transfers_enable": false,
+    "product_save_amount": false,
+    "product_save_type": "dollar",
+    "product_zoom_enable": true,
+    "quick_shop_enable": false,
+    "quick_shop_text": "Quick view",
+    "product_grid_image_size": "natural",
+    "product_hover_image": false,
+    "product_color_swatches": true,
+    "collection_color_swatches": true,
+    "swatch_style": "round",
+    "trust_image": "",
+    "product_content_1": "",
+    "product_content_collapse_1": true,
+    "product_content_2": "",
+    "product_content_collapse_2": true,
+    "product_content_3": "",
+    "product_content_collapse_3": true,
+    "product_contact": false,
+    "product_contact_title": "Ask a question",
+    "product_contact_show_phone": false,
+    "enable_product_reviews": true,
+    "reviews_layout": "full",
+    "collection_grid_style": "overlaid-box",
+    "collection_grid_shape": "square",
+    "collection_grid_image": "product",
+    "collection_grid_text_align": "center",
+    "collection_grid_tint": "#000000",
+    "collection_grid_opacity": 10,
+    "collection_grid_gutter": true,
+    "cart_type": "drawer",
+    "cart_icon": "cart",
+    "cart_additional_buttons": false,
+    "cart_notes_enable": false,
+    "cart_terms_conditions_enable": false,
+    "cart_terms_conditions_link": "",
+    "cart_free_ship": 35,
+    "cart_shipping_note": "Free Shipping $35+",
+    "social_facebook_link": "https:\/\/www.facebook.com\/retrospecbicycles\/",
+    "social_twitter_link": "https:\/\/twitter.com\/retrospecla",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/retrospec\/",
+    "social_snapchat_link": "",
+    "social_tiktok_link": "",
+    "social_tumblr_link": "",
+    "social_linkedin_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_pinterest": false,
+    "favicon": "shopify:\/\/shop_images\/Retrospec_Riff_Orange_RGB.png",
+    "search_enable": true,
+    "search_type": "product",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": true,
+    "predictive_image_size": "square",
+    "show_breadcrumbs": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Retrospec_Riff_Orange_RGB.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fffdf7",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f3ede2",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#111111",
+    "checkout_button_color": "#111111",
+    "checkout_error_color": "#ff6d6d",
+    "light_font": "poppins_n7",
+    "breadcrumb": false,
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "1524770014057": {
+            "type": "logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/Retrospec_Riff_Orange_RGB.png",
+              "desktop_logo_width": 100,
+              "mobile_logo_width": 60
+            }
+          },
+          "1524770292306": {
+            "type": "announcement",
+            "settings": {
+              "countdown_title": "Cyber Monday Ends",
+              "countdown_time": "2021,11,30,24,00,00",
+              "text": "Free shipping orders $35+",
+              "link": "#",
+              "button-text": "Dealers",
+              "button-link": "https:\/\/dealer.retrospec.com\/accounts\/sign_in"
+            }
+          }
+        },
+        "block_order": [
+          "1524770014057",
+          "1524770292306"
+        ],
+        "settings": {
+          "main_menu_link_list": "impulse-theme-header-navigation-v2",
+          "mobile_secondary_menu": "help-navigation",
+          "mobile_menu_text": "Need help choosing a bike? Start riding in no time.",
+          "mega_menu_images": true,
+          "gift_card": true,
+          "gift_card_text": "Gift Card",
+          "gift_card_link": "shopify:\/\/products\/gift-card",
+          "mobile_logo_center": true,
+          "main_menu_alignment": "left-center",
+          "header_style": "sticky",
+          "sticky_index": false,
+          "sticky_collection": false,
+          "announcement_compact": true,
+          "announcement_above_header": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1601863350098": {
+            "type": "newsletter",
+            "settings": {
+              "show_footer_title": true,
+              "title": "Sign up for our newsletter",
+              "text": "",
+              "container_width": 40
+            }
+          },
+          "1601331730207": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": true,
+              "menu": "live-footer-about",
+              "container_width": 20
+            }
+          },
+          "1494301487049": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": true,
+              "menu": "impulse-theme-footer-navigation-info",
+              "container_width": 20
+            }
+          },
+          "1601331688179": {
+            "type": "menu",
+            "settings": {
+              "show_footer_title": true,
+              "menu": "dealers",
+              "container_width": 20
+            }
+          }
+        },
+        "block_order": [
+          "1601863350098",
+          "1601331730207",
+          "1494301487049",
+          "1601331688179"
+        ],
+        "settings": {
+          "show_copyright": false,
+          "copyright_text": "",
+          "bg_desktop": "shopify:\/\/shop_images\/Footer_Desktop_a33e5534-685f-4b28-9d13-07bd83fdd416.png",
+          "bg_mobile": "shopify:\/\/shop_images\/Footer_Mobile_9f87ab65-02da-4154-8b7f-55cd90b51ae9.png"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "description_position": "top",
+          "subcollection_style": "above",
+          "subcollections_per_row": 5,
+          "enable_collection_count": false,
+          "per_row": 2,
+          "rows_per_page": 20,
+          "mobile_flush_grid": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "description_style": "default",
+          "social_enable": true,
+          "image_position": "left",
+          "image_size": "xlarge",
+          "thumbnail_position": "beside",
+          "thumbnail_arrows": false,
+          "enable_video_looping": true,
+          "ugc_hover_text": "See it in Action",
+          "product_video_style": "muted"
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "image_hero": false,
+          "blog_show_tags": true,
+          "blog_show_date": true,
+          "blog_show_comments": true,
+          "blog_show_author": false,
+          "social_sharing_blog": true
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "blog_show_tag_filter": true,
+          "blog_show_rss": false,
+          "blog_show_tags": true,
+          "blog_show_date": true,
+          "blog_show_comments": true,
+          "blog_show_author": false,
+          "blog_show_excerpt": false,
+          "blog_image_size": "wide"
+        }
+      },
+      "product-sections-template": {
+        "type": "product-sections-template",
+        "blocks": {
+          "sections-1592410313636": {
+            "type": "background-image-text",
+            "settings": {
+              "subtitle": "Why choose us?",
+              "title": "Explain your brand philosophy",
+              "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "image": "",
+              "alignment": "center",
+              "color_border": "#f4f4f4",
+              "layout": "right",
+              "height": 650,
+              "parallax": true
+            }
+          },
+          "sections-1592408476245": {
+            "type": "testimonials",
+            "settings": {
+              "title": "Testimonials",
+              "align_text": "center",
+              "round_images": false,
+              "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+              "image_1": "",
+              "author_1": "Author's name",
+              "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+              "image_2": "",
+              "author_2": "Author's name"
+            }
+          },
+          "sections-1592408474529": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "right"
+            }
+          },
+          "sections-1592410318615": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "left"
+            }
+          },
+          "sections-1592410272428": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "Two line\ntitle image",
+              "title_size": 80,
+              "subheading": "And optional subtext",
+              "link": "",
+              "link_text": "Optional button",
+              "link_2": "",
+              "link_text_2": "",
+              "color_accent": "#ffffff",
+              "text_align": "vertical-center horizontal-center",
+              "image": "",
+              "focal_point": "center center",
+              "section_height": "650px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "sections-1592410313636",
+          "sections-1592408476245",
+          "sections-1592408474529",
+          "sections-1592410318615",
+          "sections-1592410272428"
+        ],
+        "settings": {}
+      },
+      "product-story-sections": {
+        "type": "product-story-sections",
+        "blocks": {
+          "1592410313636": {
+            "type": "background-image-text",
+            "settings": {
+              "subtitle": "Why choose us?",
+              "title": "Explain your brand philosophy",
+              "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "image": "",
+              "alignment": "center",
+              "color_border": "#f4f4f4",
+              "layout": "right",
+              "height": 650,
+              "parallax": true
+            }
+          },
+          "1592408476245": {
+            "type": "testimonials",
+            "settings": {
+              "title": "Testimonials",
+              "align_text": "center",
+              "round_images": false,
+              "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+              "image_1": "",
+              "author_1": "Author's name",
+              "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+              "image_2": "",
+              "author_2": "Author's name"
+            }
+          },
+          "1592408474529": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "right"
+            }
+          },
+          "1592410318615": {
+            "type": "text-and-image",
+            "settings": {
+              "image": "",
+              "image_width": 500,
+              "subtitle": "Improved",
+              "title": "Image with text",
+              "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+              "button_label": "Optional button",
+              "button_link": "",
+              "layout": "left"
+            }
+          },
+          "1592410272428": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "Two line\ntitle image",
+              "title_size": 80,
+              "subheading": "And optional subtext",
+              "link": "",
+              "link_text": "Optional button",
+              "link_2": "",
+              "link_text_2": "",
+              "color_accent": "#ffffff",
+              "text_align": "vertical-center horizontal-center",
+              "image": "",
+              "focal_point": "center center",
+              "section_height": "650px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "1592410313636",
+          "1592408476245",
+          "1592408474529",
+          "1592410318615",
+          "1592410272428"
+        ],
+        "settings": {}
+      },
+      "page-sections-template": {
+        "type": "page-sections-template",
+        "blocks": {
+          "page-image-hero": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": true,
+              "title": "Two line\ntitle image",
+              "title_size": 80,
+              "subheading": "And optional subtext",
+              "link": "",
+              "link_text": "Optional button",
+              "link_2": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-center",
+              "image": "",
+              "focal_point": "center center",
+              "section_height": "650px",
+              "mobile_height": "auto"
+            }
+          },
+          "page-rich-text": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Rich text block",
+              "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
+              "align_text": "center",
+              "narrow_column": true,
+              "enlarge_text": true
+            }
+          },
+          "page-text-columns": {
+            "type": "text-columns",
+            "settings": {
+              "title": "",
+              "align_text": "center",
+              "enable_image_1": true,
+              "image_1": "",
+              "image_width_1": 650,
+              "title_1": "Example title",
+              "text_1": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_1": "",
+              "button_link_1": "",
+              "enable_image_2": true,
+              "image_2": "",
+              "image_width_2": 650,
+              "title_2": "Example title",
+              "text_2": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_2": "",
+              "button_link_2": "",
+              "enable_image_3": true,
+              "image_3": "",
+              "image_width_3": 650,
+              "title_3": "Example title",
+              "text_3": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label_3": "",
+              "button_link_3": ""
+            }
+          },
+          "page-background-image-text": {
+            "type": "background-image-text",
+            "settings": {
+              "subtitle": "Impressive",
+              "title": "Large image with text box",
+              "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+              "button_label": "",
+              "button_link": "",
+              "image": "",
+              "alignment": "center",
+              "color_border": "#f4f4f4",
+              "layout": "right",
+              "height": 550,
+              "parallax": true
+            }
+          },
+          "page-featured-collection": {
+            "type": "featured-collection",
+            "settings": {
+              "title": "Featured collection",
+              "collection": "",
+              "per_row": 4,
+              "rows": 1,
+              "mobile_scrollable": true,
+              "view_all": true
+            }
+          }
+        },
+        "block_order": [
+          "page-image-hero",
+          "page-rich-text",
+          "page-text-columns",
+          "page-background-image-text",
+          "page-featured-collection"
+        ],
+        "settings": {
+          "page_title_enable": false,
+          "page_content_enable": false
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "mode": "disabled",
+          "popup_seconds": 5,
+          "popup_days": 30,
+          "popup_title": "Sign up and save",
+          "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+          "close_text": "No thanks",
+          "enable_newsletter": true,
+          "button_label": "Optional button",
+          "enable_button": false
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {}
+      },
+      "collection-sidebar": {
+        "type": "collection-sidebar",
+        "settings": {
+          "enable_sidebar": true,
+          "enable_sidebar_subcollection": true,
+          "quiz_url": "shopify:\/\/collections\/help-me-choose",
+          "quiz_text": "Help Me Choose",
+          "filter_style": "sidebar",
+          "tags_combine": false,
+          "enable_sort": false
+        }
+      },
+      "collection-promotions": {
+        "type": "collection-promotions",
+        "settings": {
+          "gutter_size": 20
+        }
+      },
+      "footer-promotions": {
+        "type": "footer-promotions",
+        "blocks": {
+          "footer-promotions-0": {
+            "type": "promotion",
+            "settings": {
+              "enable_image": true,
+              "image": "",
+              "title": "Site-wide promotion",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+              "button_label": "Optional button",
+              "button_link": ""
+            }
+          },
+          "footer-promotions-1": {
+            "type": "promotion",
+            "settings": {
+              "enable_image": true,
+              "image": "",
+              "title": "Site-wide promotion",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+              "button_label": "Optional button",
+              "button_link": ""
+            }
+          },
+          "footer-promotions-2": {
+            "type": "promotion",
+            "settings": {
+              "enable_image": true,
+              "image": "",
+              "title": "Site-wide promotion",
+              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+              "button_label": "Optional button",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "footer-promotions-0",
+          "footer-promotions-1",
+          "footer-promotions-2"
+        ],
+        "settings": {
+          "hide_homepage": false,
+          "image_size": "wide"
+        }
+      },
+      "1601773468340": {
+        "type": "homepage-shout-outs",
+        "blocks": {
+          "1601773475939": {
+            "type": "shout_out",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Beaumont_f6c7c8f2-9939-4c03-9763-02f383e47d8a.jpg",
+              "shout_out": "<p>&quot;Love this bike. Uphill, through the city and around the countryside. Best purchase.&quot;<\/p>",
+              "customer": "May M., Beaumont Step-Thru 7s",
+              "button_text": "Shop Bikes",
+              "button_link": "shopify:\/\/collections\/all-bikes"
+            }
+          },
+          "ab8ba0c9-ce10-44b6-8cb3-221a3b2fc2f0": {
+            "type": "shout_out",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Alameda.jpg",
+              "shout_out": "<p>&quot;Honestly love this board, it&#x27;s easy to learn on. Highly recommend for a first board!&quot;<\/p>",
+              "customer": "Katrina F., Alameda Skateboard",
+              "button_text": "Shop Skateboards",
+              "button_link": "shopify:\/\/collections\/skateboards"
+            }
+          },
+          "feca769e-a696-4a59-aff9-2d7338581192": {
+            "type": "shout_out",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Laguna.jpg",
+              "shout_out": "<p>&quot;Love this yoga mat. Great value.&quot;<\/p>",
+              "customer": "Danna R., Laguna Yoga Mat",
+              "button_text": "Shop Yoga Mats",
+              "button_link": "shopify:\/\/collections\/yoga-exercise-mat"
+            }
+          },
+          "b0e1395c-f952-4735-b7b6-602c140149ca": {
+            "type": "shout_out",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TrekkingPole.jpg",
+              "shout_out": "<p>&quot;These are definitely my go-to for any hike now.&quot;<\/p>",
+              "customer": "Ryan, Carbon Fiber Trekking Poles",
+              "button_text": "Shop Trekking Poles",
+              "button_link": "shopify:\/\/collections\/trekking-poles"
+            }
+          }
+        },
+        "block_order": [
+          "1601773475939",
+          "ab8ba0c9-ce10-44b6-8cb3-221a3b2fc2f0",
+          "feca769e-a696-4a59-aff9-2d7338581192",
+          "b0e1395c-f952-4735-b7b6-602c140149ca"
+        ],
+        "settings": {
+          "header": "Shout Outs From Outside"
+        }
+      },
+      "1601774804369": {
+        "type": "homepage-blog-highlight",
+        "disabled": true,
+        "settings": {
+          "blog": "news",
+          "title": "Be an insider outside",
+          "description": "Tips and tricks that make nature second-nature",
+          "post_limit": 3
+        }
+      },
+      "1601842094099": {
+        "type": "homepage-ugc",
+        "settings": {
+          "header": "All natural fun from the field",
+          "description": "Follow us @Retrospec",
+          "button_link": "shopify:\/\/collections\/all",
+          "button_text": "Shop Now"
+        }
+      },
+      "1601846114826": {
+        "type": "homepage-discovery-carousel",
+        "blocks": {
+          "1601853975494": {
+            "type": "collection",
+            "settings": {
+              "title": "bike",
+              "collection": "bike",
+              "products": 10
+            }
+          },
+          "1601854023540": {
+            "type": "collection",
+            "settings": {
+              "title": "e-bike",
+              "collection": "electric-bikes",
+              "products": 10
+            }
+          },
+          "1601854006539": {
+            "type": "collection",
+            "settings": {
+              "title": "longboard",
+              "collection": "longboards",
+              "products": 10
+            }
+          },
+          "1601854038402": {
+            "type": "collection",
+            "settings": {
+              "title": "skateboard",
+              "collection": "skateboards",
+              "products": 10
+            }
+          },
+          "1601854055023": {
+            "type": "collection",
+            "settings": {
+              "title": "paddleboard",
+              "collection": "paddleboards",
+              "products": 10
+            }
+          }
+        },
+        "block_order": [
+          "1601853975494",
+          "1601854023540",
+          "1601854006539",
+          "1601854038402",
+          "1601854055023"
+        ],
+        "settings": {
+          "heading": "bike",
+          "link": ""
+        }
+      },
+      "1601855522330": {
+        "type": "homepage-categories",
+        "blocks": {
+          "146f8b1a-3ab9-4a69-96b5-a8689945f83b": {
+            "type": "collection",
+            "settings": {
+              "collection": "adult-paddleboards",
+              "button_text": "Shop Paddle",
+              "background_illustration": "shopify:\/\/shop_images\/Paddle.png"
+            }
+          },
+          "b3a92703-ca31-431f-9046-e20d90aa92ef": {
+            "type": "collection",
+            "settings": {
+              "collection": "youth-bikes",
+              "button_text": "Shop Youth Bikes",
+              "background_illustration": "shopify:\/\/shop_images\/Youth_cc3124e8-4707-481d-aca3-340a5427a2f2.png"
+            }
+          },
+          "398d8db5-8743-4529-814c-8d16fb3688fd": {
+            "type": "collection",
+            "settings": {
+              "collection": "exercise",
+              "button_text": "Shop Exercise",
+              "background_illustration": "shopify:\/\/shop_images\/Fitness.png"
+            }
+          },
+          "a3197513-3e54-4d35-8834-4f3dac908046": {
+            "type": "collection",
+            "settings": {
+              "collection": "bike",
+              "button_text": "Shop Adult Bikes",
+              "background_illustration": "shopify:\/\/shop_images\/AdultBike.png"
+            }
+          }
+        },
+        "block_order": [
+          "146f8b1a-3ab9-4a69-96b5-a8689945f83b",
+          "b3a92703-ca31-431f-9046-e20d90aa92ef",
+          "398d8db5-8743-4529-814c-8d16fb3688fd",
+          "a3197513-3e54-4d35-8834-4f3dac908046"
+        ],
+        "settings": {
+          "title": "To ensure every product is of the highest standard, we put them all through our ReadyGo Test:",
+          "checklist": "Works for all levels\nGood-to-go right away\nNo frills design\nBuilt to last",
+          "enable_gutter": true,
+          "link_title": "Shop All Skate",
+          "link": "#"
+        }
+      },
+      "1601856697290": {
+        "type": "homepage-find-us",
+        "settings": {
+          "header": "Find us in store",
+          "description": "Try out bikes, boards, and more in person",
+          "button_link": "shopify:\/\/pages\/dealer-locator",
+          "button_text": "Find a Dealer"
+        }
+      },
+      "1601863102938": {
+        "type": "homepage-need-help",
+        "settings": {}
+      },
+      "help-me-choose-collection": {
+        "type": "help-me-choose-collection",
+        "blocks": {
+          "f85087cb-cbda-4074-840e-37043c9c3bb0": {
+            "type": "conditions",
+            "settings": {
+              "question": "What will you be riding in?\nThis will help us determine the frame.",
+              "category": "Riding Attire",
+              "options": "Skirts & Dresses\nPants & Shorts",
+              "color": "#d3bea3"
+            }
+          },
+          "a90e475e-6dce-4eef-9ab3-6f3978acc746": {
+            "type": "conditions",
+            "settings": {
+              "question": "What terrain will you be riding on most?\nThis will tell us what frame in right.",
+              "category": "Terrain",
+              "options": "City\nDirt Roads\nMountain",
+              "color": "#dadcbf"
+            }
+          },
+          "80c8135d-4b5c-40e7-8eb4-1bbdc723ddfd": {
+            "type": "conditions",
+            "settings": {
+              "question": "How hilly is your ride? This will tell us how many gears you need.",
+              "category": "Hill Level",
+              "options": "Flat\nSome hills\nVery hilly",
+              "color": "#d9e1eb"
+            }
+          }
+        },
+        "block_order": [
+          "f85087cb-cbda-4074-840e-37043c9c3bb0",
+          "a90e475e-6dce-4eef-9ab3-6f3978acc746",
+          "80c8135d-4b5c-40e7-8eb4-1bbdc723ddfd"
+        ],
+        "settings": {
+          "per_row": 2,
+          "mobile_flush_grid": false
+        }
+      },
+      "product-benefits": {
+        "type": "product-benefits",
+        "settings": {}
+      },
+      "product-additional-info": {
+        "type": "product-additional-info",
+        "settings": {}
+      },
+      "product-accordion": {
+        "type": "product-accordion",
+        "settings": {}
+      },
+      "product-upsell": {
+        "type": "product-upsell",
+        "settings": {}
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "product_recommendations_heading": "Get everything you need to start moving",
+          "related_count": 5
+        }
+      },
+      "1603084682c20fecd0": {
+        "type": "homepage-ready-to-outdoor",
+        "disabled": true,
+        "settings": {
+          "image_1": "shopify:\/\/shop_images\/058A1927_briviglianco.jpg",
+          "image_1_link": "shopify:\/\/products\/beaumont-7-speed-step-through-city-bike",
+          "image_2": "shopify:\/\/shop_images\/DS7A3017.jpg",
+          "image_2_link": "shopify:\/\/products\/chatham-1-step-through-single-speed-beach-cruiser-bike",
+          "image_3": "shopify:\/\/shop_images\/DSC09219_copy.jpg",
+          "image_3_link": "shopify:\/\/products\/zed-44-inch-longboard",
+          "title": "School year essentials",
+          "text": "<p>Gear up for the school year. Commute to campus, cruise to class or take a much needed study break with expertly designed, durably crafted, accessibly priced gear. No frills or fuss, just fun.<\/p>"
+        }
+      },
+      "product-cross-sell": {
+        "type": "product-cross-sell",
+        "settings": {
+          "show_product_recommendations": true,
+          "product_recommendations_heading": "Get everything to start cycling"
+        }
+      },
+      "about-pledge": {
+        "type": "about-pledge",
+        "settings": {
+          "title": "The Retrospec Pledge",
+          "checklist": "Invite everyone, regardless of experience\nFocus on having fun, not being first\nBe nice. It's that simple.\nKeep spirits high, even if energy is low\nLeave judgment at the doorstep",
+          "text_align": "vertical-center horizontal-center",
+          "image": "shopify:\/\/shop_images\/RetrospecPledge_BG_7bee9abc-d35f-43e1-8e37-6f816c247a19.png",
+          "focal_point": "80% 100%",
+          "section_height": "650px",
+          "mobile_height": "500px"
+        }
+      },
+      "about-our-team": {
+        "type": "about-our-team",
+        "blocks": {
+          "722ba507-a661-453a-b819-f7c1b1074fbd": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Retrospec_Team.jpg",
+              "title": "Retrospec Team"
+            }
+          },
+          "8dff3b8f-7155-485c-9702-66b381939810": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/adventure_lab_chack.jpg",
+              "title": "Adventure Lab Check"
+            }
+          },
+          "547ab618-0560-4fb0-9802-918f3900875a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/team_photo_copy.jpg",
+              "title": "Retrospec Team"
+            }
+          }
+        },
+        "block_order": [
+          "722ba507-a661-453a-b819-f7c1b1074fbd",
+          "8dff3b8f-7155-485c-9702-66b381939810",
+          "547ab618-0560-4fb0-9802-918f3900875a"
+        ],
+        "settings": {
+          "team_title": "Our Team",
+          "team_description": "Since selling our first bike, we've designed hundreds of new products that get more people outside at an accessible price. When we're not geeking out on new designs for outside essentials, you can usually find us sporting Retrospec gear under the California sun."
+        }
+      },
+      "about-hero": {
+        "type": "about-hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/AboutPage_Top.png",
+          "image_width": 800,
+          "title": "Making nature \nsecond-nature",
+          "text": "<p>The outside is for everyone, but not everyone feels comfortable outside. So we set out to make everyone feel at-home in the open-air. We believe that all people regardless of background or experience should enjoy the life-affirming, eye-opening beauty of the outside world.<\/p>",
+          "layout": "right"
+        }
+      },
+      "about-adventure-labs": {
+        "type": "about-adventure-labs",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Adventure_Labs.jpg",
+          "image_width": 500,
+          "title": "Adventure Labs, where we research, design and test our gear.",
+          "text": "<p>This is where the magic happens. We pool all of our passion, expertise, and creatvity together to design best-in-class products that all but open your front door for you.<\/p>",
+          "layout": "left"
+        }
+      },
+      "about-dealers": {
+        "type": "about-dealers",
+        "settings": {
+          "mobile_image": "shopify:\/\/shop_images\/Store_Img_mobile_6a2ed71b-1a31-4c90-bc9f-3d3d70322db5.png",
+          "image": "shopify:\/\/shop_images\/Store_Img_desktop_16766a30-b5f9-4b65-bd11-a620447fb0ab.png",
+          "title": "Accessible prices and local sellers",
+          "text": "<p>We partner directly with manufacturers to sell top-tier gear at more accessible prices than traditional retailers. We also sell at local shops, so you can try our gear in-person. We deeply value our closely-knit network of local retailers and the added value their expertise and support provides to Restrospec customers. <\/p><p><\/p><p>Whatever your needs, Retrospec is committed to providing you with ready-to-outdoor essentials you can count on for any adventure.<\/p>",
+          "button_label": "Dealers"
+        }
+      },
+      "homepage-ugc": {
+        "type": "homepage-ugc",
+        "settings": {
+          "header": "All natural fun from the field",
+          "description": "Follow us @Retrospec",
+          "button_text": "Shop Now"
+        }
+      },
+      "product-reviews": {
+        "type": "product-reviews",
+        "settings": {}
+      },
+      "page-finance": {
+        "type": "page-finance",
+        "blocks": {
+          "dfbfd22e-f2f9-4413-9d9b-4768ddc67157": {
+            "type": "banner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/finance_page_banner.jpg",
+              "sub-title-banner": "Ride now, pay later with",
+              "logo-image": "shopify:\/\/shop_images\/ezgif.com-gif-maker.png",
+              "logo-link": "#"
+            }
+          },
+          "1c868b83-8d61-4a0b-a8bb-b161f64d304a": {
+            "type": "text",
+            "settings": {
+              "title": "About",
+              "title_logo": "shopify:\/\/shop_images\/ezgif.com-gif-maker_1.png",
+              "description_text": "<p>Retrospec has teamed up with Affirm to offer easy financing – without a catch. There are no gimmicks like deferred interest or hidden fees, so the total you see at checkout is always what you actually pay. Provide some basic information and get instant approval to split your purchase into 3, 6, or 12 monthly payments with rates from 10-30% APR. For example A loan of $500 from Affirm would look like this: $43.96\/mo. based on a purchase price of $500.00 at 10% APR for 12 months.<\/p>"
+            }
+          },
+          "e3d67287-a2c7-4723-aab0-6c65cbc1b35f": {
+            "type": "image",
+            "settings": {
+              "main_title": "How does it work",
+              "title_logo_1": "shopify:\/\/shop_images\/ezgif.com-gif-maker_2.png",
+              "title_img_1": "add to cart",
+              "description_img_1": "",
+              "title_logo_2": "shopify:\/\/shop_images\/checkout_18f2bff4-966c-4d73-a91f-70042c571d61.png",
+              "title_img_2": "Checkout using affirm",
+              "description_img_2": "",
+              "title_logo_3": "shopify:\/\/shop_images\/recieve-items_89409eee-f532-4426-b9cd-6e355adfa8cd.png",
+              "title_img_3": "Receive Items",
+              "description_img_3": "",
+              "title_logo_4": "shopify:\/\/shop_images\/pay-over-time_e50dc01e-7991-44a4-8568-1e745546023d.png",
+              "title_img_4": "Pay over item",
+              "description_img_4": ""
+            }
+          },
+          "ff3b3615-f31c-4764-b278-f482510ee51e": {
+            "type": "tabs",
+            "settings": {
+              "main_title": "FAQs",
+              "title_tab_1": "Online",
+              "description_tab_1": "<p><strong>Does Affirm perform a credit check?<\/strong><\/p><p>Affirm does a credit check to verify your identity and provide you with a financing offer when you sign up. This is a ‘soft’ credit check and will not impact your credit score. If you choose to complete a purchase and finance it with Affirm, we will do a single ‘hard’ credit check when your first order is processed by the merchant. This may have a minor impact on your credit score. For future purchases with Affirm we won’t need to check your credit again.<\/p><p><\/p><p> <\/p><p><strong>Why was I prompted to pay a down payment with a credit card?<\/strong><\/p><p>We try hard to approve every purchase with Affirm but sometimes we can’t approve the full amount. When this happens, we provide a debit card down payment option so that you may still complete your purchase right away.<\/p><p><\/p><p> <\/p><p><strong>Why was I prompted for a checking account?<\/strong><\/p><p>Affirm sometimes requires additional information to consider a credit application. Such information may include an active checking account, which helps us verify your identity and your ability to repay the requested loan. If we prompt you for this information but you are unable to provide it, Affirm will be unable to approve your credit application.<\/p><p><\/p><p> <\/p><p><strong>Can I see an example loan specifying terms of the loan?<\/strong><\/p><p>Sure! A loan of $500 from Affirm would look like this: $43.96\/mo. based on a purchase price of $500.00 at 10% APR for 12 months.<\/p><p><\/p><p> <\/p><p><strong>Legal Disclosure:<\/strong><\/p><p>Subject to credit check and approval. Down payment may be required. For purchases under $100, limited payment options are available. Estimated payment amount excludes taxes and shipping fees. Affirm loans are made by Cross River Bank, a New Jersey State Chartered Commercial Bank, Member FDIC. See www.affirm.com\/faqs for details.<\/p>",
+              "cta-text-1": ""
+            }
+          }
+        },
+        "block_order": [
+          "dfbfd22e-f2f9-4413-9d9b-4768ddc67157",
+          "1c868b83-8d61-4a0b-a8bb-b161f64d304a",
+          "e3d67287-a2c7-4723-aab0-6c65cbc1b35f",
+          "ff3b3615-f31c-4764-b278-f482510ee51e"
+        ],
+        "settings": {}
+      },
+      "page-rental-bike": {
+        "type": "page-rental-bike",
+        "blocks": {
+          "87d7945f-97f9-4ecc-992a-79b09cade46e": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#f3ede2",
+              "image_position": "left_image",
+              "image": "shopify:\/\/shop_images\/rental_charter.png",
+              "title": "Charter",
+              "content": "<h3>The ultimate rental cruiser<\/h3><ul>\n<li>DurableStylish<\/li>\n<li>Stylish<\/li>\n<li>Affordable<\/li>\n<\/ul>"
+            }
+          },
+          "98e21450-8aa2-4f87-a748-b72050d8e845": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "rgba(0,0,0,0)",
+              "image_position": "right_image",
+              "image": "shopify:\/\/shop_images\/built_to_last.png",
+              "title": "Built to Last",
+              "content": "<ul>\n<li>13G Stainless Steel Spokes<\/li>\n<li>Double Wall Alloy Rims<\/li>\n<li>Rust Resistant Axel Nuts<\/li>\n<\/ul>"
+            }
+          },
+          "7a6328ef-2029-415f-8a85-1af75e0d8695": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#f3ede2",
+              "image_position": "left_image",
+              "image": "shopify:\/\/shop_images\/ready_and_able.png",
+              "title": "Ready and Able",
+              "content": "<ul>\n<li>Rustbuster Chain<\/li>\n<li>Rear Mount Kickstand<\/li>\n<li>Aluminum 3-Piece Crank<\/li>\n<\/ul>"
+            }
+          },
+          "8c6cad5e-9287-4959-a7c5-82f9758eac74": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "rgba(0,0,0,0)",
+              "image_position": "right_image",
+              "image": "shopify:\/\/shop_images\/easy_branding.png",
+              "title": "Easy Branding",
+              "content": "<ul>\n<li>Welded Large Sign Plate<\/li>\n<li>Removable Decal<\/li>\n<\/ul>"
+            }
+          },
+          "3cc4386c-4c0c-4f50-a281-227bce6ec142": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#f3ede2",
+              "image_position": "left_image",
+              "image": "shopify:\/\/shop_images\/Saddle_up.png",
+              "title": "Saddle Up",
+              "content": "<ul>\n<li>Comfort Saddle With Elastomer Springs<\/li>\n<li>Quick-Release Seatpost Clamp<\/li>\n<\/ul>"
+            }
+          },
+          "50b6b572-c176-4262-8f00-bac03e3125c8": {
+            "type": "content_block",
+            "settings": {
+              "title": "Retrospec is excited to introduce our Charter Rental Bike line:",
+              "text": "<p>An ideal choice for hotels, resorts, rental shops, beach towns, factories and industrial applications. We employed a step-thru aluminum frame to make getting on-and-off easy, and with multiple sizes and colors from which to choose, your fleet will have a bike for the whole family!<br\/><br\/>The Charter’s aluminum frame makes for a rental bike that is robust, resilient, and rust-resistant, also packed-full of hand picked and durable components, this bike is designed to rent over and over with very low maintenance. We also incorporated an extra-large welded metal plate which offers plenty of real estate for branding. The Charter’s handlebars and laid back geometry create an upright ride that&#x27;s super comfortable! With it&#x27;s comfort saddle, ergonomic comfort grips and aluminum pedals with slip-resistant Kraton rubber, you can expect comfort throughout even the longest of rides.<br\/><br\/>No detail was overlooked in the inception and construction of the Charter... and it shows. In addition to the aforementioned features, this premiere rental bike from Retrospec sports double-wall alloy rims, cartridge bottom bracket, sealed precision headset, stainless steel spokes, and a KMC Rust-Buster chain for ultimate reliability and rideability.<\/p>"
+            }
+          },
+          "1fb5c4dc-5090-4929-bb53-b83ba83a8a13": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CharterRental20_2021_PacificBluecopy.jpg",
+              "image_caption": "Available in green",
+              "title": "20\" Single speed",
+              "content": "<p>The 20\" Charter is the perfect addition to your fleet that will accommodate the young ones in the family. It boast some impressive features including aluminum frame, quick-release seat post clamp, sign plate, rustbuster chain, 13g stainless steel spokes, ergo grips etc.. With this bike, the kiddos will be riding in style!<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 20x2.125 Cruiser Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1\" Threaded<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Quill Stem<\/li>\n\t<li>\n<b>Headset:<\/b> Sealed Mechanism<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n<b>Chainring:<\/b> 40T Alloy<\/li>\n\t<li>\n<b>Rear Cog:<\/b> 18T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Stainless Steel Acorn<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "c7839ab2-0025-4d55-a9ac-9b71aee0cc4c": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Background_31e0376c-751d-484a-8de0-d0b948a646b1.jpg",
+              "image_caption": "Available in green",
+              "title": "24\" Single Speed",
+              "content": "<p>The 24\" Charter is perfect for teens and petite adults alike. It also packs some impressive features including aluminum frame, quick-release seat post clamp, sign plate, rustbuster chain, 13g stainless steel spokes, ergo grips, rear mount kickstand, plus many more. Great addition to any fleet!<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 24x2.125 Cruiser Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1\" Threaded<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Quill Stem<\/li>\n\t<li>\n<b>Headset:<\/b> Sealed Mechanism<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n<b>Chainring:<\/b> 42T Alloy<\/li>\n\t<li>\n<b>Rear Cog:<\/b> 18T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Stainless Steel Acorn<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "3d40c9cb-7324-4341-aa36-f97df2dbe995": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/3491.jpg",
+              "image_caption": "Available in green, yellow, silver, and pacific  blue",
+              "title": "26\" Single Speed",
+              "content": "<p>The 26\" Charter is the bread and butter of your fleet. It's uni-sex step-thru frame fits a wide range of rider heights. Some key features on this models include aluminum frame, sealed precision headset, quick-release seat post clamp, 26\"x3\" smooth rolling tires, 13g stainless steel spokes, ergo grips etc..<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 26x3\" Smooth Rolling Fat Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1 1\/8\" Threadless<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Alloy Threadless<\/li>\n\t<li>\n<b>Headset:<\/b> Precision Sealed Bearing<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n\t<\/li>\n<li>\n<b>Rear Cog:<\/b> 22T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Rust-Resistent<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "aa5bb146-13c6-4677-8703-1ebbb6f6b4ec": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/charter_7_green.jpg",
+              "image_caption": "Available in green and yellow",
+              "title": "26\" 7-Speed",
+              "content": "<p>The 26\"7 Charter is the bread and butter of your fleet. It's uni-sex step-thru frame fits a wide range of rider heights. Some key features on this models include aluminum frame, sealed precision headset, quick-release seat post clamp, 26\"x3\" smooth rolling tires, 13g stainless steel spokes, ergo grips etc..<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 26x3\" Smooth Rolling Fat Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1 1\/8\" Threadless<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Alloy Threadless<\/li>\n\t<li>\n<b>Headset:<\/b> Precision Sealed Bearing<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n\t<\/li>\n<li>\n<b>Rear Cog:<\/b> 22T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Rust-Resistent<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "d27128b3-431a-44c0-9b7a-d72034b549b2": {
+            "type": "content_block",
+            "settings": {
+              "title": "Dealer Program and Custom Orders",
+              "text": "<p>At Retrospec, we strive to offer you the best product for the best price including price breaks and shipping specials to help you maximize your profits! If you are interested in getting a quote feel free to call us at <a href=\"tel:8884882369\" target=\"_blank\"><strong>888-488-2369<\/strong><\/a> or email one of our account executives at <a href=\"mailto:wholesasle@retrospecusa.com\">wholesasle@retrospecusa.com<\/a><br\/><br\/>We are also happy to customize your fleet order with branded colors, decals, and accessories for the Charter Rental Bike line as well as others, such as our <a href=\"https:\/\/www.retrospecbicycles.com\/collections\/mars-diamond\">Venus and Mars City Bike line<\/a>. If you are interested in ordering custom orders in bulk <a href=\"mailto:wholesasle@retrospecusa.com\">Email Us!<\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "87d7945f-97f9-4ecc-992a-79b09cade46e",
+          "98e21450-8aa2-4f87-a748-b72050d8e845",
+          "7a6328ef-2029-415f-8a85-1af75e0d8695",
+          "8c6cad5e-9287-4959-a7c5-82f9758eac74",
+          "3cc4386c-4c0c-4f50-a281-227bce6ec142",
+          "50b6b572-c176-4262-8f00-bac03e3125c8",
+          "1fb5c4dc-5090-4929-bb53-b83ba83a8a13",
+          "c7839ab2-0025-4d55-a9ac-9b71aee0cc4c",
+          "3d40c9cb-7324-4341-aa36-f97df2dbe995",
+          "aa5bb146-13c6-4677-8703-1ebbb6f6b4ec",
+          "d27128b3-431a-44c0-9b7a-d72034b549b2"
+        ],
+        "settings": {}
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "blocks": {
+          "page-contact-template-0": {
+            "type": "contact-form",
+            "settings": {
+              "title": "",
+              "show_phone": false,
+              "narrow_column": true
+            }
+          }
+        },
+        "block_order": [
+          "page-contact-template-0"
+        ],
+        "settings": {
+          "page_title_enable": false,
+          "page_content_enable": true
+        }
+      },
+      "1618330702cf89cd31": {
+        "type": "homepage-hero-bike",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/DSC_7135-1.jpg",
+          "image_width": 1000,
+          "product_image": "shopify:\/\/shop_images\/Harper_2021_MatteBlack_1_copy.png",
+          "title": "Back To School",
+          "text": "<p>Need a ride? We have bikes and boards for that<\/p><p><\/p>",
+          "button_label": "Shop Now",
+          "button_link": "shopify:\/\/collections\/back-to-school",
+          "layout": "right"
+        }
+      },
+      "collection-header-alternate": {
+        "type": "collection-header-alternate",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Hero.jpg",
+          "image_width": 1000,
+          "title": "Bike",
+          "subheader": "Explore your sense of adventure without breaking the bank",
+          "text": "<p>We are committed to bringing you the quality, no compromise biking experience that you desire at a price that makes sense. We are able to do this by working directly with the factory so you can be sure you are getting the best value possible.<\/p>",
+          "button_label": "Find your new ride"
+        }
+      },
+      "product-quick-specs": {
+        "type": "product-quick-specs",
+        "settings": {}
+      },
+      "product-press-logo": {
+        "type": "product-press-logo",
+        "blocks": {
+          "8b80ecc4-de87-4c54-ae12-dc873d47e4a7": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Forbes_sized.png",
+              "quote": "\"They can take you longer and farther to more unknown places and you don't sacrifice anything on the exercise front unless you want to\""
+            }
+          },
+          "7b938ca4-77ec-4b18-8eaa-6eda08260bda": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Domino_Charcoal.png",
+              "quote": "\"Who knew they made electric bikes that are actually cute?\""
+            }
+          },
+          "ddc76756-3c3e-454f-ba01-d30e2bbcc1c0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TechCrunch_Charcoal_1f1036b3-f5fe-4e48-987c-896e4f42f06d.png",
+              "quote": "\"Retrospec, the brand that makes fun toys like paddle boards, skateboards and bikes, is now adding electric bikes to the mix.\""
+            }
+          }
+        },
+        "block_order": [
+          "8b80ecc4-de87-4c54-ae12-dc873d47e4a7",
+          "7b938ca4-77ec-4b18-8eaa-6eda08260bda",
+          "ddc76756-3c3e-454f-ba01-d30e2bbcc1c0"
+        ],
+        "settings": {
+          "title": "",
+          "logo_opacity": 100,
+          "divider": false
+        }
+      },
+      "product-benefit-2": {
+        "type": "product-benefit-2",
+        "settings": {}
+      },
+      "product-heavy-section": {
+        "type": "product-heavy-section",
+        "settings": {
+          "title": ""
+        }
+      },
+      "page-ride-it-baby": {
+        "type": "page-ride-it-baby",
+        "blocks": {
+          "03d54b34-acba-4860-9cfa-52c05010198c": {
+            "type": "image-hero",
+            "settings": {
+              "title": "Retrospec x Ride It Baby\nBikes: E-Bike Rebate",
+              "color_heading": "#002221",
+              "title_size": 40,
+              "subheading": "",
+              "link": "#ride-copy",
+              "link_text": "Check it Out",
+              "link_2": "",
+              "link_text_2": "",
+              "color_accent": "#002221",
+              "text_align": "vertical-center horizontal-left",
+              "image": "shopify:\/\/shop_images\/DS7A0252_copy_1_1.jpg",
+              "focal_point": "80% 50%",
+              "section_height": "100vh",
+              "mobile_height": "500px"
+            }
+          },
+          "99107fe8-9c62-40d7-b132-2262fb1092b0": {
+            "type": "rich-text",
+            "settings": {
+              "title": "Retrospec x Ride It Baby Bikes",
+              "text": "<p>Between the recent launch of our e-Bike \"Rev\" collection and the start of summer, we have a lot to celebrate. That's why we've teamed up with Ride It Baby Bikes to bring you something special this season.<\/p>",
+              "title-2": "The Offer",
+              "text-2": "<p>When you rent an e-bike at Ride It Baby Bikes, we will rebate your rental fee with the purchase of an e-bike<\/p>",
+              "align_text": "center",
+              "narrow_column": true,
+              "enlarge_text": false
+            }
+          },
+          "64b0ef5c-aab5-420f-a7d1-33b47281a692": {
+            "type": "text-columns",
+            "settings": {
+              "color_background": "#a6d4f5",
+              "title": "How it works...",
+              "align_text": "center",
+              "title_1": "Rent",
+              "text_1": "<p>Rent a Jax Rev e-bike at <a href=\"https:\/\/rideitbabybikes.com\/\" target=\"_blank\" title=\"https:\/\/rideitbabybikes.com\/\">Ride it Baby Bikes<\/a> for 1 hour, 2 hours or all day ($40-$80)<\/p>",
+              "button_label_1": "",
+              "button_link_1": "",
+              "title_2": "Buy",
+              "text_2": "<p><strong>Purchase your own <\/strong><a href=\"\/collections\/electric-bikes\" title=\"Electric Bikes\"><strong>Retrospec Rev e-bike<\/strong><\/a> within 30 days of your rental<\/p>",
+              "button_label_2": "",
+              "button_link_2": "",
+              "title_3": "Rebate",
+              "text_3": "<p>Upload your Ride It Baby Bikes rental receipt and input your Retrospec e-Bike order number to the form field below and we will refund your rental fee<\/p>",
+              "button_label_3": "",
+              "button_link_3": ""
+            }
+          }
+        },
+        "block_order": [
+          "03d54b34-acba-4860-9cfa-52c05010198c",
+          "99107fe8-9c62-40d7-b132-2262fb1092b0",
+          "64b0ef5c-aab5-420f-a7d1-33b47281a692"
+        ],
+        "settings": {}
+      },
+      "1626888944f7b008a6": {
+        "type": "text-and-video",
+        "disabled": true,
+        "settings": {
+          "video_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/2423\/6599\/files\/1920x1080_Beaumont_Rev_Vinyard_Fly_Over_V3.mp4?v=1625687632",
+          "video_width": 1000,
+          "video_height": 400,
+          "product_image": "shopify:\/\/shop_images\/BeaumontRev_2021_Eggshell_1_copy.png",
+          "title": "Electrify your ride",
+          "text": "<p>Explore farther than ever before<\/p>",
+          "button_label": "Explore E-Bikes",
+          "button_link": "shopify:\/\/collections\/electric-bikes",
+          "layout": "right"
+        }
+      },
+      "page-reviews": {
+        "type": "page-reviews",
+        "blocks": {
+          "4260a795-3adc-48ad-a7f2-5b07fe5926fe": {
+            "type": "image-hero",
+            "settings": {
+              "parallax": false,
+              "title": "Customer Reviews",
+              "title_size": 40,
+              "subheading": "",
+              "link": "",
+              "link_text": "",
+              "link_2": "",
+              "link_text_2": "",
+              "color_accent": "rgba(0,0,0,0)",
+              "text_align": "vertical-center horizontal-left",
+              "image": "shopify:\/\/shop_images\/DS7A0252_copy_1_1.jpg",
+              "focal_point": "center center",
+              "section_height": "650px",
+              "mobile_height": "auto"
+            }
+          }
+        },
+        "block_order": [
+          "4260a795-3adc-48ad-a7f2-5b07fe5926fe"
+        ],
+        "settings": {
+          "page_title_enable": false,
+          "page_content_enable": false
+        }
+      },
+      "electric-main-header": {
+        "type": "electric-main-header",
+        "settings": {
+          "parallax": false,
+          "title": "E-Bikes",
+          "title_size": 50,
+          "subheading": "Power Your Ride",
+          "content": "<p>Experience the ease of riding an electric bike. Our Rev collection is charged with E-Power and decked out, Retro-style. If you're looking to liven your commute, up your exercise, or cruise for fun, our e-bikes will amplify your biking experience. <\/p>",
+          "link": "#shopify-section-electric-why-section",
+          "link_text": "Learn More",
+          "link_2": "",
+          "link_text_2": "",
+          "color_accent": "#202020",
+          "text_align": "vertical-center horizontal-left",
+          "image": "shopify:\/\/shop_images\/Hero_1.jpg",
+          "focal_point": "center center",
+          "section_height": "750px",
+          "mobile_height": "auto"
+        }
+      },
+      "electric-press-section": {
+        "type": "electric-press-section",
+        "blocks": {
+          "2fe64532-f57a-4ecd-a32a-d370e773d1a9": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Forbes_sized.png",
+              "quote": "\"They can take you longer and farther to more unknown places and you don't sacrifice anything on the exercise front unless you want to\""
+            }
+          },
+          "7c3be632-0401-4942-be91-36fb3b80b42c": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Domino_Charcoal.png",
+              "quote": "\"Who knew they made electric bikes that are actually cute\""
+            }
+          },
+          "c4df1a56-6f1c-45cf-be30-f698ae56bde5": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/TechCrunch_Charcoal.png",
+              "quote": "\"Retrospec, the brand that makes fun toys like paddle boards, skateboards and bikes, is now adding electric bikes to the mix.\""
+            }
+          }
+        },
+        "block_order": [
+          "2fe64532-f57a-4ecd-a32a-d370e773d1a9",
+          "7c3be632-0401-4942-be91-36fb3b80b42c",
+          "c4df1a56-6f1c-45cf-be30-f698ae56bde5"
+        ],
+        "settings": {
+          "logo_opacity": 76,
+          "divider": false
+        }
+      },
+      "electric-product-benefits2": {
+        "type": "electric-product-benefits2",
+        "settings": {}
+      },
+      "electric-easy-shopping-section": {
+        "type": "electric-easy-shopping-section",
+        "blocks": {
+          "18cc174e-c979-4646-a25a-ae2c6cc32857": {
+            "type": "products",
+            "settings": {
+              "product": "beaumont-rev-electric-city-bike",
+              "btn_text": "Shop Now"
+            }
+          },
+          "a28f084c-9045-4c23-9955-f5db17e8b250": {
+            "type": "products",
+            "settings": {
+              "product": "beaumont-rev-electric-city-bike-step-through",
+              "btn_text": "Shop Now"
+            }
+          },
+          "d32e33c7-79b8-47b0-ac03-be99ddd7e1a4": {
+            "type": "products",
+            "settings": {
+              "product": "jax-rev-electric-folding-bike",
+              "btn_text": "Shop Now"
+            }
+          }
+        },
+        "block_order": [
+          "18cc174e-c979-4646-a25a-ae2c6cc32857",
+          "a28f084c-9045-4c23-9955-f5db17e8b250",
+          "d32e33c7-79b8-47b0-ac03-be99ddd7e1a4"
+        ],
+        "settings": {
+          "title": "Shop Electric Bikes"
+        }
+      },
+      "electric-reviews-section": {
+        "type": "electric-reviews-section",
+        "blocks": {
+          "abc19523-8eb8-4fb7-9fa3-ce1037d88e33": {
+            "type": "shout_out",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/HAILEY-BIKE-APPROVAL0005_1_2bcbfc76-40da-45bd-aa21-b2cedacd2f1f.jpg",
+              "shout_out": "<p>\"Beat the crowds by taking the back roads on Jax Rev.\"<\/p>",
+              "customer": "@haileylangland",
+              "button_text": "Shop E-Bikes",
+              "button_link": "shopify:\/\/collections\/electric-bikes"
+            }
+          },
+          "2bb2da64-edee-4b3f-854d-09d48f8e2065": {
+            "type": "shout_out",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/196267324_507068170431452_3643960656707829107_n_1.jpg",
+              "shout_out": "<p>\"New e-bike from @retrospec & I feel like a kid again!\"<\/p>",
+              "customer": "@cierahudson",
+              "button_text": "Shop E-bikes",
+              "button_link": "shopify:\/\/collections\/electric-bikes"
+            }
+          }
+        },
+        "block_order": [
+          "abc19523-8eb8-4fb7-9fa3-ce1037d88e33",
+          "2bb2da64-edee-4b3f-854d-09d48f8e2065"
+        ],
+        "settings": {
+          "header": "Shout Outs From Outside"
+        }
+      },
+      "electric-why-section": {
+        "type": "electric-why-section",
+        "settings": {
+          "title": "Why should I get an e-bike",
+          "image": "shopify:\/\/shop_images\/DS7A7325_1_1.jpg",
+          "checklist": "Lower costs offer an affordable, eco-friendly swap for your car. We don't want to toot our own bike bell, but our e-bikes are some of the most affordable on the market.\nComfort grips, saddle, and upright riding position ensure a comfortable, cloud-9 type of cruise.\nVintage-inspired design that's true to our roots makes your ride the most stylish on the bike path.\nPedal-assist gets you biking farther and faster without breaking a sweat.\nThree levels of pedal-assist make your workout customizable to how you're feeling that ride.\nThumb Throttle boosts you up tough incline."
+        }
+      },
+      "1631711859b49cdfe4": {
+        "type": "homepage-hero-bike1",
+        "blocks": {
+          "80d4852e-af44-404c-84f0-f718876d86c2": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "img_sel": "1",
+              "img_pic": "shopify:\/\/shop_images\/ValenRev_2021_MatteBlueFog_1_copy.png",
+              "img_svg": "",
+              "img_width_desktop": "56%",
+              "desktop_top": "",
+              "desktop_right": "",
+              "desktop_bottom": "-24%",
+              "desktop_left": "20%",
+              "img_width_tablet": "",
+              "tablet_top": "",
+              "tablet_right": "",
+              "tablet_bottom": "",
+              "tablet_left": "",
+              "img_width_mobile": "",
+              "mobile_top": "",
+              "mobile_right": "",
+              "mobile_bottom": "",
+              "mobile_left": ""
+            }
+          },
+          "425c0c0c-0fb1-4032-a0c0-5bde73867475": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "img_sel": "1",
+              "img_pic": "shopify:\/\/shop_images\/Snowflake1_OverlapsImage.png",
+              "img_svg": "",
+              "img_width_desktop": "23%",
+              "desktop_top": "",
+              "desktop_right": "",
+              "desktop_bottom": "1%",
+              "desktop_left": "2%",
+              "img_width_tablet": "",
+              "tablet_top": "",
+              "tablet_right": "",
+              "tablet_bottom": "",
+              "tablet_left": "",
+              "img_width_mobile": "",
+              "mobile_top": "",
+              "mobile_right": "",
+              "mobile_bottom": "",
+              "mobile_left": ""
+            }
+          },
+          "924ca151-7308-492c-af14-9f583e0a808f": {
+            "type": "image",
+            "settings": {
+              "img_sel": "1",
+              "img_pic": "shopify:\/\/shop_images\/Snowflake1_OverlapsImage_acf919f1-7f0d-4f0f-9e74-b87b0e400240.png",
+              "img_svg": "",
+              "img_width_desktop": "25%",
+              "desktop_top": "-12%",
+              "desktop_right": "",
+              "desktop_bottom": "",
+              "desktop_left": "-10%",
+              "img_width_tablet": "",
+              "tablet_top": "",
+              "tablet_right": "",
+              "tablet_bottom": "",
+              "tablet_left": "",
+              "img_width_mobile": "",
+              "mobile_top": "",
+              "mobile_right": "",
+              "mobile_bottom": "",
+              "mobile_left": ""
+            }
+          }
+        },
+        "block_order": [
+          "80d4852e-af44-404c-84f0-f718876d86c2",
+          "425c0c0c-0fb1-4032-a0c0-5bde73867475",
+          "924ca151-7308-492c-af14-9f583e0a808f"
+        ],
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Hero_Image.jpg",
+          "image_width": 1000,
+          "title": "Cyber Monday Sale",
+          "text": "<p>The sale is on. Spread holiday cheer with great gear. Retrospec is your one-stop shop for every adventurer on your list.<\/p>",
+          "button_label": "Shop the Sale",
+          "button_link": "shopify:\/\/collections\/sale",
+          "layout": "right"
+        }
+      },
+      "1631725890aaf7c7f1": {
+        "type": "homepage-ready-to-outdoor1",
+        "blocks": {
+          "ecb4a7f9-2525-4bb3-b747-50012230a459": {
+            "type": "image",
+            "settings": {
+              "img_sel": "1",
+              "img_pic": "shopify:\/\/shop_images\/Image1_013e9494-9644-4af2-8280-a99af02a7358.png",
+              "img_svg": "",
+              "img_width_desktop": "280px",
+              "desktop_top": "-67%",
+              "desktop_right": "",
+              "desktop_bottom": "",
+              "desktop_left": "8%",
+              "img_width_tablet": "210px",
+              "tablet_top": "-52%",
+              "tablet_right": "",
+              "tablet_bottom": "",
+              "tablet_left": "2%",
+              "img_width_mobile": "180px",
+              "mobile_top": "1%",
+              "mobile_right": "",
+              "mobile_bottom": "",
+              "mobile_left": "3%"
+            }
+          },
+          "ce2d4da6-ad42-4e53-98c0-e045a7dcf90c": {
+            "type": "image",
+            "settings": {
+              "img_sel": "1",
+              "img_pic": "shopify:\/\/shop_images\/Image2.png",
+              "img_svg": "",
+              "img_width_desktop": "280px",
+              "desktop_top": "-5%",
+              "desktop_right": "8%",
+              "desktop_bottom": "",
+              "desktop_left": "",
+              "img_width_tablet": "210px",
+              "tablet_top": "-60%",
+              "tablet_right": "5%",
+              "tablet_bottom": "",
+              "tablet_left": "",
+              "img_width_mobile": "180px",
+              "mobile_top": "0",
+              "mobile_right": "4%",
+              "mobile_bottom": "",
+              "mobile_left": ""
+            }
+          },
+          "bfadf429-62bf-43a6-9859-92f9a76224c8": {
+            "type": "image",
+            "settings": {
+              "img_sel": "1",
+              "img_pic": "shopify:\/\/shop_images\/058A1927_BriViglianco_6688c848-72db-4b10-958e-f007adb2bb78.jpg",
+              "img_svg": "",
+              "img_width_desktop": "200px",
+              "desktop_top": "",
+              "desktop_right": "",
+              "desktop_bottom": "-80%",
+              "desktop_left": "25%",
+              "img_width_tablet": "150px",
+              "tablet_top": "",
+              "tablet_right": "",
+              "tablet_bottom": "-50%",
+              "tablet_left": "55%",
+              "img_width_mobile": "120px",
+              "mobile_top": "",
+              "mobile_right": "25%",
+              "mobile_bottom": "-5%",
+              "mobile_left": ""
+            }
+          }
+        },
+        "block_order": [
+          "ecb4a7f9-2525-4bb3-b747-50012230a459",
+          "ce2d4da6-ad42-4e53-98c0-e045a7dcf90c",
+          "bfadf429-62bf-43a6-9859-92f9a76224c8"
+        ],
+        "settings": {
+          "title": "Gift Adventure",
+          "text": "<p>Expertly designed, durably crafted, accessibly priced gear to help you spark new traditions outdoors or celebrate timeless ones—there’s no greater gift.<\/p>"
+        }
+      },
+      "collection-filters": {
+        "type": "collection-filters",
+        "blocks": {
+          "721b068d-8bb6-4dfd-b160-c7f5b3bd2b40": {
+            "type": "subcollection",
+            "disabled": true,
+            "settings": {
+              "title": "Filter by type",
+              "quiz_url": "shopify:\/\/collections\/help-me-choose",
+              "quiz_text": "Help Me Choose"
+            }
+          },
+          "eab941ef-feff-478f-8edf-64a19f41035d": {
+            "type": "tags_group",
+            "disabled": true,
+            "settings": {
+              "title": "Frame",
+              "tag_list": "ebike\ncampus"
+            }
+          },
+          "eb058393-1aea-48c7-8e65-c865169d1540": {
+            "type": "tags_group",
+            "disabled": true,
+            "settings": {
+              "title": "Speed",
+              "tag_list": "ebike\ncampus"
+            }
+          }
+        },
+        "block_order": [
+          "721b068d-8bb6-4dfd-b160-c7f5b3bd2b40",
+          "eab941ef-feff-478f-8edf-64a19f41035d",
+          "eb058393-1aea-48c7-8e65-c865169d1540"
+        ],
+        "settings": {}
+      }
+    },
+    "content_for_index": [
+      "1626888944f7b008a6",
+      "1618330702cf89cd31",
+      "1631711859b49cdfe4",
+      "1631725890aaf7c7f1",
+      "1603084682c20fecd0",
+      "1601846114826",
+      "1601863102938",
+      "1601855522330",
+      "1601842094099",
+      "1601856697290",
+      "1601774804369",
+      "1601773468340"
+    ]
+  },
+  "presets": {
+    "Modern": {
+      "breadcrumb": false,
+      "button_style": "square",
+      "cart_notes_enable": false,
+      "cart_terms_conditions_enable": false,
+      "cart_type": "drawer",
+      "checkout_accent_color": "#111111",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_button_color": "#111111",
+      "checkout_error_color": "#ff6d6d",
+      "checkout_input_background_color_mode": "white",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_sidebar_background_color": "#fafafa",
+      "collection_color_swatches": false,
+      "collection_grid_gutter": true,
+      "collection_grid_image": "product",
+      "collection_grid_opacity": 10,
+      "collection_grid_shape": "square",
+      "collection_grid_style": "overlaid-box",
+      "collection_grid_text_align": "center",
+      "collection_grid_tint": "#000000",
+      "color_announcement": "#0f0f0f",
+      "color_announcement_text": "#ffffff",
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#000000",
+      "color_borders": "#e8e8e1",
+      "color_button": "#111111",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#ff4f33",
+      "color_drawer_background": "#ffffff",
+      "color_drawer_border": "#e8e8e1",
+      "color_drawer_button": "#111111",
+      "color_drawer_button_text": "#ffffff",
+      "color_drawer_text": "#000000",
+      "color_footer": "#ffffff",
+      "color_footer_text": "#000000",
+      "color_header": "#ffffff",
+      "color_header_text": "#000000",
+      "color_image_overlay": "#000000",
+      "color_image_overlay_text_shadow": 20,
+      "color_large_image_bg": "#0f0f0f",
+      "color_modal_overlays": "#e6e6e6",
+      "color_price": "#1c1d1d",
+      "color_savings_text": "#C20000",
+      "color_small_image_bg": "#ffffff",
+      "icon_linecaps": "miter",
+      "icon_weight": "2px",
+      "inventory_enable": true,
+      "product_color_swatches": false,
+      "product_contact": false,
+      "product_grid_image_size": "natural",
+      "product_hover_image": false,
+      "quantity_enable": false,
+      "quick_shop_text": "Quick view",
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "sku_enable": false,
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_instagram_link": "https:\/\/instagram.com\/shopify",
+      "social_pinterest_link": "https:\/\/www.pinterest.com\/shopify",
+      "type_base_font_family": "futura_n4",
+      "type_base_line_height": 1.6,
+      "type_base_size": 16,
+      "type_base_spacing": "25",
+      "type_body_align_text": true,
+      "type_collection_font": "body",
+      "type_collection_size": 18,
+      "type_header_base_size": 38,
+      "type_header_capitalize": true,
+      "type_header_font_family": "tiemann_n4",
+      "type_header_line_height": 1,
+      "type_header_spacing": "0",
+      "type_headers_align_text": true,
+      "type_navigation_capitalize": true,
+      "type_navigation_size": 13,
+      "type_navigation_style": "body",
+      "type_product_style": "body",
+      "variant_type": "button",
+      "vendor_enable": false,
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1524770014057": {
+              "type": "logo",
+              "settings": {
+                "desktop_logo_width": 140,
+                "mobile_logo_width": 110
+              }
+            },
+            "1524770292306": {
+              "type": "announcement",
+              "settings": {
+                "text": "Free shipping"
+              }
+            },
+            "1524770296206": {
+              "type": "announcement",
+              "settings": {
+                "text": "Hassle-free returns"
+              }
+            }
+          },
+          "block_order": [
+            "1524770014057",
+            "1524770292306",
+            "1524770296206"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu",
+            "main_menu_alignment": "center-split",
+            "header_style": "sticky",
+            "sticky_index": false,
+            "sticky_collection": false,
+            "announcement_compact": true
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494301487048": {
+              "type": "logo_social",
+              "settings": {
+                "container_width": 95
+              }
+            },
+            "1494301487049": {
+              "type": "menu",
+              "settings": {
+                "menu": "footer",
+                "container_width": 25
+              }
+            },
+            "1494292487693": {
+              "type": "newsletter",
+              "settings": {
+                "container_width": 33
+              }
+            }
+          },
+          "block_order": [
+            "1494301487049",
+            "1494292487693",
+            "1494301487048"
+          ],
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "subcollection_style": "above",
+            "subcollections_per_row": 5,
+            "per_row": 4
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "social_enable": true,
+            "image_position": "left",
+            "image_size": "large"
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "social_sharing_blog": true
+          }
+        },
+        "1498163293234": {
+          "type": "featured-content",
+          "settings": {
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": false
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "blog_show_tag_filter": true,
+            "blog_show_rss": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "blog_image_size": "wide"
+          }
+        },
+        "1499789718857": {
+          "type": "featured-collections",
+          "blocks": {
+            "1499789718857-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "1499789718857-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "1499789718857-2": {
+              "type": "collection",
+              "settings": {}
+            },
+            "1499789718857-3": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1499789718857-0",
+            "1499789718857-1",
+            "1499789718857-2",
+            "1499789718857-3"
+          ],
+          "settings": {
+            "title": "Shop by category",
+            "divider": false,
+            "per_row": 4,
+            "enable_gutter": true
+          }
+        },
+        "1499790633921": {
+          "type": "background-image-text",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/all",
+            "focal_point": "80% 0",
+            "color_border": "#cdb8ac",
+            "layout": "left",
+            "height": 750,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "product-sections-template": {
+          "type": "product-sections-template",
+          "blocks": {
+            "sections-1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "sections-1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "sections-1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "sections-1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "sections-1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "sections-1592410313636",
+            "sections-1592408476245",
+            "sections-1592408474529",
+            "sections-1592410318615",
+            "sections-1592410272428"
+          ],
+          "settings": {}
+        },
+        "product-story-sections": {
+          "type": "product-story-sections",
+          "blocks": {
+            "1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1592410313636",
+            "1592408476245",
+            "1592408474529",
+            "1592410318615",
+            "1592410272428"
+          ],
+          "settings": {}
+        },
+        "page-sections-template": {
+          "type": "page-sections-template",
+          "blocks": {
+            "page-image-hero": {
+              "type": "image-hero",
+              "settings": {}
+            },
+            "page-rich-text": {
+              "type": "rich-text",
+              "settings": {
+                "align_text": "center",
+                "narrow_column": true,
+                "enlarge_text": true
+              }
+            },
+            "page-text-columns": {
+              "type": "text-columns",
+              "settings": {}
+            },
+            "page-background-image-text": {
+              "type": "background-image-text",
+              "settings": {
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 550
+              }
+            },
+            "page-featured-collection": {
+              "type": "featured-collection",
+              "settings": {
+                "title": "Featured collection",
+                "per_row": 4,
+                "rows": 1,
+                "view_all": true
+              }
+            }
+          },
+          "block_order": [
+            "page-image-hero",
+            "page-rich-text",
+            "page-text-columns",
+            "page-background-image-text",
+            "page-featured-collection"
+          ],
+          "settings": {
+            "page_title_enable": false,
+            "page_content_enable": false
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {}
+        },
+        "1524769873765": {
+          "type": "slideshow",
+          "blocks": {
+            "1524769873765-0": {
+              "type": "image",
+              "settings": {
+                "title_size": 80,
+                "link": "shopify:\/\/collections\/all",
+                "link_text": "Shop this",
+                "link_2": "shopify:\/\/collections\/all",
+                "link_text_2": "Shop all",
+                "color_accent": "#000000",
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "top center"
+              }
+            },
+            "1524769873765-1": {
+              "type": "image",
+              "settings": {
+                "title_size": 80,
+                "link": "shopify:\/\/collections\/all",
+                "link_text": "Shop all",
+                "link_2": "shopify:\/\/collections\/all",
+                "link_text_2": "Shop all",
+                "color_accent": "#000000",
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "top center"
+              }
+            }
+          },
+          "block_order": [
+            "1524769873765-0",
+            "1524769873765-1"
+          ],
+          "settings": {
+            "section_height": "750px",
+            "mobile_height": "auto",
+            "parallax": true,
+            "style": "bars",
+            "autoplay": true,
+            "autoplay_speed": 7
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {}
+        },
+        "collection-sidebar": {
+          "type": "collection-sidebar",
+          "blocks": {
+            "1524772785241": {
+              "type": "subcollections",
+              "settings": {}
+            },
+            "1524772580942": {
+              "type": "tags_all",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1524772785241",
+            "1524772580942"
+          ],
+          "settings": {
+            "enable_sidebar": true,
+            "filter_style": "sidebar",
+            "tags_combine": false,
+            "enable_sort": true
+          }
+        },
+        "1525115199973": {
+          "type": "blog-posts",
+          "settings": {
+            "title": "From the journal",
+            "blog": "news",
+            "post_limit": 3,
+            "blog_show_tags": false,
+            "blog_show_date": true,
+            "blog_show_comments": false,
+            "blog_show_author": false,
+            "view_all": true,
+            "blog_image_size": "wide",
+            "divider": false
+          }
+        },
+        "1525118065355": {
+          "type": "map",
+          "settings": {}
+        },
+        "1525295772132": {
+          "type": "featured-collection",
+          "settings": {
+            "per_row": 4,
+            "rows": 1,
+            "view_all": true,
+            "divider": false
+          }
+        },
+        "1525886124958": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525886482727": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "100",
+                "height": 720,
+                "text_size": 120,
+                "focal_point": "80% 50%",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1525886854810": {
+              "type": "sale_collection",
+              "settings": {
+                "width": "50",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1525911710924": {
+              "type": "sale_collection",
+              "settings": {
+                "width": "50",
+                "boxed": false,
+                "framed": true
+              }
+            }
+          },
+          "block_order": [
+            "1525886482727",
+            "1525886854810",
+            "1525911710924"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 20,
+            "space_above": false,
+            "space_below": false
+          }
+        },
+        "1525912530555": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525912530555-0": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "50",
+                "height": 800,
+                "text_size": 100,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1525912530555-1": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "50",
+                "height": 500,
+                "text_size": 100,
+                "text_align": "vertical-bottom horizontal-center",
+                "focal_point": "80% 50%",
+                "boxed": true,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1525912530555-0",
+            "1525912530555-1"
+          ],
+          "settings": {
+            "full_width": true,
+            "gutter_size": 20,
+            "space_above": false,
+            "space_below": false
+          }
+        },
+        "collection-promotions": {
+          "type": "collection-promotions",
+          "blocks": {
+            "1526403837307": {
+              "type": "banner",
+              "settings": {
+                "link": "shopify:\/\/collections\/all",
+                "label": "Shop now",
+                "color_tint": "#e95454",
+                "color_tint_opacity": 10,
+                "framed": false
+              }
+            },
+            "1526496043079": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "100",
+                "height": 500,
+                "text_size": 120,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": true
+              }
+            }
+          },
+          "block_order": [
+            "1526403837307",
+            "1526496043079"
+          ],
+          "settings": {
+            "gutter_size": 20
+          }
+        }
+      },
+      "content_for_index": [
+        "1524769873765",
+        "1498163293234",
+        "1525912530555",
+        "1499789718857",
+        "1525886124958",
+        "1525295772132",
+        "1499790633921",
+        "1525115199973",
+        "1525118065355"
+      ]
+    },
+    "Clean": {
+      "show_breadcrumbs": true,
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#000000",
+      "color_price": "#1c1d1d",
+      "color_savings_text": "#ff4e4e",
+      "color_borders": "#e8e8e1",
+      "color_button": "#111111",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#ff4f33",
+      "color_small_image_bg": "#e5e5e5",
+      "color_large_image_bg": "#0f0f0f",
+      "color_header": "#ffffff",
+      "color_header_text": "#000000",
+      "color_announcement": "#0f0f0f",
+      "color_announcement_text": "#ffffff",
+      "color_footer": "#ffffff",
+      "color_footer_text": "#000000",
+      "color_drawer_background": "#ffffff",
+      "color_drawer_text": "#000000",
+      "color_drawer_border": "#e8e8e1",
+      "color_drawer_button": "#111111",
+      "color_drawer_button_text": "#ffffff",
+      "color_modal_overlays": "#e6e6e6",
+      "color_image_overlay_opacity": 0,
+      "color_image_overlay_text_shadow": 24,
+      "type_header_font_family": "basic_commercial_n7",
+      "type_header_spacing": "25",
+      "type_header_base_size": 38,
+      "type_header_line_height": 1,
+      "type_header_capitalize": false,
+      "type_headers_align_text": false,
+      "type_base_font_family": "basic_commercial_n4",
+      "type_base_spacing": "25",
+      "type_base_size": 16,
+      "type_base_line_height": 1.6,
+      "type_body_align_text": false,
+      "type_navigation_style": "body",
+      "type_navigation_size": 18,
+      "type_navigation_capitalize": false,
+      "type_product_style": "heading",
+      "type_product_capitalize": false,
+      "type_collection_font": "body",
+      "type_collection_size": 24,
+      "button_style": "square",
+      "icon_weight": "4px",
+      "icon_linecaps": "miter",
+      "vendor_enable": false,
+      "sku_enable": false,
+      "quantity_enable": false,
+      "variant_type": "button",
+      "inventory_enable": false,
+      "quick_shop_text": "Quick view",
+      "product_grid_image_size": "square",
+      "product_hover_image": true,
+      "product_color_swatches": false,
+      "collection_color_swatches": false,
+      "product_contact": true,
+      "collection_grid_style": "overlaid",
+      "collection_grid_shape": "square",
+      "collection_grid_image": "collection",
+      "collection_grid_text_align": "center",
+      "collection_grid_tint": "#000000",
+      "collection_grid_opacity": 20,
+      "collection_grid_gutter": true,
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "cart_terms_conditions_enable": false,
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_instagram_link": "https:\/\/instagram.com\/shopify",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_color": "#f5f5f5",
+      "checkout_accent_color": "#682d2d",
+      "checkout_button_color": "#682d2d",
+      "checkout_error_color": "#ff6d6d",
+      "product_fixed_image_height": false,
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1520882467782": {
+              "type": "logo",
+              "settings": {
+                "logo": "",
+                "logo-inverted": "",
+                "desktop_logo_width": 200,
+                "mobile_logo_width": 140
+              }
+            },
+            "1521051841065": {
+              "type": "announcement",
+              "settings": {
+                "text": "Free shipping",
+                "link": "shopify:\/\/collections\/all"
+              }
+            },
+            "1520888647304": {
+              "type": "announcement",
+              "settings": {
+                "text": "Hassle-free returns",
+                "link": "shopify:\/\/collections\/all"
+              }
+            }
+          },
+          "block_order": [
+            "1520882467782",
+            "1521051841065",
+            "1520888647304"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu",
+            "mega_menu_images": true,
+            "main_menu_alignment": "left-center",
+            "header_style": "sticky",
+            "sticky_index": true,
+            "sticky_collection": true,
+            "announcement_compact": true,
+            "announcement_above_header": true
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494301487049": {
+              "type": "menu",
+              "settings": {
+                "show_footer_title": false,
+                "menu": "footer",
+                "container_width": 25
+              }
+            },
+            "1494292487693": {
+              "type": "newsletter",
+              "settings": {
+                "show_footer_title": true,
+                "title": "Sign up and save",
+                "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+                "container_width": 30
+              }
+            },
+            "1494301487048": {
+              "type": "logo_social",
+              "settings": {
+                "logo": "",
+                "desktop_logo_height": 50,
+                "container_width": 95
+              }
+            }
+          },
+          "block_order": [
+            "1494301487049",
+            "1494292487693",
+            "1494301487048"
+          ],
+          "settings": {
+            "show_copyright": false,
+            "copyright_text": ""
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "description_position": "top",
+            "subcollection_style": "above",
+            "subcollections_per_row": 3,
+            "enable_collection_count": true,
+            "per_row": 4,
+            "rows_per_page": 7,
+            "mobile_flush_grid": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "description_style": "default",
+            "social_enable": true,
+            "image_position": "left",
+            "image_size": "large",
+            "thumbnail_position": "below",
+            "thumbnail_arrows": false,
+            "enable_video_looping": true,
+            "product_video_style": "muted"
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "image_hero": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "social_sharing_blog": true
+          }
+        },
+        "1498163293234": {
+          "type": "featured-content",
+          "settings": {
+            "title": "",
+            "text": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.<\/p>",
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": false
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "blog_show_tag_filter": true,
+            "blog_show_rss": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "blog_show_excerpt": false,
+            "blog_image_size": "wide"
+          }
+        },
+        "product-sections-template": {
+          "type": "product-sections-template",
+          "blocks": {
+            "sections-1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "sections-1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "sections-1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "sections-1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "sections-1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "sections-1592410313636",
+            "sections-1592408476245",
+            "sections-1592408474529",
+            "sections-1592410318615",
+            "sections-1592410272428"
+          ],
+          "settings": {}
+        },
+        "product-story-sections": {
+          "type": "product-story-sections",
+          "blocks": {
+            "1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1592410313636",
+            "1592408476245",
+            "1592408474529",
+            "1592410318615",
+            "1592410272428"
+          ],
+          "settings": {}
+        },
+        "page-sections-template": {
+          "type": "page-sections-template",
+          "blocks": {
+            "page-rich-text": {
+              "type": "rich-text",
+              "settings": {
+                "title": "Rich text block",
+                "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
+                "align_text": "center",
+                "narrow_column": true,
+                "enlarge_text": true
+              }
+            },
+            "page-text-columns": {
+              "type": "text-columns",
+              "settings": {
+                "title": "",
+                "align_text": "center",
+                "enable_image_1": true,
+                "image_1": "",
+                "image_width_1": 650,
+                "title_1": "Example title",
+                "text_1": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+                "button_label_1": "",
+                "button_link_1": "",
+                "enable_image_2": true,
+                "image_2": "",
+                "image_width_2": 650,
+                "title_2": "Example title",
+                "text_2": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+                "button_label_2": "",
+                "button_link_2": "",
+                "enable_image_3": true,
+                "image_3": "",
+                "image_width_3": 650,
+                "title_3": "Example title",
+                "text_3": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+                "button_label_3": "",
+                "button_link_3": ""
+              }
+            },
+            "page-background-image-text": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Impressive",
+                "title": "Large image with text box",
+                "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 550,
+                "parallax": true
+              }
+            },
+            "page-featured-collection": {
+              "type": "featured-collection",
+              "settings": {
+                "title": "Featured collection",
+                "collection": "",
+                "per_row": 4,
+                "rows": 1,
+                "mobile_scrollable": true,
+                "view_all": true
+              }
+            }
+          },
+          "block_order": [
+            "page-rich-text",
+            "page-text-columns",
+            "page-background-image-text",
+            "page-featured-collection"
+          ],
+          "settings": {
+            "page_title_enable": false,
+            "page_content_enable": false
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {
+            "mode": "disabled",
+            "popup_seconds": 5,
+            "popup_days": 30,
+            "popup_title": "Sign up and save",
+            "popup_image": "",
+            "popup_text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.<\/p>",
+            "close_text": "No thanks",
+            "enable_newsletter": true,
+            "button_label": "Optional button",
+            "button_link": "",
+            "enable_button": false
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {}
+        },
+        "collection-sidebar": {
+          "type": "collection-sidebar",
+          "blocks": {
+            "1524772785241": {
+              "type": "subcollections",
+              "settings": {
+                "enable_subsubcollections": true,
+                "enable_count": false,
+                "collapsed": false
+              }
+            },
+            "1524772580942": {
+              "type": "tags_all",
+              "settings": {
+                "title": "Filter",
+                "collapsed": false
+              }
+            }
+          },
+          "block_order": [
+            "1524772785241",
+            "1524772580942"
+          ],
+          "settings": {
+            "enable_sidebar": true,
+            "filter_style": "sidebar",
+            "tags_combine": false,
+            "enable_sort": true
+          }
+        },
+        "1523298253705": {
+          "type": "slideshow",
+          "blocks": {
+            "1523298253705-0": {
+              "type": "image",
+              "settings": {
+                "top_subheading": "Optional headline",
+                "title": "Two line\ntitle slide.",
+                "title_size": 80,
+                "subheading": "",
+                "link": "",
+                "link_text": "Shop this",
+                "link_2": "",
+                "link_text_2": "Shop all",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-bottom horizontal-left",
+                "image": "",
+                "focal_point": "center center"
+              }
+            },
+            "1523298253705-1": {
+              "type": "image",
+              "settings": {
+                "top_subheading": "",
+                "title": "Two line\ntitle slide.",
+                "title_size": 80,
+                "subheading": "Optional descriptive text",
+                "link": "",
+                "link_text": "Shop this",
+                "link_2": "",
+                "link_text_2": "Shop all",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center"
+              }
+            }
+          },
+          "block_order": [
+            "1523298253705-0",
+            "1523298253705-1"
+          ],
+          "settings": {
+            "section_height": "100vh",
+            "mobile_height": "500px",
+            "parallax": true,
+            "style": "bars",
+            "autoplay": true,
+            "autoplay_speed": 7
+          }
+        },
+        "list-collections-template": {
+          "type": "list-collections-template",
+          "settings": {
+            "title_enable": true,
+            "display_type": "all",
+            "sort": "alphabetical",
+            "grid": "3"
+          }
+        },
+        "1524685456938": {
+          "type": "background-image-text",
+          "settings": {
+            "subtitle": "Impressive",
+            "title": "Large image with text box",
+            "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
+            "button_label": "Shop this ⟶",
+            "button_link": "shopify:\/\/collections\/all",
+            "image": "",
+            "focal_point": "center",
+            "color_border": "#e5e5e5",
+            "layout": "right",
+            "height": 650,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "1524685919990": {
+          "type": "featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "home_featured_products": "",
+            "per_row": 4,
+            "rows": 1,
+            "mobile_scrollable": true,
+            "view_all": true,
+            "divider": false
+          }
+        },
+        "1524685997883": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Join the club.",
+            "text": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.<\/p>",
+            "color_background": "#000000",
+            "color_text": "#ffffff"
+          }
+        },
+        "1524686167862": {
+          "type": "featured-collection",
+          "settings": {
+            "title": "Featured collection",
+            "home_featured_products": "",
+            "per_row": 3,
+            "rows": 1,
+            "mobile_scrollable": true,
+            "view_all": true,
+            "divider": false
+          }
+        },
+        "1524686876171": {
+          "type": "featured-collections",
+          "blocks": {
+            "1524686876171-0": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1524686876171-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626135647": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626162332": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626173524": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            }
+          },
+          "block_order": [
+            "1524686876171-0",
+            "1524686876171-1",
+            "1588626135647",
+            "1588626162332",
+            "1588626173524"
+          ],
+          "settings": {
+            "title": "Collections",
+            "divider": false,
+            "per_row": 5,
+            "enable_gutter": true
+          }
+        },
+        "1525878145666": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525879359021": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Your promotion.",
+                "textarea": "",
+                "cta_text1": "Shop This",
+                "cta_link1": "shopify:\/\/collections\/all",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "33",
+                "height": 560,
+                "text_size": 115,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "80% 50%",
+                "color_accent": "#000000",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1588625715338": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Another promotion.",
+                "textarea": "",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "33",
+                "height": 500,
+                "text_size": 115,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "color_accent": "#000000",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1588625789930": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "A boxed promotion.",
+                "textarea": "Include smaller text.",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "33",
+                "height": 500,
+                "text_size": 100,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "center",
+                "color_accent": "#000000",
+                "boxed": true,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1525879359021",
+            "1588625715338",
+            "1588625789930"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 10,
+            "space_above": true,
+            "space_below": false
+          }
+        },
+        "1525881294487": {
+          "type": "promo-grid",
+          "blocks": {
+            "1588626352304": {
+              "type": "product",
+              "settings": {
+                "product": "",
+                "subheading": "Limited time",
+                "heading": "Announce your product",
+                "textarea": "Include the smaller details of your promotion in text below the title.",
+                "link_label": "Learn more",
+                "label": "New",
+                "enable_price": true,
+                "width": "50",
+                "text_size": 100,
+                "color_tint": "#000000",
+                "color_tint_opacity": 0,
+                "framed": false
+              }
+            },
+            "1588626372747": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "50",
+                "height": 300,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1588626352304",
+            "1588626372747"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 40,
+            "space_above": true,
+            "space_below": false
+          }
+        },
+        "1526493275292": {
+          "type": "promo-grid",
+          "blocks": {
+            "1588625972876": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Powerful flexibility.",
+                "textarea": "Include the smaller details of your promotion in text below the title.",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "50",
+                "height": 700,
+                "text_size": 115,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "center",
+                "color_accent": "#000000",
+                "boxed": false,
+                "framed": false
+              }
+            },
+            "1588625975479": {
+              "type": "advanced",
+              "settings": {
+                "subheading": "",
+                "heading": "Adaptive layouts",
+                "textarea": "Include the smaller details of your promotion in text below the title.",
+                "cta_text1": "Shop This",
+                "cta_link1": "",
+                "cta_text2": "Shop All",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "50",
+                "height": 500,
+                "text_size": 100,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "color_accent": "rgba(0,0,0,0)",
+                "boxed": true,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1588625972876",
+            "1588625975479"
+          ],
+          "settings": {
+            "full_width": true,
+            "gutter_size": 20,
+            "space_above": true,
+            "space_below": false
+          }
+        },
+        "collection-promotions": {
+          "type": "collection-promotions",
+          "blocks": {
+            "1526501699095": {
+              "type": "banner",
+              "settings": {
+                "promo_collection": "",
+                "heading": "Summer Savings",
+                "text": "Add the details of your promotion",
+                "link": "shopify:\/\/collections\/all",
+                "label": "Shop now",
+                "image": "",
+                "color_tint": "#66a7d7",
+                "color_tint_opacity": 14,
+                "framed": false
+              }
+            },
+            "1588794963981": {
+              "type": "advanced",
+              "settings": {
+                "promo_collection": "",
+                "subheading": "",
+                "heading": "Free shipping over $100",
+                "textarea": "",
+                "cta_text1": "Learn more",
+                "cta_link1": "",
+                "cta_text2": "",
+                "cta_link2": "",
+                "image": "",
+                "video_url": "",
+                "width": "100",
+                "height": 300,
+                "text_size": 100,
+                "text_align": "vertical-bottom horizontal-left",
+                "focal_point": "center",
+                "color_accent": "#ffffff",
+                "boxed": false,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1526501699095",
+            "1588794963981"
+          ],
+          "settings": {
+            "gutter_size": 17
+          }
+        },
+        "footer-promotions": {
+          "type": "footer-promotions",
+          "blocks": {
+            "footer-promotions-0": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            },
+            "footer-promotions-1": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            },
+            "footer-promotions-2": {
+              "type": "promotion",
+              "settings": {
+                "enable_image": true,
+                "image": "",
+                "title": "Site-wide promotion",
+                "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+                "button_label": "Optional button",
+                "button_link": ""
+              }
+            }
+          },
+          "block_order": [
+            "footer-promotions-0",
+            "footer-promotions-1",
+            "footer-promotions-2"
+          ],
+          "settings": {
+            "hide_homepage": false,
+            "image_size": "wide"
+          }
+        },
+        "1588626192341": {
+          "type": "featured-collections",
+          "blocks": {
+            "1588626192341-0": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626192341-1": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            },
+            "1588626192341-2": {
+              "type": "collection",
+              "settings": {
+                "collection": "",
+                "title": "",
+                "focal_point": "center center"
+              }
+            }
+          },
+          "block_order": [
+            "1588626192341-0",
+            "1588626192341-1",
+            "1588626192341-2"
+          ],
+          "settings": {
+            "title": "More collections",
+            "divider": false,
+            "per_row": 3,
+            "enable_gutter": true
+          }
+        },
+        "1588626476600": {
+          "type": "featured-content",
+          "settings": {
+            "title": "Rich text",
+            "text": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.<\/p>",
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": true
+          }
+        },
+        "1588626523224": {
+          "type": "promo-grid",
+          "blocks": {
+            "1588626523224-0": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "33",
+                "height": 340,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            },
+            "1588626523224-1": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "33",
+                "height": 300,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            },
+            "1588626529491": {
+              "type": "simple",
+              "settings": {
+                "link": "",
+                "text": "",
+                "image": "",
+                "width": "33",
+                "height": 300,
+                "color_tint": "#000000",
+                "color_tint_opacity": 8,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1588626523224-0",
+            "1588626523224-1",
+            "1588626529491"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 5,
+            "space_above": false,
+            "space_below": true
+          }
+        }
+      },
+      "content_for_index": [
+        "1523298253705",
+        "1525878145666",
+        "1498163293234",
+        "1524685919990",
+        "1526493275292",
+        "1524686876171",
+        "1588626192341",
+        "1524685456938",
+        "1525881294487",
+        "1524686167862",
+        "1588626476600",
+        "1588626523224",
+        "1524685997883"
+      ]
+    },
+    "Bold": {
+      "color_body_bg": "#000000",
+      "color_body_text": "#ffffff",
+      "color_price": "#d1ba98",
+      "color_savings_text": "#b30000",
+      "color_borders": "#2b2a27",
+      "color_button": "#9f8561",
+      "color_button_text": "#ffffff",
+      "color_cart_dot": "#b30000",
+      "color_small_image_bg": "#000000",
+      "color_large_image_bg": "#111111",
+      "color_header": "#000000",
+      "color_header_text": "#ffffff",
+      "color_announcement": "#cf2424",
+      "color_announcement_text": "#ffffff",
+      "color_footer": "#000000",
+      "color_footer_text": "#ffffff",
+      "color_drawer_background": "#000000",
+      "color_drawer_text": "#ffffff",
+      "color_drawer_border": "#2b2a27",
+      "color_drawer_button": "#9f8561",
+      "color_drawer_button_text": "#ffffff",
+      "color_modal_overlays": "#67635d",
+      "color_image_overlay": "#000000",
+      "color_image_overlay_opacity": 15,
+      "color_image_overlay_text_shadow": 30,
+      "type_header_font_family": "fjalla_one_n4",
+      "type_header_spacing": "150",
+      "type_header_base_size": 45,
+      "type_header_line_height": 1.2,
+      "type_header_capitalize": true,
+      "type_headers_align_text": true,
+      "type_base_font_family": "itc_conduit_n4",
+      "type_base_spacing": "50",
+      "type_base_size": 18,
+      "type_base_line_height": 1.4,
+      "type_body_align_text": true,
+      "type_navigation_style": "heading",
+      "type_navigation_size": 18,
+      "type_product_style": "heading",
+      "type_collection_font": "heading",
+      "type_collection_size": 23,
+      "button_style": "angled",
+      "icon_weight": "5px",
+      "icon_linecaps": "miter",
+      "vendor_enable": false,
+      "search_enable": false,
+      "sku_enable": false,
+      "quantity_enable": false,
+      "variant_type": "button",
+      "inventory_enable": false,
+      "product_save_amount": true,
+      "product_zoom_enable": false,
+      "quick_shop_enable": true,
+      "quick_shop_text": "Quick view",
+      "product_grid_image_size": "square",
+      "product_hover_image": false,
+      "product_color_swatches": false,
+      "collection_color_swatches": false,
+      "product_content_collapse_1": false,
+      "product_content_collapse_2": true,
+      "product_content_collapse_3": true,
+      "product_contact": false,
+      "enable_product_reviews": true,
+      "reviews_layout": "expandable",
+      "collection_grid_style": "overlaid-box",
+      "collection_grid_shape": "landscape",
+      "collection_grid_image": "collection",
+      "collection_grid_text_align": "bottom-center",
+      "collection_grid_tint": "#000000",
+      "collection_grid_opacity": 10,
+      "collection_grid_gutter": true,
+      "cart_type": "drawer",
+      "social_facebook_link": "https:\/\/www.facebook.com\/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_youtube_link": "https:\/\/www.youtube.com\/user\/shopify",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_color": "#000000",
+      "checkout_input_background_color_mode": "transparent",
+      "checkout_sidebar_background_color": "#000000",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#ae9878",
+      "checkout_button_color": "#ae9878",
+      "checkout_error_color": "#ff6d6d",
+      "color_image_2": "#cf2424",
+      "color_image_2_opacity": 0,
+      "color_image_1": "#6d1414",
+      "color_image_1_opacity": 0,
+      "type_accent_style": "body",
+      "type_accent_bold": true,
+      "type_accent_capitalize": true,
+      "type_button_font": "heading",
+      "type_button_capitalize": false,
+      "type_header_accent_transform": true,
+      "type_base_accent_transform": true,
+      "collection_grid_font": "heading",
+      "color_image_bg": "#000000",
+      "breadcrumb": true,
+      "color_sale_tag": "#990000",
+      "color_input": "#ffffff",
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_call_to_action_color": "#a26b25",
+      "sections": {
+        "header": {
+          "type": "header",
+          "blocks": {
+            "1524768779513": {
+              "type": "logo",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1524768779513"
+          ],
+          "settings": {
+            "main_menu_link_list": "main-menu",
+            "main_menu_alignment": "left-center",
+            "header_style": "normal",
+            "sticky_index": true,
+            "sticky_collection": false,
+            "announcement_compact": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1494292487693": {
+              "type": "newsletter",
+              "settings": {}
+            },
+            "1526406521795": {
+              "type": "menu",
+              "settings": {
+                "menu": "footer",
+                "container_width": 25
+              }
+            },
+            "1525444454442": {
+              "type": "logo_social",
+              "settings": {
+                "container_width": 95
+              }
+            }
+          },
+          "block_order": [
+            "1494292487693",
+            "1526406521795",
+            "1525444454442"
+          ],
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "subcollection_style": "above",
+            "subcollections_per_row": 3,
+            "per_row": 5,
+            "mobile_flush_grid": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "social_enable": true,
+            "image_size": "large"
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "social_sharing_blog": true
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "blog_show_tag_filter": true,
+            "blog_show_rss": false,
+            "blog_show_tags": true,
+            "blog_show_date": true,
+            "blog_show_comments": true,
+            "blog_show_author": false,
+            "blog_image_size": "wide"
+          }
+        },
+        "1499790633921": {
+          "type": "background-image-text",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/all",
+            "focal_point": "center",
+            "color_border": "#090909",
+            "layout": "right",
+            "height": 750,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "product-sections-template": {
+          "type": "product-sections-template",
+          "blocks": {
+            "sections-1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "sections-1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "sections-1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "sections-1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "sections-1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "sections-1592410313636",
+            "sections-1592408476245",
+            "sections-1592408474529",
+            "sections-1592410318615",
+            "sections-1592410272428"
+          ],
+          "settings": {}
+        },
+        "product-story-sections": {
+          "type": "product-story-sections",
+          "blocks": {
+            "1592408474529": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "right"
+              }
+            },
+            "1592410313636": {
+              "type": "background-image-text",
+              "settings": {
+                "subtitle": "Why choose us?",
+                "title": "Explain your brand philosophy",
+                "text": "<p>Use this section to explain your company philosophy or standards. Showcase lifestyle photography for added emphasis. This content will appear on all products.<\/p>",
+                "button_label": "",
+                "button_link": "",
+                "image": "",
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 650,
+                "parallax": true
+              }
+            },
+            "1592408476245": {
+              "type": "testimonials",
+              "settings": {
+                "title": "Testimonials",
+                "align_text": "center",
+                "round_images": false,
+                "testimonial_1": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_1": "",
+                "author_1": "Author's name",
+                "testimonial_2": "<p>Add customer reviews and testimonials to showcase your store&rsquo;s happy customers and to provide social proof.<\/p>",
+                "image_2": "",
+                "author_2": "Author's name"
+              }
+            },
+            "1592410272428": {
+              "type": "image-hero",
+              "settings": {
+                "parallax": true,
+                "title": "Two line\ntitle image",
+                "title_size": 80,
+                "subheading": "And optional subtext",
+                "link": "",
+                "link_text": "Optional button",
+                "link_2": "",
+                "link_text_2": "",
+                "color_accent": "#ffffff",
+                "text_align": "vertical-center horizontal-center",
+                "image": "",
+                "focal_point": "center center",
+                "section_height": "650px",
+                "mobile_height": "auto"
+              }
+            },
+            "1592410318615": {
+              "type": "text-and-image",
+              "settings": {
+                "image": "",
+                "image_width": 500,
+                "subtitle": "Improved",
+                "button_label": "Optional button",
+                "button_link": "",
+                "layout": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1592410313636",
+            "1592408476245",
+            "1592408474529",
+            "1592410318615",
+            "1592410272428"
+          ],
+          "settings": {}
+        },
+        "page-sections-template": {
+          "type": "page-sections-template",
+          "blocks": {
+            "page-rich-text": {
+              "type": "rich-text",
+              "settings": {
+                "align_text": "center",
+                "narrow_column": true,
+                "enlarge_text": true
+              }
+            },
+            "page-text-columns": {
+              "type": "text-columns",
+              "settings": {}
+            },
+            "page-background-image-text": {
+              "type": "background-image-text",
+              "settings": {
+                "alignment": "center",
+                "color_border": "#f4f4f4",
+                "layout": "right",
+                "height": 550
+              }
+            },
+            "page-featured-collection": {
+              "type": "featured-collection",
+              "settings": {
+                "per_row": 4,
+                "rows": 1,
+                "view_all": true
+              }
+            }
+          },
+          "block_order": [
+            "page-rich-text",
+            "page-text-columns",
+            "page-background-image-text",
+            "page-featured-collection"
+          ],
+          "settings": {
+            "page_title_enable": false,
+            "page_content_enable": false
+          }
+        },
+        "newsletter-popup": {
+          "type": "newsletter-popup",
+          "settings": {}
+        },
+        "1524768368258": {
+          "type": "slideshow",
+          "blocks": {
+            "1524768368258-0": {
+              "type": "image",
+              "settings": {
+                "link": "shopify:\/\/collections\/all",
+                "link_text": "Shop all",
+                "text_align": "vertical-center horizontal-left",
+                "focal_point": "top center"
+              }
+            }
+          },
+          "block_order": [
+            "1524768368258-0"
+          ],
+          "settings": {
+            "section_height": "750px",
+            "mobile_height": "auto",
+            "parallax": true,
+            "style": "minimal",
+            "autoplay": true,
+            "autoplay_speed": 5
+          }
+        },
+        "collection-header": {
+          "type": "collection-header",
+          "settings": {}
+        },
+        "collection-sidebar": {
+          "type": "collection-sidebar",
+          "blocks": {
+            "1524772785241": {
+              "type": "subcollections",
+              "settings": {}
+            },
+            "1524772580942": {
+              "type": "tags_all",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1524772785241",
+            "1524772580942"
+          ],
+          "settings": {
+            "enable_sidebar": true,
+            "filter_style": "sidebar",
+            "tags_combine": false,
+            "enable_sort": true
+          }
+        },
+        "1525290496166": {
+          "type": "featured-collections",
+          "blocks": {
+            "1525290496166-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "1525290496166-2": {
+              "type": "collection",
+              "settings": {}
+            },
+            "1525290496166-1": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1525290496166-0",
+            "1525290496166-2",
+            "1525290496166-1"
+          ],
+          "settings": {
+            "divider": false,
+            "per_row": 3,
+            "enable_gutter": true
+          }
+        },
+        "1525969132569": {
+          "type": "promo-grid",
+          "blocks": {
+            "1525969870126": {
+              "type": "product",
+              "settings": {
+                "link_label": "Shop now",
+                "label": "New",
+                "enable_price": true,
+                "width": "50",
+                "text_size": 100,
+                "color_tint": "#f8ebd4",
+                "color_tint_opacity": 0,
+                "framed": true
+              }
+            },
+            "1525969996422": {
+              "type": "product",
+              "settings": {
+                "link_label": "Shop now",
+                "label": "New",
+                "enable_price": true,
+                "width": "50",
+                "text_size": 100,
+                "color_tint": "#ff0000",
+                "color_tint_opacity": 0,
+                "framed": true
+              }
+            }
+          },
+          "block_order": [
+            "1525969870126",
+            "1525969996422"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 5,
+            "space_above": false,
+            "space_below": false
+          }
+        },
+        "1526048428302": {
+          "type": "featured-collection",
+          "settings": {
+            "per_row": 4,
+            "rows": 1,
+            "view_all": false,
+            "divider": false
+          }
+        },
+        "1526048519234": {
+          "type": "newsletter",
+          "settings": {
+            "color_background": "#171615",
+            "color_text": "#ffffff"
+          }
+        },
+        "1526048620689": {
+          "type": "blog-posts",
+          "settings": {
+            "title": "Our blog",
+            "blog": "news",
+            "post_limit": 3,
+            "blog_show_tags": false,
+            "blog_show_date": true,
+            "blog_show_comments": false,
+            "blog_show_author": false,
+            "view_all": true,
+            "blog_image_size": "wide",
+            "divider": false
+          }
+        },
+        "collection-promotions": {
+          "type": "collection-promotions",
+          "blocks": {
+            "1526501090474": {
+              "type": "advanced",
+              "settings": {
+                "cta_link1": "shopify:\/\/collections\/all",
+                "width": "50",
+                "height": 400,
+                "text_size": 120,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1526501130849": {
+              "type": "sale_collection",
+              "settings": {
+                "width": "50",
+                "boxed": false,
+                "framed": true
+              }
+            },
+            "1526501360047": {
+              "type": "banner",
+              "settings": {
+                "label": "Shop 2017",
+                "color_tint": "#514f4b",
+                "color_tint_opacity": 20,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1526501090474",
+            "1526501130849",
+            "1526501360047"
+          ],
+          "settings": {
+            "gutter_size": 20
+          }
+        },
+        "1526480838446": {
+          "type": "background-image-text",
+          "settings": {
+            "button_link": "shopify:\/\/collections\/all",
+            "focal_point": "center",
+            "color_border": "#f4f4f4",
+            "layout": "left",
+            "height": 750,
+            "framed": false,
+            "parallax": true
+          }
+        },
+        "1526481284428": {
+          "type": "featured-content",
+          "settings": {
+            "align_text": "center",
+            "narrow_column": true,
+            "enlarge_text": true,
+            "divider": false
+          }
+        },
+        "1526481405629": {
+          "type": "promo-grid",
+          "blocks": {
+            "1526481405629-1": {
+              "type": "advanced",
+              "settings": {
+                "width": "100",
+                "height": 660,
+                "text_size": 120,
+                "text_align": "vertical-center horizontal-center",
+                "focal_point": "center",
+                "boxed": false,
+                "framed": false
+              }
+            }
+          },
+          "block_order": [
+            "1526481405629-1"
+          ],
+          "settings": {
+            "full_width": false,
+            "gutter_size": 34,
+            "space_above": false,
+            "space_below": true
+          }
+        }
+      },
+      "page-rental-bike": {
+        "type": "page-rental-bike",
+        "blocks": {
+          "1584524987849": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#f4f4f4",
+              "image_position": "left_image",
+              "image": "shopify:\/\/shop_images\/Full.png",
+              "title": "Charter",
+              "content": "<h3>The ultimate rental cruiser<\/h3>\n<ul>\n<li>Durable<\/li>\n<li>Stylish<\/li>\n<li>Affordable<\/li>\n<\/ul>"
+            }
+          },
+          "1584525244045": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#ffffff",
+              "image_position": "right_image",
+              "image": "shopify:\/\/shop_images\/Tire.png",
+              "title": "Built to Last",
+              "content": "<ul>\n<li>13G Stainless Steel Spokes<\/li>\n<li>Double Wall Alloy Rims<\/li>\n<li>Rust Resistant Axel Nuts<\/li>\n<\/ul>"
+            }
+          },
+          "1584525485780": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#f4f4f4",
+              "image_position": "left_image",
+              "image": "shopify:\/\/shop_images\/BackTire-cutout.png",
+              "title": "Ready and Able",
+              "content": "<ul>\n<li>Rustbuster Chain<\/li>\n<li>Rear Mount Kickstand<\/li>\n<li>Aluminum 3-Piece Crank<\/li>\n<\/ul>"
+            }
+          },
+          "1584525594336": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#ffffff",
+              "image_position": "right_image",
+              "image": "shopify:\/\/shop_images\/Handlebars.png",
+              "title": "Easy Branding",
+              "content": "<ul>\n<li>Welded Large Sign Plate<\/li>\n<li>Removable Decal<\/li>\n<\/ul>"
+            }
+          },
+          "1584525623173": {
+            "type": "image_with_text",
+            "settings": {
+              "bg_color": "#f4f4f4",
+              "image_position": "left_image",
+              "image": "shopify:\/\/shop_images\/Saddle.png",
+              "title": "Saddle Up",
+              "content": "<ul>\n<li>Comfort Saddle With Elastomer Springs<\/li>\n<li>Quick-Release Seatpost Clamp<\/li>\n<\/ul>"
+            }
+          },
+          "1584525699797": {
+            "type": "content_block",
+            "settings": {
+              "title": "Retrospec is excited to introduce our Charter Rental Bike line:",
+              "text": "<p>An ideal choice for hotels, resorts, rental shops, beach towns, factories and industrial applications. We employed a step-thru aluminum frame to make getting on-and-off easy, and with multiple sizes and colors from which to choose, your fleet will have a bike for the whole family!<br><br>The Charter&rsquo;s aluminum frame makes for a rental bike that is robust, resilient, and rust-resistant, also packed-full of hand picked and durable components, this bike is designed to rent over and over with very low maintenance. We also incorporated an extra-large welded metal plate which&nbsp;offers plenty of real estate for branding. The Charter&rsquo;s handlebars and laid back geometry create an upright ride that's super comfortable! With it's comfort saddle, ergonomic comfort grips and aluminum pedals with slip-resistant Kraton rubber, you can expect comfort throughout even the longest of rides.<br><br>No detail was overlooked in the inception and construction of the Charter... and it shows. In addition to the aforementioned features, this premiere rental bike from Retrospec sports double-wall alloy rims, cartridge bottom bracket, sealed precision headset, stainless steel spokes, and a KMC Rust-Buster chain for ultimate reliability and rideability.<\/p>"
+            }
+          },
+          "1584525731987": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/20.JPG",
+              "image_caption": "Available in green",
+              "title": "20\" Single speed",
+              "content": "<p>The 20\" Charter is the perfect addition to your fleet that will accommodate the young ones in the family. It boast some impressive features including aluminum frame, quick-release seat post clamp, sign plate, rustbuster chain, 13g stainless steel spokes, ergo grips etc.. With this bike, the kiddos will be riding in style!<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 20x2.125 Cruiser Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1\" Threaded<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Quill Stem<\/li>\n\t<li>\n<b>Headset:<\/b> Sealed Mechanism<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n<b>Chainring:<\/b> 40T Alloy<\/li>\n\t<li>\n<b>Rear Cog:<\/b> 18T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Stainless Steel Acorn<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "1584526381258": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/24.JPG",
+              "image_caption": "Available in green",
+              "title": "24\" Single Speed",
+              "content": "<p>The 24\" Charter is perfect for teens and petite adults alike. It also packs some impressive features including aluminum frame, quick-release seat post clamp, sign plate, rustbuster chain, 13g stainless steel spokes, ergo grips, rear mount kickstand, plus many more. Great addition to any fleet!<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 24x2.125 Cruiser Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1\" Threaded<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Quill Stem<\/li>\n\t<li>\n<b>Headset:<\/b> Sealed Mechanism<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n<b>Chainring:<\/b> 42T Alloy<\/li>\n\t<li>\n<b>Rear Cog:<\/b> 18T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Stainless Steel Acorn<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "1584526426324": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/26.JPG",
+              "image_caption": "Available in green, yello, silver, and pacific  blue",
+              "title": "26\" Single Speed",
+              "content": "<p>The 26\" Charter is the bread and butter of your fleet. It's uni-sex step-thru frame fits a wide range of rider heights. Some key features on this models include aluminum frame, sealed precision headset, quick-release seat post clamp, 26\"x3\" smooth rolling tires, 13g stainless steel spokes, ergo grips etc..<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 26x3\" Smooth Rolling Fat Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1 1\/8\" Threadless<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Alloy Threadless<\/li>\n\t<li>\n<b>Headset:<\/b> Precision Sealed Bearing<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n\t<\/li>\n<li>\n<b>Rear Cog:<\/b> 22T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Rust-Resistent<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "1584528066455": {
+            "type": "bike_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/26__7speed.JPG",
+              "image_caption": "Available in green and yello",
+              "title": "26\" 7-Speed",
+              "content": "<p>The 26\"7 Charter is the bread and butter of your fleet. It's uni-sex step-thru frame fits a wide range of rider heights. Some key features on this models include aluminum frame, sealed precision headset, quick-release seat post clamp, 26\"x3\" smooth rolling tires, 13g stainless steel spokes, ergo grips etc..<\/p>",
+              "specifications": "<ul>\n\t<li>\n<b>Frame:<\/b> Aluminum Low Step-Thru, Unisex<\/li>\n\t<li>\n<b>Brakes:<\/b> Coaster Brakes<\/li>\n\t<li>\n<b>Tires:<\/b> 26x3\" Smooth Rolling Fat Tires<\/li>\n\t<li>\n<b>Fork:<\/b> Steel 1 1\/8\" Threadless<\/li>\n\t<li>\n<b>Handlebar:<\/b> Cruiser Bar, 22.2mm<\/li>\n\t<li>\n<b>Stem:<\/b> Alloy Threadless<\/li>\n\t<li>\n<b>Headset:<\/b> Precision Sealed Bearing<\/li>\n\t<li>\n<b>Saddle:<\/b> Comfort Cruiser Saddle<\/li>\n\t<li>\n<b>Crank:<\/b> Prowheel 3PC Alloy<\/li>\n\t<li>\n\t<\/li>\n<li>\n<b>Rear Cog:<\/b> 22T<\/li>\n\t<li>\n<b>Chain:<\/b> KMC Rust-Buster<\/li>\n\t<li>\n<b>Bottom Bracket:<\/b> Sealed Cartridge Bearing<\/li>\n\t<li>\n<b>Pedals:<\/b> Wellgo Aluminum Chasis with Kraton Rubber<\/li>\n\t<li>\n<b>Rims:<\/b> Aluminum Double-Wall with 13G Stainless Steel Spokes, Coated ED Black<\/li>\n\t<li>\n<b>Hub Rear:<\/b> KT Coaster Brake Hub<\/li>\n\t<li>\n<b>Hub Front:<\/b> KT Hub<\/li>\n\t<li>\n<b>Axle Nuts:<\/b> Rust-Resistent<\/li>\n\t<li>\n<b>Seat Post Clamp:<\/b> 31.8mm, Black<\/li>\n\t<li>\n<b>Seatpost:<\/b> 27.2mm, 300mm<\/li>\n\t<li>\n<b>Grips:<\/b> Comfort Ergonomic<\/li>\n\t<li>\n<b>Kickstand:<\/b> Rear Mount Bolted to Frame<\/li>\n\t<li>\n<b>Sign Plate:<\/b> Welded Large Metal Plate with Removable Decal<\/li>\n\t<li><b>Recommended Weight Limit: 220 LBS<\/b><\/li>\n<\/ul>"
+            }
+          },
+          "1584525987813": {
+            "type": "footer",
+            "settings": {
+              "title": "Dealer Program and Custom Orders",
+              "content": "<p>At Retrospec, we strive to offer you the best product for the best price including price breaks and shipping specials to help you maximize your profits! If you are interested in getting a quote feel free to call us at 213-744-1555 Ext 2 or email one of our account executives at&nbsp;<a href=\"mailto:wholesasle@retrospecusa.com\">wholesasle@retrospecusa.com<\/a><br><br>We are also happy to customize your fleet order with branded colors, decals, and accessories for the Charter Rental Bike line as well as others, such as our&nbsp;<a href=\"https:\/\/www.retrospecbicycles.com\/collections\/mars-diamond\">Venus and Mars City Bike line<\/a>. If you are interested in ordering custom orders in bulk&nbsp;<a href=\"mailto:wholesasle@retrospecusa.com\">Email Us!<\/a><\/p>",
+              "header": "Ready to Get Started?",
+              "link": "mailto:wholesasle@retrospecusa.com",
+              "btn_text": "SEND US AN EMAIL"
+            }
+          }
+        },
+        "page-finance": {
+          "type": "page-finance",
+          "blocks": {
+            "1558299468219": {
+              "type": "banner",
+              "settings": {
+                "image": "shopify:\/\/shop_images\/affirm_page_banner_new_5dbf2bfb-d564-40df-b81f-1b8ff3b07a3b.jpg",
+                "sub-title-banner": "Ride now, pay later with",
+                "logo-image": "shopify:\/\/shop_images\/affirm_white_logo_2_ada4cb1b-82f0-4165-9596-b13f7f617fd7.png",
+                "logo-link": "#"
+              }
+            },
+            "1558299787896": {
+              "type": "text",
+              "settings": {
+                "title": "About",
+                "title_logo": "shopify:\/\/shop_images\/affirm-orange-logo_1024x1024_9f1adece-c274-41af-ba0c-97d13adc45ca.png",
+                "description_text": "<p>Retrospec&nbsp;has teamed up with Affirm to offer easy financing &ndash; without a catch. There are no gimmicks like deferred interest or hidden fees, so the total you see at checkout is always what you actually pay. Provide some basic information and get instant approval to split your purchase into 3, 6, or 12 monthly payments with rates from 10-30% APR. For example A loan of $500 from Affirm would look like this: $43.96\/mo. based on a purchase price of $500.00 at 10% APR for 12 months.<\/p>"
+              }
+            },
+            "1558299839935": {
+              "type": "image",
+              "settings": {
+                "main_title": "How does it work",
+                "title_logo_1": "shopify:\/\/shop_images\/add-to-cart_1024x1024_5bc6c007-596d-403c-ad7b-f0d24ad38a08.png",
+                "title_img_1": "add to cart",
+                "description_img_1": "",
+                "title_logo_2": "shopify:\/\/shop_images\/checkout_1024x1024_5ff6f396-a5c6-409c-85f1-ed6d3c2dfba1.png",
+                "title_img_2": "Checkout using affirm",
+                "description_img_2": "",
+                "title_logo_3": "shopify:\/\/shop_images\/recieve-items_1024x1024_e3695c12-df48-439b-8eec-4c7f126864ea.png",
+                "title_img_3": "Receive Items",
+                "description_img_3": "",
+                "title_logo_4": "shopify:\/\/shop_images\/pay-over-time_1024x1024_b75a0fb5-3cf4-46ba-894e-def6333a695d.png",
+                "title_img_4": "Pay over item",
+                "description_img_4": ""
+              }
+            },
+            "1558299930148": {
+              "type": "tabs",
+              "settings": {
+                "main_title": "FAQs",
+                "title_tab_1": "Online",
+                "description_tab_1": "<p><strong>Does Affirm perform a credit check?<\/strong><\/p>\n<p>Affirm does a credit check to verify your identity and provide you with a financing offer when you sign up. This is a &lsquo;soft&rsquo; credit check and will not impact your credit score. If you choose to complete a purchase and finance it with Affirm, we will do a single &lsquo;hard&rsquo; credit check when your first order is processed by the merchant. This may have a minor impact on your credit score. For future purchases with Affirm we won&rsquo;t need to check your credit again.<\/p>\n<p><\/p>\n<p>&nbsp;<\/p>\n<p><strong>Why was I prompted to pay a down payment with a credit card?<\/strong><\/p>\n<p>We try hard to approve every purchase with Affirm but sometimes we can&rsquo;t approve the full amount. When this happens, we provide a debit card down payment option so that you may still complete your purchase right away.<\/p>\n<p><\/p>\n<p>&nbsp;<\/p>\n<p><strong>Why was I prompted for a checking account?<\/strong><\/p>\n<p>Affirm sometimes requires additional information to consider a credit application. Such information may include an active checking account, which helps us verify your identity and your ability to repay the requested loan. If we prompt you for this information but you are unable to provide it, Affirm will be unable to approve your credit application.<\/p>\n<p><\/p>\n<p>&nbsp;<\/p>\n<p><strong>Can I see an example loan specifying terms of the loan?<\/strong><\/p>\n<p>Sure! A loan of $500 from Affirm would look like this: $43.96\/mo. based on a purchase price of $500.00 at 10% APR for 12 months.<\/p>\n<p><\/p>\n<p>&nbsp;<\/p>\n<p><strong>Legal Disclosure:<\/strong><\/p>\n<p>Subject to credit check and approval. Down payment may be required. For purchases under $100, limited payment options are available. Estimated payment amount excludes taxes and shipping fees. Affirm loans are made by Cross River Bank, a New Jersey State Chartered Commercial Bank, Member FDIC. See www.affirm.com\/faqs for details.<\/p>",
+                "cta-text-1": "",
+                "cta-link-1": ""
+              }
+            }
+          },
+          "block_order": [
+            "1558299468219",
+            "1558299787896",
+            "1558299839935",
+            "1558299930148"
+          ],
+          "settings": {}
+        },
+        "block_order": [
+          "1584524987849",
+          "1584525244045",
+          "1584525485780",
+          "1584525594336",
+          "1584525623173",
+          "1584525699797",
+          "1584525731987",
+          "1584526381258",
+          "1584526426324",
+          "1584528066455",
+          "1584525987813"
+        ],
+        "settings": {}
+      },
+      "content_for_index": [
+        "1524768368258",
+        "1526481284428",
+        "1525969132569",
+        "1525290496166",
+        "1526048428302",
+        "1526480838446",
+        "1499790633921",
+        "1526048519234",
+        "1526048620689",
+        "1526481405629"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{%- if linklists[block.settings.menu].links.size > 0 -%}
+  {%- if block.settings.show_footer_title -%}
+    <p class="eyebrow-font footer__title">
+      {{ linklists[block.settings.menu].title | remove: '(Live) Footer:' }}
+    </p>
+  {%- endif -%}
+  <div id="Footer-{{ block.id }}">
+    <div>
+      <div>
+        <ul class="no-bullets site-footer__linklist">
+          {%- for link in linklists[block.settings.menu].links -%}
+          {% if link.title == "Account" %}
+          <li>   
+            <p class="eyebrow-font footer__inner-title footer__title">
+              {{link.title}}
+            </p> 
+          </li>
+          {% else %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+          {% endif %}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

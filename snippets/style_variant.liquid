@@ -1,0 +1,30 @@
+<div class="variant-wrapper">
+  <label class="variant__label{% unless settings.variant_labels_enable %} hidden-label{% endunless %}"
+         for="ProductSelect-{{ section_id }}-option-3">
+    Style
+  </label>
+  <div class="style-toggle-wrapper">
+    <div class="style-selected-value">
+      <span class="selected-style-value">Select Style</span> <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"/></svg>
+    </div>
+  </div>
+  {%- assign option_index = 4 -%}
+  <fieldset class="variant-input-wrap style-wrapper"
+            id="ProductSelect-{{ section_id }}-option-3" style="display:none;">
+    {% for style_product in product.metafields.accentuate.style_dropdown_variant %}
+    <div
+         class="variant-input">
+      <a href="/products/{{product.metafields.accentuate.style_dropdown_variant[forloop.index0] | replace:":","?variant="}}">
+      <label
+             for="ProductSelect-{{ section_id }}-option-{{ option.name | handleize }}-{{ value | url_encode }}"
+             class="variant__button-label">
+        {{ product.metafields.accentuate.style_dropdown_title[forloop.index0]}} <span class="soldout-text">(Sold Out)</span>
+      </label>
+        </a>
+    </div>
+    {% endfor %}
+  </fieldset>
+  {% if is_size %}
+  <span class="error"></span>
+  {% endif %}
+</div>

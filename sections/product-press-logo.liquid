@@ -1,0 +1,96 @@
+{%- style -%}
+.logo-bar--{{ section.id }} {
+  opacity: {{ section.settings.logo_opacity | divided_by: 100.0 }};
+}
+{%- endstyle -%}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width text-center" data-aos="logo__animation">
+  {%- if section.settings.title != blank -%}
+      <h5 class="section-header">{{ section.settings.title | escape }}</h6>
+  {%- endif -%}
+  <div class="press-quote-wrapper">
+  <div class="press-quote-slider">
+    {% for block in section.blocks %}
+      {% if block.settings.quote != blank %}
+      <div class="press-quote">
+        <p class="h4">{{block.settings.quote}}</p>
+      </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+  {%- if section.blocks.size > 0 -%}
+  <div class="press-wrapper">
+    <div class=" press-logo-slider">
+      {%- for block in section.blocks -%}
+        <div class="logo-bar__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="logo-bar__image lazyload press-logo-image"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720]"
+                data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ block.settings.image.alt }}">
+          {%- else -%}
+            {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- endif -%}
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% schema %}
+  {
+    "name": "Logo list",
+    "class": "index-section product-press-logo",
+    "max_blocks": 10,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "range",
+        "id": "logo_opacity",
+        "label": "Logo opacity",
+        "default": 76,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "%"
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo_image",
+        "name": "Logo",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+			{
+            "type": "text",
+            "id": "quote",
+            "label": "Quote"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

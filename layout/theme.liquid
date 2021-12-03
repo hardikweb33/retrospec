@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}-US">
+<head>
+  {%- render 'elevar-head' -%}
+
+  <!-- Anti-flicker snippet (recommended) -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-MGSLGS9':true});</script>
+  <script src="https://www.googleoptimize.com/optimize.js?id=GTM-MGSLGS9"></script>
+  
+  {%- render 'orbislabs_sitemap_noindex' -%}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- endif -%}
+
+  {%- render 'seo-title' -%}
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- render 'social-meta-tags' -%}
+
+  {%- render 'font-face' -%}
+  
+  {%- render 'css-variables' -%}
+  
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.routes = {
+      cart: "{{ routes.cart_url }}",
+      cartAdd: "{{ routes.cart_add_url | append: '.js'}}",
+      cartChange: "{{ routes.cart_change_url }}"
+    };
+    theme.strings = {
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+    };
+    theme.settings = {
+      dynamicVariantsEnable: true,
+      dynamicVariantType: {{ settings.variant_type | json }},
+      cartType: {{ settings.cart_type | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      saveType: {{ settings.product_save_type | json }},
+      recentlyViewedEnabled: false,
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      inventoryThreshold: {{ settings.inventory_threshold }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Impulse',
+      themeVersion: "3.3.0"
+    };
+    theme.addonmetafields = {{shop.metafields.add_ons | json}}
+  </script>
+
+  {{ content_for_header }}
+
+  <script src="{{ 'vendor-scripts-v7.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+<link rel="stylesheet" href="{{ 'theme.css' | asset_url}}">
+  {%- if shop.enabled_currencies.size > 1 -%}
+    <link rel="preload" as="style" href="{{ 'currency-flags.css' | asset_url }}" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url }}"></noscript>
+  {%- endif -%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer="defer"></script>
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+  
+  {% comment %}
+  <script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
+  <script>
+    window.renderBadge = function() {
+      var ratingBadgeContainer = document.createElement("div");
+      document.body.appendChild(ratingBadgeContainer);
+      window.gapi.load('ratingbadge', function() {
+        window.gapi.ratingbadge.render(ratingBadgeContainer, {"merchant_id": 119671053});
+      });
+    }
+  </script>
+  {% endcomment %}
+  
+<!-- Affirm -->
+<script>
+ _affirm_config = {
+   public_api_key:  "XS5WS97IN4C87GRT",
+   script:          "https://cdn1.affirm.com/js/v2/affirm.js"
+ };
+ (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+</script>
+<!-- End Affirm -->
+  
+</head>
+
+<body class="enavi-klaviyo-embed template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{settings.type_body_align_text}}" data-button_style="{{settings.button_style}}" data-type_header_capitalize="{{settings.type_header_capitalize}}" data-type_headers_align_text="{{settings.type_headers_align_text}}" data-type_product_capitalize="{{settings.type_product_capitalize}}" data-swatch_style="{{settings.swatch_style}}" data-ship="{{shop.metafields.globals.free_shipping_threshold}}" data-ship-text="{{ settings.cart_shipping_note }}">
+  
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+
+      {%- section 'header' -%}
+      
+      <main class="main-content" id="MainContent">
+        {{ content_for_layout }}
+      </main>
+
+      {%- section 'footer' -%}
+
+    </div>
+  </div>
+
+  {%- if settings.cart_type == 'drawer' -%}
+    {%- render 'ajax-cart-template' -%}
+  {%- endif -%}
+
+  <div class="hide">
+    <button id="prevArrowTemplate" class="slick-prev" aria-label="{{ 'general.pagination.previous' | t }}" type="button">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+      <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+    </button>
+    <button id="nextArrowTemplate" class="slick-next" aria-label="{{ 'general.pagination.next' | t }}" type="button">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+      <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+    </button>
+  </div>
+
+  {%- if settings.predictive_search_enabled -%}
+    {%- render 'predictive-template' -%}
+  {%- endif -%}
+  
+  
+  {%- if template contains 'product' -%}
+  {%- render 'photoswipe-template' -%}
+    {%- render 'recently-viewed-product-template' -%}
+  {%- endif -%}  
+  
+ {% if template == 'index' or page.url contains 'store-locator' %} 
+ <script>
+     var loc = window.location.href;
+     loc = loc.split("/");
+     if(loc[4] == 'store-locator'){
+//          if (window.location.href.indexOf('reload')==-1) {
+//              window.location.replace(window.location.href+'?reload');
+//          }
+       
+         var url = window.location.href;
+         var zipcode = decodeURIComponent(url);
+         zipcode = zipcode.split("?");
+         zipcode = zipcode[1].split("=");
+         setTimeout(function(){
+            $(".stockist-search-field").val(zipcode[1]);
+             $('.stockist-feature-bg-color').trigger('click');
+           history.pushState(null, "", location.href.split("?")[0]);
+         }, 3000);
+     }
+
+ function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+</script>
+{% endif %}
+  
+  <script async type="text/javascript" id="stamped-script-widget" data-api-key="pubkey-K03u96t7KdE3R2HRJ2733qg5E7Pqy5" src="https://cdn1.stamped.io/files/widget.min.js"></script>
+  {% if template contains 'product' %}
+{% render 'enavi-backinstock' %}  
+{% endif %}
+
+  <!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install-v2" src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=6106"></script>
+<script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
+{%- render 'elevar-body-end' -%}  
+</body>
+</html>

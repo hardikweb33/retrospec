@@ -1,0 +1,114 @@
+<div class="homepage-shout-outs_box">
+  <div class="page-width page-content">
+    {%- for block in section.blocks -%}
+    <div class="slick-slider-wrapper">
+      <div class="feature-row" data-aos>
+        <div class="feature-row__item">
+          {%- if section.settings.header != blank -%}
+          <p class="eyebrow-font mobile">{{ section.settings.header }}</p>
+          {%- endif -%}
+          <div style="margin: 0 auto; max-width: 580px;">
+            {%- if block.settings.image != blank -%}
+            <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+              {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              <img class="feature-row__image lazyload"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080]"
+                   data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ block.settings.image.alt }}">
+            </div>
+            {%- else -%}
+            <div class="image-wrap">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="feature-row__item feature-row__text feature-row__text--left text-center">
+          <div class="shout-content-height">
+          {%- if section.settings.header != blank -%}
+          <p class="eyebrow-font desktop">{{ section.settings.header }}</p>
+          {%- endif -%}
+          {%- if block.settings.shout_out != blank -%}
+          <div class="h5">{{ block.settings.shout_out }}</div>
+          {%- endif -%}
+          {%- if block.settings.customer != blank -%}
+          <p class="eyebrow-font">{{ block.settings.customer }}</p>
+          {%- endif -%}
+          {%- if block.settings.button_text != blank and block.settings.button_link != blank -%}
+          <a href="{{ block.settings.button_link }}" class="btn btn--secondary">
+            {{ block.settings.button_text }} <span class="right-arrow">{% render 'icon-arrow' %}</span>
+          </a>
+          {%- endif -%}
+          </div>
+          
+          <div class="navigation blognavigation">
+            <div class="bprev_s disabled"><span class="icon-left-arrow">{% render 'icon-arrow' %}</span></div>
+            <div class="dots">
+              {%- for block in section.blocks -%}
+              <span class="dot dot-{{forloop.index0}} {% if forloop.first %}active{% endif %}"></span>
+              {% endfor %}
+            </div>
+            <div class="bnext_s"><span class="right-arrow">{% render 'icon-arrow' %}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Shout Outs",
+    "class": "index-section homepage-shout-outs bg-sand",
+    "settings": [
+	  {
+        "type": "text",
+        "id": "header",
+        "label": "Header",
+        "default": "Shout Outs From Outside"
+      }
+	],
+    "blocks": [
+      {
+        "type": "shout_out",
+        "name": "Shout Out",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "richtext",
+            "id": "shout_out",
+            "label": "Shout Out Text"
+          },
+		  {
+            "type": "text",
+            "id": "customer",
+            "label": "Customer Info"
+          },
+		  {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+    	]
+	  }
+    ],
+    "presets": [
+      {
+        "name": "Shout Outs",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

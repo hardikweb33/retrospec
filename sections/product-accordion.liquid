@@ -1,0 +1,154 @@
+{% for tag in shop.metafields.sizing.product_tag %}
+{% if product.tags contains shop.metafields.sizing.product_tag[forloop.index0] %}
+{% assign show_size = true %}
+{% endif %}
+{% endfor %}
+{% for tag in product.tags %}
+{% if tag contains 'Bike' or show_size == true %}
+	{% assign has_bike = true %}
+{% endif %}
+{% endfor %}
+<div class="product-accordions{% if product.metafields.prop_65.text %} product-accordions-p65{% endif %} bg-green">
+  {% if product.metafields.prop_65.text %}
+  <div class="prop-65">
+    <p>⚠️ {{ product.metafields.prop_65.text }}</p>
+  </div>
+  {% endif %}
+  <div class="product-accordions-wrapper">
+    {% if product.metafields.specs.list != blank %}
+    <div class="collapsibles-wrapper">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="product-specs">
+        <span class="h4">Specifications</span>
+        <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <span class="plus-icon icon-accordion">+</span>
+          <span class="minus-icon icon-accordion">-</span>
+        </span>
+        {% comment %}
+        {%- render 'collapsible-icons' -%}
+        {% endcomment %}
+      </button>
+      <div id="product-specs" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {% include 'product-accordion-specs' %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% assign hassizemetafield = false %}
+    {% for sizetag in shop.metafields.sizing.product_tag %}
+    	{% if product.tags contains sizetag %}
+    		{% assign hassizemetafield = true %}
+    		{% break %}
+    	{% endif %}
+    {% endfor %}
+    {% if has_bike or product.tags contains 'snow-helmets' %}
+    {% unless product.tags contains 'Bike Trailers & Racks' %}
+    <div class="collapsibles-wrapper">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="product-sizing">
+        <span class="h4">Sizing</span>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <span class="plus-icon icon-accordion">+</span>
+          <span class="minus-icon icon-accordion">-</span>
+        </span>
+        {% comment %}
+        {%- render 'collapsible-icons' -%}
+        {% endcomment %}
+      </button>
+      <div id="product-sizing" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {% include 'product-accordion-sizing' %}
+        </div>
+      </div>
+    </div>
+    {% endunless %}
+    {% endif %}
+    <div class="collapsibles-wrapper finance-acc-wrapper">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="product-financing">
+        <span class="h4">Financing Options</span>
+         <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <span class="plus-icon icon-accordion">+</span>
+          <span class="minus-icon icon-accordion">-</span>
+        </span>
+        {% comment %}
+        {%- render 'collapsible-icons' -%}
+        {% endcomment %}
+      </button>
+      <div id="product-financing" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {% include 'product-accordion-financing' %}
+        </div>
+      </div>
+    </div>
+    {% if product.metafields.assembly.instructions != blank %}
+    <div class="collapsibles-wrapper">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="product-assembly">
+        <span class="h4">Assembly Instructions</span>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <span class="plus-icon icon-accordion">+</span>
+          <span class="minus-icon icon-accordion">-</span>
+        </span>
+        {% comment %}
+        {%- render 'collapsible-icons' -%}
+        {% endcomment %}
+      </button>
+      <div id="product-assembly" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner">
+          {% include 'product-accordion-assembly' %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if product.metafields.owners_manual.instructions %}
+    <div class="collapsibles-wrapper">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="product-owners">
+        <span class="h4">Owner's Manual</span>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <span class="plus-icon icon-accordion">+</span>
+          <span class="minus-icon icon-accordion">-</span>
+        </span>
+        {% comment %}
+        {%- render 'collapsible-icons' -%}
+        {% endcomment %}
+      </button>
+      <div id="product-owners" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner">
+          {% include 'product-accordion-owners' %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if product.tags contains 'googles' or product.tags contains 'Googles' %}
+     <div class="collapsibles-wrapper">
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible--auto-height" aria-controls="product-goggle">
+        <span class="h4">VLT%</span>
+          <span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+          <span class="plus-icon icon-accordion">+</span>
+          <span class="minus-icon icon-accordion">-</span>
+        </span>
+        {% comment %}
+        {%- render 'collapsible-icons' -%}
+        {% endcomment %}
+      </button>
+      <div id="product-goggle" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner">
+          <div class="goggle-image">
+          	<img data-src="{{ 'VLT_Chart.png' | file_img_url: '3000x' }}" class="lazyload"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Accordions",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

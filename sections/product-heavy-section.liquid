@@ -1,0 +1,73 @@
+<div class="page-width product-heavy-section ">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header text-{{ section.settings.align_text }}">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+  {%- endif -%}
+  {% for image in product.metafields.heavy-specs.image %}
+  {% if forloop.first %}
+  {% assign blocks_size = forloop.length %}
+  {% endif %}
+  {% endfor %}
+  <div class="{% if blocks_size < 5 %} grid grid--uniform grid--flush-bottom{% else %} product-heavy-slider{% endif %}">
+    {%- liquid
+      assign grid_item_width = 'medium-up--one-third'
+      case blocks_size
+        when 1
+          assign grid_item_width = 'medium-up--one-half'
+        when 2
+          assign grid_item_width = 'medium-up--one-half'
+        when 3
+          assign grid_item_width = 'medium-up--one-third'
+        when 4
+          assign grid_item_width = 'medium-up--one-quarter'
+      endcase
+    -%}
+    {%- for image_data in product.metafields.heavy-specs.image -%}
+    {% assign image = image_data[0] %}
+      <div class="{% if blocks_size <= 4 %} grid__item {{ grid_item_width }}{% else %} text-column-slider {% endif %} text-center" data-aos="row-of-3">
+        {%- if image != blank -%}
+        {% capture srcset %}{% for i in (1..12) %}{% assign width = 180 | times:i %}{{image.cloudinary_src | append:'w_' | append:width }} {{width}}w{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+        <div style="margin: 0 auto;">
+          <div class="image-wrap text-spacing" style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;">
+            {%- assign img_url = image.cloudinary_src -%}
+            <img class="lazyload"
+                 data-src="{{ img_url }}"
+                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                 data-aspectratio="{{ image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ image.alt }}">
+          </div>
+        </div>
+        {%- endif -%}
+        <div class="heavy-content" >
+        {%- if product.metafields.heavy-specs.title[forloop.index0] != blank -%}
+          <h6>{{ product.metafields.heavy-specs.title[forloop.index0] }}</h6>
+        {%- endif -%}
+        {%- if product.metafields.heavy-specs.description[forloop.index0] != blank -%}
+          <div class="rte-setting text-spacing">{{ product.metafields.heavy-specs.description[forloop.index0] }}</div>
+        {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Product Heavy Specs",
+	"class":"index-section",
+    "settings": [
+	{
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

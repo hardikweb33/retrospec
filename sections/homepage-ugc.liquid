@@ -1,0 +1,61 @@
+<div class="page-width page-content">
+  <div class="grid">
+    <div class="grid__item medium-up--one-half small--text-center">
+      <h4>{{ section.settings.header }}</h4>
+      <p>{{ section.settings.description }}</p>
+    </div>
+    <div class="grid__item medium-up--one-half small--text-center">
+      <a href="{{ section.settings.button_link }}" class="btn text-link">
+        {{ section.settings.button_text }}
+        <span class="right-arrow">
+        {% include 'icon-arrow' %}
+        </span>
+      </a>
+    </div>
+  </div>
+  <div id="stamped-reviews-widget" data-widget-type="instagram-feed" data-feed-type="feed" data-take="5" data-resolution="high"></div>
+</div>
+
+{% schema %}
+  {
+    "name": "UGC",
+    "class": "homepage-ugc bg-sand",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header",
+        "label": "Header",
+		"default": "All natural fun from the field"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+	  	"default": "Follow us @Retrospec"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+	  	"default": "Shop Now"
+      }
+	],
+    "presets": [
+      {
+        "name": "UGC",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

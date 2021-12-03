@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+  {% render 'elevar-head' %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+    {% comment %}
+    <script src="https://apis.google.com/js/platform.js?onload=renderBadge" async defer></script>
+
+    <script>
+      window.renderBadge = function() {
+        var ratingBadgeContainer = document.createElement("div");
+        document.body.appendChild(ratingBadgeContainer);
+        window.gapi.load('ratingbadge', function() {
+          window.gapi.ratingbadge.render(ratingBadgeContainer, {"merchant_id": 119671053});
+        });
+      }
+    </script>
+    {% endcomment %}
+    
+  </head>
+  <body>
+  {% render 'elevar-checkout-end' %}
+    {{ skip_to_content_link }}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+	<script src="https://scripts.retentionrocket.com/scripts/checkout/westridge-outdoors.js" checkoutId = "{{ checkout.id }}" async="async"></script>
+    {% if settings.po_text != blank %}
+    <script>
+      $(document).on('ready page:load page:change', function() {
+        if(Shopify.Checkout.step === 'contact_information') {
+          $("[data-address-field|='address1']").append('<div class="po-text">{{settings.po_text}}</div>')
+        }
+      });
+    </script>
+    <style>
+      .po-text{
+      	padding: 0.85714em 0 0;
+        font-style: italic;
+      }
+    </style>
+    {% endif %}
+    <script>
+      $(document).on('page:load page:change', function(){
+        //console.log('change update');
+        var discount_code = $('.total-line.total-line--reduction').find('.applied-reduction-code__information').html();
+        if(discount_code == "JUMP50OFF" || discount_code == "JUMP50OFF!"){
+          $('.content-box__row').each(function(){
+            if($(this).parents('.section').hasClass('section--shipping-method')){
+              var ship_val = $(this).find('.content-box__emphasis').html().trim();
+              //console.log(ship_val);
+              if(ship_val == 'Free'){
+                $(this).hide();
+                $(this).next('.content-box__row').find('input').prop('checked', true).trigger('change');
+              }
+            }
+          });
+        }
+        else{
+          $('.content-box__row').each(function(){
+            if($(this).parents('.section').hasClass('section--shipping-method')){
+              var ship_val = $(this).find('.content-box__emphasis').html().trim();
+              //console.log(ship_val);
+              if(ship_val == 'Free'){
+                $(this).show();
+                //$(this).next('.content-box__row').find('input').attr('checked', true).trigger('change');
+              }
+            }
+          });
+        }
+      });
+    </script>
+
+    {{ tracking_code }}
+  </body>
+</html>

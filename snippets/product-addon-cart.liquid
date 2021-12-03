@@ -1,0 +1,57 @@
+
+{% for addon_data in shop.metafields.add_ons.tag %}
+{% if product.tags contains shop.metafields.add_ons.tag[forloop.index0] %}
+{% if shop.metafields.add_ons.display[forloop.index0]  == 'true' %}
+{% assign addon_product = all_products[shop.metafields.add_ons.product[forloop.index0]] %}
+<div class="addon-version-2 addon">
+  <div class="addon-version-2-inner">
+    <div class="variant-wrapper variant-wrapper--{{ settings.variant_type }}">
+      <label class="variant__label">
+        {{shop.metafields.add_ons.label[forloop.index0]}}
+        <span>
+          <div class="question-mark-wrapper">
+            <div class="question-mark">?</div>
+            <div class="question-content">
+              <h6>{{addon_product.title}}</h6>
+              <p>{{shop.metafields.add_ons.short_description[forloop.index0]}}</p>
+            </div>
+          </div>
+        </span>
+      </label>
+    </div>
+    <div class="addon-v2-variants">
+      <div class="addon-v2-variants-inner">
+        {% assign count = 0 %}
+        {% for variant in addon_product.variants %}
+        {% if variant.available and count < 3 %}
+        <div class="addon-v2-variant" data-id="{{variant.id}}">
+          <div class="bike-style-content">
+          {% if variant.image %}
+          <img data-src="{{variant.image | img_url:'original'}}" class="lazyload" />
+          {% endif %}
+          <div class="addon-variant-title">{{variant.title}}</div>
+        </div>
+        </div>
+        {% assign count = count | plus:1 %}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="addon-btn-wrapper">
+        <a href="javascript:void(0)" class="btn text-link addon-addtocart">{{ 'products.product.add_to_cart' | t }}<span class="right-arrow"><svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+            <g id="icon/arrow" transform="translate(1.000000, 1.000000)" stroke="#000000" stroke-width="1.2">
+              <g id="Right-Arrow">
+                <polyline id="Path-Copy" transform="translate(7.560660, 5.000000) rotate(-45.000000) translate(-7.560660, -5.000000) " points="11.0606602 1.5 11.0606602 8.5 4.06066017 8.5"></polyline>
+                <line x1="1.5959456e-16" y1="5.10355339" x2="12" y2="5.10355339" id="Line-2-Copy"></line>
+              </g>
+            </g>
+          </g>
+          </svg></span></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% break %}
+{% endif %}
+{% endif %}
+{% endfor%}

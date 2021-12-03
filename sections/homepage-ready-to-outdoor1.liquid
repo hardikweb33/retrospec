@@ -1,0 +1,262 @@
+<div class="ready-to-outdoor1">
+  <div class="custom_second">
+    <div class="custom_second_wrapper">
+      {% for block in section.blocks %}
+        <div class="img_snippet" id="img-{{block.id}}">
+          {% if block.settings.img_sel == '1' %}
+           <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.img_pic.aspect_ratio }}%;">
+            {%- assign img_url = block.settings.img_pic | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                 data-src="{{ img_url }}"
+                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                 data-aspectratio="{{ block.settings.img_pic.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ block.settings.img_pic.alt }}">
+          </div>
+          {% else %}
+            {{ block.settings.img_svg }}
+          {% endif %}
+        </div>
+        <style type="text/css">
+          #img-{{block.id}} {
+            position: absolute;
+            top: {{block.settings.desktop_top}};
+            right: {{block.settings.desktop_right}};
+            bottom: {{block.settings.desktop_bottom}};
+            left: {{block.settings.desktop_left}};
+            width: {{block.settings.img_width_desktop}};
+            z-index: 0;
+          }
+
+          {% if block.settings.tablet_top != blank or block.settings.tablet_right != blank or block.settings.tablet_bottom != blank or block.settings.tablet_left != blank %}
+          @media screen and (max-width: 1100px) {
+            #img-{{block.id}} {
+              {%- if block.settings.tablet_top != blank -%}
+              top: {{block.settings.tablet_top}};
+              bottom: unset;
+              {%- elsif block.settings.tablet_bottom != blank -%}
+              top: unset;
+              bottom: {{block.settings.tablet_bottom }};
+              {%- endif -%}
+              {%- if block.settings.tablet_right != blank -%}
+              right: {{block.settings.tablet_right}};
+              left: unset;
+              {%- elsif block.settings.tablet_left != blank -%}
+              right: unset;
+              left: {{block.settings.tablet_left}};
+              {%- endif -%}
+              {%- if block.settings.img_width_tablet != blank -%}
+              width: {{block.settings.img_width_tablet}};
+              {%- endif -%}
+            }
+          }
+          {% endif %}
+
+          {% if block.settings.mobile_top != blank or block.settings.mobile_right != blank or block.settings.mobile_bottom != blank or block.settings.mobile_left != blank %}
+          @media screen and (max-width: 768px) {
+            #img-{{block.id}} {
+              {%- if block.settings.mobile_top != blank -%}
+              top: {{block.settings.mobile_top}};
+              bottom: unset;
+              {%- elsif block.settings.mobile_bottom != blank -%}
+              top: unset;
+              bottom: {{block.settings.mobile_bottom }};
+              {%- endif -%}
+              {%- if block.settings.mobile_right != blank -%}
+              right: {{block.settings.mobile_right}};
+              left: unset;
+              {%- elsif block.settings.mobile_left != blank -%}
+              right: unset;
+              left: {{block.settings.mobile_left}};
+              {%- endif -%}
+              {%- if block.settings.img_width_mobile != blank -%}
+              width: {{block.settings.img_width_mobile}};
+              {%- endif -%}
+            }
+          }
+          {% endif %}
+        </style>
+      {% endfor %}
+      <div class="center_content">
+        <h2>{{ section.settings.title }}</h2>
+        {{ section.settings.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  .img_snippet {
+    z-index: 10;
+  }
+  .img_snippet * {
+    width: 100%;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Ready To Outdoor 2.0",
+	  "class": "ready-to-outdoor1",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "radio",
+            "label": "Select image type",
+            "options": [
+              {
+                "value": "1",
+                "label": "Use uploaded image"
+              },
+              {
+                "value": "2",
+                "label": "Use SVG code" 
+              }
+            ],
+            "id": "img_sel",
+            "default": "1"
+          },
+          {
+            "type": "image_picker",
+            "id": "img_pic", 
+            "label": "Image"
+          },
+          {
+            "type": "textarea",
+            "id": "img_svg",
+            "label": "SVG code for image snippet"
+          },
+          {
+            "type": "header",
+            "content": "Desktop Position"
+          },
+          {
+            "type": "text",
+            "id": "img_width_desktop",
+            "label": "Desktop Width",
+            "info": "px, %" 
+          },
+          {
+            "type": "text",
+            "label": "Top",
+            "id": "desktop_top",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Right",
+            "id": "desktop_right",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Bottom",
+            "id": "desktop_bottom",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Left",
+            "id": "desktop_left",
+            "info": "px, %"
+          },
+          {
+            "type": "header",
+            "content": "Tablet Position"
+          },
+          {
+            "type": "text",
+            "id": "img_width_tablet",
+            "label": "Tablet Width",
+            "info": "px, %" 
+          },
+          {
+            "type": "text",
+            "label": "Top",
+            "id": "tablet_top",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Right",
+            "id": "tablet_right",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Bottom",
+            "id": "tablet_bottom",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Left",
+            "id": "tablet_left",
+            "info": "px, %"
+          },
+          {
+            "type": "header",
+            "content": "Mobile Position"
+          },
+          {
+            "type": "text",
+            "id": "img_width_mobile",
+            "label": "Mobile Width",
+            "info": "px, %" 
+          },
+          {
+            "type": "text",
+            "label": "Top",
+            "id": "mobile_top",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Right",
+            "id": "mobile_right",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Bottom",
+            "id": "mobile_bottom",
+            "info": "px, %"
+          },
+          {
+            "type": "text",
+            "label": "Left",
+            "id": "mobile_left",
+            "info": "px, %"
+          }
+        ]
+      }
+    ],
+	"presets": [{
+        "name": "Ready To Outdoor 2.0",
+        "category": "Custom"
+	 }]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

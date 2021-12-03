@@ -1,0 +1,137 @@
+{%- liquid
+  unless grid_item_width
+    assign grid_item_width = 'medium-up--one-quarter small--one-half'
+  endunless
+
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+
+  assign sold_out = true
+  if product.available
+    assign sold_out = false
+  endif
+-%}
+
+<div class="{% unless menugrid %}grid__item {{ grid_item_width }}{% endunless %} standard-product-grid grid-product" data-aos="row-of-{{ per_row }}">
+  <div class="grid-product__content">
+    {%- liquid
+      assign fixed_aspect_ratio = false
+      unless settings.product_grid_image_size == 'natural'
+        assign fixed_aspect_ratio = true
+      endunless
+
+      assign preview_image = product.featured_media.preview_image
+      assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+    -%}
+
+    <a href="{{ product.url | within: collection }}" class="grid-product__link{% if sold_out %} grid-product__link--disabled{% endif %}">
+      <div class="grid-product__primary-benefit">
+      {%- if on_sale and sold_out == false -%}
+        <div class="card-primary-benefit card-sale">
+          Sale
+        </div>
+        {%- endif -%}
+        {%- if product.metafields.benefits.primary  -%}
+        <div class="card-primary-benefit">
+          {{ product.metafields.benefits.primary }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="grid-product__meta">
+        <h6 class="grid-product__title">{{ product.title }}</h6>
+        <div class="grid-product__price">
+          {%- if on_sale -%}
+            <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
+            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+          {%- endif -%}
+          {%- if product.price_varies -%}
+            {%- assign price = product.price_min | money -%}
+            {{ price }} +
+          {%- else -%}
+            {{ product.price  | money }}
+          {%- endif -%}
+          {%- if on_sale -%}
+            {%- if settings.product_save_amount -%}
+              {%- if settings.product_save_type == 'dollar' -%}
+                {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money }}{% endcapture %}
+              {%- else -%}
+                {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{% endcapture %}
+              {%- endif -%}
+              <span class="grid-product__price--savings">
+                {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
+              </span>
+            {%- endif -%}
+          {%- endif -%}
+
+          {%- assign product_variant = product.selected_or_first_available_variant -%}
+          {%- if product_variant.unit_price_measurement -%}
+            <div class="product__unit-price">
+              {%- capture unit_price_base_unit -%}
+                {%- if product_variant.unit_price_measurement -%}
+                  {%- if product_variant.unit_price_measurement.reference_value != 1 -%}
+                    {{ product_variant.unit_price_measurement.reference_value }}
+                  {%- endif -%}
+                  {{ product_variant.unit_price_measurement.reference_unit }}
+                {%- endif -%}
+              {%- endcapture -%}
+
+              {{ product_variant.unit_price | money }}/{{ unit_price_base_unit }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+      <div class="grid-product__image-mask">
+        {%- if fixed_aspect_ratio -%}
+          <div
+            class="grid__image-ratio grid__image-ratio--{{ settings.product_grid_image_size }} lazyload"
+            data-bgset="{% render 'bgset', image: preview_image %}"
+            data-sizes="auto">
+          </div>
+        {%- else -%}
+          <div class="image-wrap"
+            style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
+            >
+            <img class="grid-product__image lazyload"
+                data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080]"
+                data-aspectratio="{{ preview_image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ preview_image.alt | escape }}">
+     
+          </div>
+        {%- endif -%}
+
+        {%- unless sold_out -%}
+          {%- if settings.product_hover_image and product.images.size > 1 -%}
+            {%- for media in product.media offset: 1 limit: 1 -%}
+              {%- assign second_image = media.preview_image -%}
+            {%- endfor -%}
+            <div
+              class="grid-product__secondary-image small--hide lazyload"
+              data-bgset="{% render 'bgset', image: second_image %}"
+              data-sizes="auto">
+            </div>
+          {%- endif -%}
+        {%- endunless -%}
+
+      </div>
+    </a>
+    {% if redirect_text != blank %}
+    <a href="{{ product.url | within: collection }}" class="btn btn--secondary" data-gtm-vis-has-fired-10840058_117="1">{{redirect_text}}<span class="right-arrow" data-gtm-vis-has-fired-10840058_117="1"><svg width="15px" height="12px" viewBox="0 0 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-gtm-vis-has-fired-10840058_117="1">
+      <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square" data-gtm-vis-has-fired-10840058_117="1">
+        <g id="icon/arrow" transform="translate(1.000000, 1.000000)" stroke="#000000" stroke-width="1.2" data-gtm-vis-has-fired-10840058_117="1">
+          <g id="Right-Arrow" data-gtm-vis-has-fired-10840058_117="1">
+            <polyline id="Path-Copy" transform="translate(7.560660, 5.000000) rotate(-45.000000) translate(-7.560660, -5.000000) " points="11.0606602 1.5 11.0606602 8.5 4.06066017 8.5" data-gtm-vis-has-fired-10840058_117="1"></polyline>
+            <line x1="1.5959456e-16" y1="5.10355339" x2="12" y2="5.10355339" id="Line-2-Copy" data-gtm-vis-has-fired-10840058_117="1"></line>
+          </g>
+        </g>
+      </g>
+      </svg>
+      </span>
+    </a>
+    {% endif %}
+  </div>
+</div>

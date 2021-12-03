@@ -1,0 +1,29 @@
+<h6 class="enavi-klaviyo-success klaviyo-message" style="display:none">You're in!<br/>We'll let you know when it's back.</h6>
+        <h6 class="enavi-klaviyo-error klaviyo-message" style="display:none"><span class="error-text">Something went wrong</span>.</h6>
+        <h4>{{product.title}}</h4>
+        <p><b>Register to receive a notification when this item comes back in stock.</b></p>
+        <form action="https://enavi-klaviyo-bridge.herokuapp.com/" method="POST" class="enavi-klaviyo-form">
+          <select style="display:none;" class="enavi-hidden-variant">
+          	{% for variant in product.variants %}
+            <option value="{{variant.id}}" data-available="{% if variant.available %}true{% else %}false{% endif %}"></option>
+            {% endfor %}
+          </select>
+          <input type="hidden" value="PXF8bU" name="klaviyo_account_id" />
+          <input type="hidden" value="shopify" name="klaviyo_platform" />
+          <input type="hidden" value="{{shop.url}}" name="klaviyo_domain" />
+          <input type="hidden" value="{{shop.url}}{{product.url | within:collection}}" name="klaviyo_return_url" />
+          {% unless product.has_only_default_variant %}
+          <select class="enavi-dropdown select-field" name="klaviyo_variant_id" title="variant-select-dropdown">
+          	{% for variant in product.variants %}
+            {% unless variant.available %}
+            <option value="{{variant.id}}">{{variant.title}}</option>
+            {% endunless %}
+            {% endfor %}
+          </select>
+          {% else %}
+          <input type="hidden" value="{{product.variants.first.id}}" name="klaviyo_variant_id"/>
+          {% endunless %}
+          <input type="email" title="email" required class="enavi-input email-field" value="{{customer.email}}" name="email" placeholder="Email" />
+          <span class="enavi-klaviyo-email-error"></span>
+          <input type="submit" value="Notify me when available" name="enavi_submit_btn" class="btn enavi-klaviyo-submit"/>
+        </form>

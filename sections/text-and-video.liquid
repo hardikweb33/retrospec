@@ -1,0 +1,174 @@
+<div class="homepage-hero-bike">
+  {%- capture image_layout -%}
+  <div class="feature-row__item">
+    <div class="homepage-hero-overflow">
+      <div class="illustration cloud_1">
+        {% render 'illustration-cloud' %}
+      </div>
+      <div class="illustration cloud_2">
+        {% render 'illustration-cloud' %}
+      </div>
+      <div style="margin: 0 auto; max-width: {{ section.settings.video_width }}px; height: {{ section.settings.video_height }}px;">
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}<a href="{{ section.settings.button_link }}">{%- endif -%}
+        <div class="hero__media hero__media--{{ section.id }}">
+          <div class="hero__media-container">
+            {%- if section.settings.video_url contains 'youtube.com/watch' -%}
+              {%- assign video_id = section.settings.video_url | split: 'v=' -%}
+              {%- assign video_id = video_id[1] | split: '&' | first -%}
+              <div
+                id="YouTubeVideo-{{ section.id }}"
+                data-video-id="{{ video_id }}"></div>
+            {%- endif -%}
+
+            {%- if section.settings.video_url contains 'youtu.be/' -%}
+              {%- assign video_id = section.settings.video_url | split: '.be/' -%}
+              {%- assign video_id = video_id[1] | split: '&' | first -%}
+              <div
+                id="YouTubeVideo-{{ section.id }}"
+                data-video-id="{{ video_id }}"></div>
+            {%- endif -%}
+
+            {%- if section.settings.video_url contains 'vimeo.com' -%}
+              {%- assign video_id = section.settings.video_url | split: '.com/' -%}
+              {%- assign video_id = video_id[1] | split: '/' | first -%}
+              <div
+                id="Vimeo-{{ section.id }}"
+                data-video-id="{{ video_id }}"></div>
+            {%- endif -%}
+
+            {%- if section.settings.video_url contains '.mp4' or section.settings.video_url contains '.MP4' -%}
+              <video
+                id="Mp4Video-{{ section.id }}"
+                src="{{ section.settings.video_url }}"
+                loop muted playsinline autoplay></video>
+            {%- endif -%}
+
+          </div>
+        </div>
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank %}</a>{% endif -%}
+      </div>
+      {% if section.settings.product_image != blank %}
+      <div class="hero_product_1">
+        <img class="lazyload hero_product_image" src="{{ section.settings.product_image | img_url: '1000x' }}">
+      </div>
+      {% endif %}
+      {% if section.settings.product_image_2 != blank %}
+      <div class="hero_product_2">
+        <img class="lazyload hero_product_image" src="{{ section.settings.product_image_2 | img_url: '1000x' }}">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {%- endcapture -%}
+
+  <div class="feature-row" data-aos>
+    {%- if section.settings.layout == 'left' -%}
+      {{ image_layout }}
+    {%- endif -%}
+
+    <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+      {%- if section.settings.subtitle != blank -%}
+        <p class="h5">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <p class="h3 homepage_hero_title">{{ section.settings.title | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="btn">
+          {{ section.settings.button_label }}
+          <span class="right-arrow">
+            {% include 'icon-arrow' %}
+          </span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.layout == 'right' -%}
+      {{ image_layout }}
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Hero - Video",
+	"class": "homepage-heros",
+    "settings": [
+      {
+        "type": "text",
+        "id": "video_url",
+        "label": "Background Video"
+      },
+      {
+        "type": "range",
+        "id": "video_width",
+        "label": "video width",
+        "default": 1000,
+        "min": 100,
+        "max": 1000,
+        "step": 10,
+        "unit": "px"
+      },
+  	  {
+        "type": "range",
+        "id": "video_height",
+        "label": "video height",
+        "default": 400,
+        "min": 300,
+        "max": 600,
+        "step": 10,
+        "unit": "px"
+      },
+	  {
+        "type": "image_picker",
+        "id": "product_image",
+        "label": "Product Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Optional button"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      }
+    ],
+	"presets": [{
+        "name": "Hero - Video",
+        "category": "Custom"
+	 }]
+  }
+{% endschema %}

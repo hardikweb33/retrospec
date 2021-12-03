@@ -1,0 +1,27 @@
+<div class="collection-{{ collection.handle }}">
+  {% section 'collection-header-alternate' %}
+  <div id="CollectionAjaxResult" class="collection-content">
+    <div id="CollectionAjaxContent">
+        <div class="grid bg-alt-sand">
+          {% if collection.metafields.info.subcollections %}
+          <div class="grid__item medium-up--three-tenths widescreen--one-fifth collection-sidebar sticky-filter">
+            <div class="">
+            {% section 'collection-sidebar' %}
+            </div>
+          </div>
+          {% endif %}
+          <div class="grid__item {% if collection.metafields.info.subcollections %}medium-up--seven-tenths widescreen--four-fifths{% endif %} grid__item--content bg-off-white">
+            <div class="collection-grid__wrapper" id="grid-anchor">
+              {% section 'collection-template' %}
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+try {
+	hj('trigger', 'alternate');
+} 
+catch(e) {}
+</script>

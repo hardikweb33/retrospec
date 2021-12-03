@@ -1,0 +1,266 @@
+<div class="page-width">
+  <div
+    data-subsection
+    data-section-id="{{ section.id }}"
+    data-section-type="slideshow-section"
+    data-align-top="true">
+    <div class="slideshow-wrapper">
+      {%- assign natural_height = false -%}
+      {%- if section.settings.section_height == 'natural' -%}
+        {%- if section.settings.image != blank -%}
+          {%- assign natural_height = true -%}
+          {%- capture natural_height_ratio -%}{{ 100 | divided_by: section.settings.image.aspect_ratio }}%{% endcapture %}
+        {%- endif -%}
+      {%- endif -%}
+
+      {%- if natural_height -%}
+        {%- style -%}
+          .hero-natural--{{ section.id }} {
+            height: 0;
+            padding-bottom: {{ natural_height_ratio }};
+          }
+        {%- endstyle -%}
+      {%- endif -%}
+
+      {%- if natural_height -%}
+        <div class="hero-natural--{{ section.id }}">
+      {%- endif -%}
+        <div id="Slideshow-{{ section.id }}"
+          class="hero hero--{{ section.settings.section_height }} hero--{{ section.id }} hero--mobile--{{ section.settings.mobile_height }} loading loading--delayed"
+          {% if natural_height %}
+            data-natural="true"
+          {% endif %}
+          data-aos="hero__animation"
+          data-slide-count="1">
+          <div
+            class="slideshow__slide slideshow__slide--{{ section.id }}"
+            data-id="{{ section.id }}">
+
+              <div class="hero__image-wrapper hero__image-wrapper--no-overlay">
+                {%- if section.settings.image != blank -%}
+                  {%- style -%}
+                    .hero__image--{{ section.id }} {
+                      object-position: {{ section.settings.focal_point }};
+                      font-family: "object-fit: cover; object-position: {{ section.settings.focal_point }};";
+                    }
+                  {%- endstyle -%}
+
+                  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+                  <img class="image-fit hero__image hero__image--{{ section.id }} lazyload"
+                    src=""
+                    data-src="{{ img_url }}"
+                    data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                    data-sizes="auto"
+                    data-parent-fit="cover"
+                    alt="{{ section.settings.image.alt | escape }}">
+                  <noscript>
+                    <img class="image-fit hero__image hero__image--{{ section.id }}"
+                      src="{{ section.settings.image | img_url: '1400x' }}"
+                      alt="{{ section.settings.image.alt | escape }}">
+                  </noscript>
+                {%- else -%}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
+              </div>
+
+              <div class="hero__text-wrap">
+                <div class="page-width">
+                  <div class="hero__text-content {{ section.settings.text_align }}">
+                    <div class="checklist-width">
+                      <h3 class="section-header__title">{{ section.settings.title }}</h3>
+                      <ul class="collection-checklist">
+                        {% assign checks = section.settings.checklist | newline_to_br | split: '<br />' %}
+                        {% for check in checks %}
+                        <li>
+                          <div class="checklist-checkmark"><span class="icon-handwritten-check">{% render 'icon-handwritten-check' %}</span></div>
+                          <div class="checklist-items">{{ check }}</div>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      {%- if natural_height -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Retrospec Pledge",
+    "class": "retrospec_pledge medium-up--page-width page-content",
+    "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "The Retrospec Pledge"
+          },
+          {
+            "type": "textarea",
+            "id": "checklist",
+            "label": "Checklist"
+          },
+          {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text alignment",
+            "default": "vertical-center horizontal-center",
+            "options": [
+              {
+                "value": "vertical-center horizontal-left",
+                "label": "Center left"
+              },
+              {
+                "value": "vertical-center horizontal-center",
+                "label": "Center"
+              },
+              {
+                "value": "vertical-center horizontal-right",
+                "label": "Center right"
+              },
+              {
+                "value": "vertical-bottom horizontal-left",
+                "label": "Bottom left"
+              },
+              {
+                "value": "vertical-bottom horizontal-center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "vertical-bottom horizontal-right",
+                "label": "Bottom right"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "focal_point",
+            "label": "Image focal point",
+            "info": "Used to keep the subject of your photo in view.",
+            "default": "center center",
+            "options": [
+              {
+                "value": "20% 0",
+                "label": "Top left"
+              },
+              {
+                "value": "top center",
+                "label": "Top center"
+              },
+              {
+                "value": "80% 0",
+                "label": "Top right"
+              },
+              {
+                "value": "20% 50%",
+                "label": "Left"
+              },
+              {
+                "value": "center center",
+                "label": "Center"
+              },
+              {
+                "value": "80% 50%",
+                "label": "Right"
+              },
+              {
+                "value": "20% 100%",
+                "label": "Bottom left"
+              },
+              {
+                "value": "bottom center",
+                "label": "Bottom center"
+              },
+              {
+                "value": "80% 100%",
+                "label": "Bottom right"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "section_height",
+            "label": "Desktop height",
+            "default": "650px",
+            "options": [
+              {
+                "label": "Natural",
+                "value": "natural"
+              },
+              {
+                "label": "450px",
+                "value": "450px"
+              },
+              {
+                "label": "550px",
+                "value": "550px"
+              },
+              {
+                "label": "650px",
+                "value": "650px"
+              },
+              {
+                "label": "750px",
+                "value": "750px"
+              },
+              {
+                "label": "Full screen",
+                "value": "100vh"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "mobile_height",
+            "label": "Mobile height",
+            "default": "auto",
+            "info": "Not used if desktop height is set to natural",
+            "options": [
+              {
+                "label": "Auto",
+                "value": "auto"
+              },
+              {
+                "label": "250px",
+                "value": "250px"
+              },
+              {
+                "label": "300px",
+                "value": "300px"
+              },
+              {
+                "label": "400px",
+                "value": "400px"
+              },
+              {
+                "label": "500px",
+                "value": "500px"
+              },
+              {
+                "label": "Full screen",
+                "value": "100vh"
+              }
+            ]
+          }
+        ]
+      }
+{% endschema %}
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

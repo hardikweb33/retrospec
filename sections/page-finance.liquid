@@ -1,0 +1,570 @@
+{% for block in section.blocks %}
+{% case block.type %}
+{% when 'banner' %}
+<div class="bg-light-green page-content">
+  <div class="page-width">
+    <div class="top-banner-content">
+      <h4>{{ block.settings.sub-title-banner }}</h4>
+      <div class="affirm-logo">
+          <a href="{{ block.settings.logo-link }}"><img src="{{ block.settings.logo-image | img_url : 'master' }}"/></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcase %}
+{% endfor %}
+
+<div class="page-content page-width">
+  {% for block in section.blocks %}
+  {% case block.type %}
+
+  {% when 'text' %}
+  <div class="page-width page-content text-block-cont">
+    <div class="widget-title">   
+      <fieldset class="box-title">
+        <legend align="center">{{block.settings.title}}
+        {% if block.settings.title_logo != blank%}<img src="{{ block.settings.title_logo | img_url: 'original'}}">{% endif %}
+        </legend>
+      </fieldset>
+    </div>
+
+    {{ block.settings.description_text }}
+  </div>
+  {% when 'image' %}
+  {% assign icons = 0 %}
+  {% for i in (1..4) %}
+  	{% capture setting %}title_logo_{{i}}{% endcapture%}
+  	{% if block.settings[setting] != blank %}
+  		{% assign icons = icons |plus: 1%}
+  	{% endif%}
+  {% endfor %}
+  {% case icons %}
+    {% when 1 %}
+  		{% assign icon_width = 'col-sm-12 col-md-12' %}
+    {% when 2 %}
+  		{% assign icon_width = 'col-sm-6 col-md-6' %}
+    {% when 3 %}
+  		{% assign icon_width = 'col-sm-4 col-md-4' %}
+    {% when 4 %}
+  		{% assign icon_width = 'col-sm-3 col-md-3' %}
+  {% endcase %}
+  {% if icons > 0 %}
+  <div class="page-width page-content service-cont">
+    {% if block.settings.main_title != blank %}
+    <div class="widget-title">   
+      <fieldset class="box-title">
+        <legend align="center">{{block.settings.main_title}}</legend>
+      </fieldset>
+    </div>
+    {% endif %}
+    <div class="row"> 
+      {% if block.settings.title_logo_1 != blank %}
+      <div class="{{ icon_width }}">
+        <span><img src="{{ block.settings.title_logo_1 | img_url: 'original' }}"/></span>
+        <h1>{{ block.settings.title_img_1 }}</h1>
+        {{ block.settings.description_img_1 }}
+      </div>
+      {% endif %}
+      {% if block.settings.title_logo_2 != blank %}
+      <div class="{{ icon_width }}">
+        <span><img src="{{ block.settings.title_logo_2 | img_url: 'original' }}"/></span>
+        <h1>{{ block.settings.title_img_2 }}</h1>
+        {{ block.settings.description_img_2 }}
+      </div>
+      {% endif %}
+      {% if block.settings.title_logo_3 != blank %}
+      <div class="{{ icon_width }}">
+        <span><img src="{{ block.settings.title_logo_3 | img_url: 'original' }}"/></span>
+        <h1>{{ block.settings.title_img_3 }}</h1>
+        {{ block.settings.description_img_3 }}
+      </div>
+      {% endif %}
+      {% if block.settings.title_logo_4 != blank %}
+      <div class="{{ icon_width }}">
+        <span><img src="{{ block.settings.title_logo_4 | img_url: 'original' }}"/></span>
+        <h1>{{ block.settings.title_img_4 }}</h1>
+        {{ block.settings.description_img_4 }}
+      </div>
+      {% endif %}
+    </div>  
+  </div>
+  {% endif %}
+  {% when 'tabs' %}
+  <div class="page-content page-width bg-sand">
+    {% if block.settings.main_title != blank %}
+    <div class="page-width widget-title">   
+      <fieldset class="box-title">
+        <legend align="center">{{block.settings.main_title}}</legend>
+      </fieldset>
+    </div>
+    {% endif %}
+    <div id="page-width page-content">
+      <div class="">
+        {{ block.settings.description_tab_1 }}
+      </div> 
+    </div>
+  </div>
+
+  {% endcase %}
+  {% endfor %}
+</div>  
+{% schema %}
+{
+    "name": "Finance",
+     "settings": [
+	  
+    ],
+    "blocks": [
+
+     {
+        "type": "banner",
+        "name": "Banner Top",
+        "settings": [
+          {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Background Image"
+          },
+	      {
+           "type": "text",
+           "id": "sub-title-banner",
+           "label": "Title"
+          },
+          {
+           "type": "image_picker",
+           "id": "logo-image",
+           "label": "Logo"
+          },
+          {
+             "type": "url",
+             "id": "logo-link",
+             "label": "Logo Link"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text Block",
+        "settings": [
+          
+	       {
+             "type": "text",
+             "id": "title",
+             "label": "Title"
+           },
+			{
+             "type": "image_picker",
+             "id": "title_logo",
+             "label": "Logo"
+           },
+           {
+             "type": "richtext",
+             "id": "description_text",
+             "label": "Description"
+           }
+        ]
+      },
+      {
+        "type": "image",
+        "name": "Services",
+        "settings": [
+		    {
+			"type": "text",
+             "id": "main_title",
+             "label": "Main Title"
+			},
+			{
+			"type": "header",
+			"content": "First Block"
+			},
+	       {
+             "type": "image_picker",
+             "id": "title_logo_1",
+             "label": "logo"
+           },
+	       {
+             "type": "text",
+             "id": "title_img_1",
+             "label": "Title"
+           },
+           {
+             "type": "richtext",
+             "id": "description_img_1",
+             "label": "Description"
+           },
+			{
+			"type": "header",
+			"content": "Second Block"
+			},
+	       {
+             "type": "image_picker",
+             "id": "title_logo_2",
+             "label": "logo"
+           },
+	       {
+             "type": "text",
+             "id": "title_img_2",
+             "label": "Title"
+           },
+           {
+             "type": "richtext",
+             "id": "description_img_2",
+             "label": "Description"
+           },
+			{
+			"type": "header",
+			"content": "Third Block"
+			},
+	       {
+             "type": "image_picker",
+             "id": "title_logo_3",
+             "label": "logo"
+           },
+	       {
+             "type": "text",
+             "id": "title_img_3",
+             "label": "Title"
+           },
+           {
+             "type": "richtext",
+             "id": "description_img_3",
+             "label": "Description"
+           },
+			{
+			"type": "header",
+			"content": "Forth Block"
+			},
+	       {
+             "type": "image_picker",
+             "id": "title_logo_4",
+             "label": "logo"
+           },
+	       {
+             "type": "text",
+             "id": "title_img_4",
+             "label": "Title"
+           },
+           {
+             "type": "richtext",
+             "id": "description_img_4",
+             "label": "Description"
+           }
+        ]
+      },
+       {
+        "type": "tabs",
+        "name": "Tabs",
+        "settings": [
+			{
+			"type": "text",
+             "id": "main_title",
+             "label": "Main Title"
+			},
+		   {
+			"type": "header",
+			"content": "First tab"
+			},
+	       {
+             "type": "text",
+             "id": "title_tab_1",
+             "label": "Title"
+           },
+           {
+             "type": "richtext",
+             "id": "description_tab_1",
+             "label": "Description"
+           },
+           {
+             "type": "text",
+             "id": "cta-text-1",
+             "label": "CTA Button"
+           },
+           {
+             "type": "url",
+             "id": "cta-link-1",
+             "label": "CTA Link"
+           }
+        ]
+      }
+
+    ]
+}
+
+
+{% endschema %}
+<style type="text/css">
+  .top-banner-content {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.top-banner-content h4 {
+  margin-bottom: 40px;
+  color: #fff;
+}
+.widget-title fieldset {
+  border-color: transparent;
+}
+  fieldset{border:0px;}
+.container {
+    max-width: 1200px;
+}
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.top-banner {
+    width: 100%;
+    float: left;
+    padding-bottom: 0;
+  	margin-bottom:-100px;
+}
+  .top-banner img {
+    width: 100%;
+    float: left;
+}
+  .top-banner .container {
+    position: relative;
+}
+  
+  .top-banner img {
+    width: 100%;
+    float: left;
+}
+  #shopify-section-page-finance .text-block-cont {
+    padding-bottom: 16px;
+}
+  .text-block-cont, .service-cont {
+    width: 100%;
+    float: left;
+    padding-bottom: 45px;
+    clear: both;
+}
+  #shopify-section-page-finance .text-block-cont .widget-title {
+    margin-bottom: 37px;
+}
+  .text-block-cont .widget-title {
+    width: 100%;
+    float: left;
+    margin-bottom: 22px;
+}
+  .widget-title {
+    margin-bottom: 40px;
+}
+  .widget-title fieldset.box-title {
+    text-align: center;
+    border-top: 1px solid #ff702d;
+    text-transform: uppercase;
+    margin: 0 0 0;    
+    display: block;
+    height: 30px;
+}
+  #shopify-section-page-finance .widget-title fieldset.box-title legend {
+    color: #ff702d;
+    font-weight: bold;
+}
+  #shopify-section-page-finance .widget-title fieldset.box-title legend img {
+    position: relative;
+    bottom: 0px;
+}
+  .widget-title fieldset.box-title legend {
+    display: block;
+    width: auto;
+    margin: 0;
+    padding: 0 20px;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+  .row {
+    margin-right: -10px;
+    margin-left: -10px;
+}
+  .col-md-3 {
+    width: 25%;
+    float:left;
+}
+  .col-sm-12 {
+    width: 100%;
+    float:left;
+}
+  .col-md-6 {
+    width: 50%;
+    float:left;
+}
+  #shopify-section-page-finance .tabs-cont #tab-2 .tab-content .col-md-6 {
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+  #shopify-section-page-finance .tabs-cont #tab-2 .tab-content .col-md-6:nth-child(2), #shopify-section-page-finance .tabs-cont #tab-2 .tab-content .col-md-6:nth-child(3) {
+    padding-top: 0;
+}
+  #shopify-section-page-finance .tabs-cont #tab-2 .tab-content .col-md-6:nth-child(2n+2) {
+    clear: both;
+}
+  #shopify-section-page-finance .tabs-cont #tab-2 .tab-content img {
+    padding-top: 11px;
+}
+  #shopify-section-page-finance .service-cont span {
+    width: 94px;
+    height: 94px;
+}
+  .service-cont span {
+    background: #000;
+    border-radius: 50%;
+    display: table;
+    position: relative;
+    height: 105px;
+    width: 105px;
+    margin: 0 auto;
+}
+  #shopify-section-page-finance .service-cont span img {
+    width: auto;
+}
+  .service-cont span img {
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0 auto;
+    width: 50px;
+}
+  #shopify-section-page-finance .service-cont h1 {
+    padding-top: 24px;
+    font-size: 14px;
+}
+  .service-cont h1 {
+    line-height: 1.5em;
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+    padding-top: 30px;
+    margin-bottom: 8px;
+}
+  .tabs-cont {
+    width: 100%;
+    float: left;
+}
+  ul.tabs {
+    border-bottom: 1px solid #f7f7f7;
+    display: block;
+    margin: 0;
+    padding: 0;
+    float:left;
+}
+  ul.tabs:before, ul.tabs:after {
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+  ul.tabs li {
+    display: block;
+    float: left;
+    height: 36px;
+    margin-bottom: 0;
+    padding: 0;
+    width: auto;
+}
+  #shopify-section-page-finance ul.tabs li a {
+    padding: 0 40px;
+}
+  ul.tabs li:first-child a.active {
+    margin-left: 0;
+}
+  ul.tabs li:first-child a {
+    border-top-left-radius: 2px;
+    border-width: 1px 1px 0;
+}
+  ul.tabs li a.active {
+    background: #f7f7f7;
+    border-left-width: 1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    height: 36px;
+    margin: 0 0 0 0;
+    position: relative;
+    text-transform: uppercase;
+    color: #000;
+}
+  ul.tabs li a {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #000;
+    border-color: #f7f7f7 !important;
+    border-style: solid;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-right: 1px solid #f7f7f7;
+    display: block;
+    font-size: 12px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0 28px;
+    text-decoration: none;
+    width: auto;
+    color: #fff;
+    border-bottom: none !important;
+    text-transform: uppercase;
+}
+  ul.tabs li:last-child a {
+    border-top-right-radius: 2px;
+}
+  #shopify-section-page-finance ul.tabs li a {
+    padding: 0 40px;
+}
+  #shopify-section-page-finance .tabs-cont .tab-content {
+    margin-bottom: 0;
+    display:block;
+    margin-bottom:50px;
+}
+  #shopify-section-page-finance .tabs-cont .tab-content {
+    padding-top: 25px;
+}
+  .tabs-cont .tab-content {
+    background: #f7f7f7;
+    margin-bottom: 40px;
+    float: left;
+    width: 100%;
+    padding: 28px;
+}
+  #shopify-section-page-finance .tabs-cont .tab-content p {
+    margin-bottom: 0;
+}
+  .text-block-cont p, .service-cont p, .tabs-cont p {
+    line-height: 1.8em;
+    width: 100%;
+    float: left;
+}
+  .tab-content p {
+    margin-bottom: 20px;
+}
+  #shopify-section-page-finance .tabs-cont #tab-2 .tab-content .tabs_main_title {
+    margin: 0 0 10px;
+}
+  #shopify-section-footer-promotions{clear:both;}
+  @media only screen and (max-width:480px){
+    .about-logos{margin-top:0px !important;}
+    .top-banner{margin-bottom:-30px !important;}
+    .col-md-3{width:100%;
+    margin-bottom: 25px;}
+    ul.tabs, ul.tabs li{width:100%;}
+    .col-md-6{width:100%;}
+  }
+</style>

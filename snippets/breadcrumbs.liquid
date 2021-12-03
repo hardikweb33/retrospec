@@ -1,0 +1,49 @@
+{%- if settings.show_breadcrumbs -%}
+
+{%- unless template.name == 'index' or template.name == 'cart' -%}
+<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+
+  {%- if template.name == 'product' -%}
+    {%- if collection -%}
+      {%- if collection.handle -%}
+      {% render 'breadcrumb-subcollection', collection:collection %}
+      {%- capture url -%}{{ routes.collections_url }}/{{ collection.handle }}{%- endcapture -%}
+      {{ collection.title | link_to: url }}
+      {%- endif -%}
+    {%- else -%}
+      {% render 'breadcrumb-subcollection' , collection:false %}
+    {% endif %}
+  {%- elsif template.name == 'collection' and collection.handle -%}
+    {%- capture url -%}{{ routes.collections_url }}/{{ collection.handle }}{%- endcapture -%}
+    {{ collection.title | link_to: url }}
+
+  {%- elsif template.name == 'blog' -%}
+
+  {%- if current_tags -%}
+  {{ blog.title | link_to: blog.url }}
+  <span class="breadcrumb_divider" aria-hidden="true">/</span>
+  <span>{{ current_tags | join: " + " }}</span>
+  {%- endif -%}
+
+  {%- elsif template.name == 'article' -%}
+
+  {{ blog.title | link_to: blog.url }}
+  <span class="breadcrumb_divider" aria-hidden="true">/</span>
+
+  {%- elsif template.name == 'page' -%}
+
+  <span>{{ page.title }}</span>
+
+  {%- elsif template.name == 'search' -%}
+
+  <span>{{ page_title | replace: '*', '' }}</span>
+
+  {%- else -%}
+
+  <span>{{ page_title }}</span>
+
+  {%- endif -%}
+</nav>
+{%- endunless -%}
+
+{%- endif -%}

@@ -1,0 +1,41 @@
+#enavi-backinstock .modal__close{
+	border:none;
+}
+.enavi-klaviyo-success.klaviyo-message{
+    color: #00ca63;
+    padding: 5px;
+}
+.enavi-klaviyo-error.klaviyo-message{
+    color: red;
+    padding: 5px;
+}
+.enavi-klaviyo-form{
+	    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: auto;
+}
+.enavi-klaviyo-submit{
+	margin:auto;
+}
+.enavi-dropdown,.enavi-input{
+	margin-bottom:20px;
+}
+#enavi-backinstock .modal-close{
+	    color: #000;
+    text-decoration: underline;
+}
+.enavi-backinstock-trigger{
+	width:100%;
+  	margin-top:20px;
+}
+span.enavi-klaviyo-email-error {
+    /* text-align: left; */
+    color: red;
+    margin-bottom: 20px;
+  	display:none;
+}
+ span.enavi-klaviyo-stock-date {
+      margin-bottom: 10px;
+   display:none;
+    }

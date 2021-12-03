@@ -1,0 +1,216 @@
+{% include 'page-image-hero' %}
+
+{% schema %}
+  {
+    "name": "Contest Image Hero",
+  "settings": [
+  {
+  "type": "checkbox",
+  "id": "parallax",
+  "label": "Enable parallax",
+  "default": true
+  },
+  {
+  "type": "textarea",
+  "id": "title",
+  "label": "Heading",
+  "default": "Two line\ntitle image"
+  },
+  {
+  "type": "range",
+  "id": "title_size",
+  "label": "Heading text size",
+  "default": 80,
+  "min": 40,
+  "max": 100,
+  "unit": "px"
+  },
+  {
+  "type": "text",
+  "id": "subheading",
+  "label": "Subheading",
+  "default": "And optional subtext"
+  },
+  {
+  "type": "url",
+  "id": "link",
+  "label": "Link"
+  },
+  {
+  "type": "text",
+  "id": "link_text",
+  "label": "Link text",
+  "default": "Optional button"
+  },
+  {
+  "type": "url",
+  "id": "link_2",
+  "label": "Second link"
+  },
+  {
+  "type": "text",
+  "id": "link_text_2",
+  "label": "Second link text 2"
+  },
+  {
+  "type": "color",
+  "id": "color_accent",
+  "label": "Buttons",
+  "default": "rgba(0,0,0,0)"
+  },
+  {
+  "type": "select",
+  "id": "text_align",
+  "label": "Text alignment",
+  "default": "vertical-center horizontal-center",
+  "options": [
+  {
+  "value": "vertical-center horizontal-left",
+  "label": "Center left"
+  },
+  {
+  "value": "vertical-center horizontal-center",
+  "label": "Center"
+  },
+  {
+  "value": "vertical-center horizontal-right",
+  "label": "Center right"
+  },
+  {
+  "value": "vertical-bottom horizontal-left",
+  "label": "Bottom left"
+  },
+  {
+  "value": "vertical-bottom horizontal-center",
+  "label": "Bottom center"
+  },
+  {
+  "value": "vertical-bottom horizontal-right",
+  "label": "Bottom right"
+  }
+  ]
+  },
+  {
+  "type": "image_picker",
+  "id": "image",
+  "label": "Image"
+  },
+  {
+  "type": "select",
+  "id": "focal_point",
+  "label": "Image focal point",
+  "info": "Used to keep the subject of your photo in view.",
+  "default": "center center",
+  "options": [
+  {
+  "value": "20% 0",
+  "label": "Top left"
+  },
+  {
+  "value": "top center",
+  "label": "Top center"
+  },
+  {
+  "value": "80% 0",
+  "label": "Top right"
+  },
+  {
+  "value": "20% 50%",
+  "label": "Left"
+  },
+  {
+  "value": "center center",
+  "label": "Center"
+  },
+  {
+  "value": "80% 50%",
+  "label": "Right"
+  },
+  {
+  "value": "20% 100%",
+  "label": "Bottom left"
+  },
+  {
+  "value": "bottom center",
+  "label": "Bottom center"
+  },
+  {
+  "value": "80% 100%",
+  "label": "Bottom right"
+  }
+  ]
+  },
+  {
+  "type": "select",
+  "id": "section_height",
+  "label": "Desktop height",
+  "default": "650px",
+  "options": [
+  {
+  "label": "Natural",
+  "value": "natural"
+  },
+  {
+  "label": "450px",
+  "value": "450px"
+  },
+  {
+  "label": "550px",
+  "value": "550px"
+  },
+  {
+  "label": "650px",
+  "value": "650px"
+  },
+  {
+  "label": "750px",
+  "value": "750px"
+  },
+  {
+  "label": "Full screen",
+  "value": "100vh"
+  }
+  ]
+  },
+  {
+  "type": "select",
+  "id": "mobile_height",
+  "label": "Mobile height",
+  "default": "auto",
+  "info": "Not used if desktop height is set to natural",
+  "options": [
+  {
+  "label": "Auto",
+  "value": "auto"
+  },
+  {
+  "label": "250px",
+  "value": "250px"
+  },
+  {
+  "label": "300px",
+  "value": "300px"
+  },
+  {
+  "label": "400px",
+  "value": "400px"
+  },
+  {
+  "label": "500px",
+  "value": "500px"
+  },
+  {
+  "label": "Full screen",
+  "value": "100vh"
+  }
+  ]
+  }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

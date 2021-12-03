@@ -1,0 +1,146 @@
+{%- assign per_row = section.settings.per_row -%}
+{%- assign paginate_by = per_row | times: section.settings.rows_per_page -%}
+
+{%- paginate collection.products by paginate_by -%}
+
+<div
+  id="CollectionSection"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-template">
+
+  <div
+    class="grid grid--uniform grid--collection{% if section.settings.mobile_flush_grid %} small--grid--flush{% endif %}"{% unless section.settings.enable_collection_count %} data-scroll-to{% endunless %}>
+    {%- liquid
+      assign grid_item_width = 'small--one-half medium-up--one-third'
+
+      case per_row
+        when 2
+          assign grid_item_width = 'medium-up--one-half'
+        when 3
+          assign grid_item_width = 'small--one-half medium-up--one-third'
+        when 4
+          assign grid_item_width = 'small--one-half medium-up--one-quarter'
+        when 5
+          assign grid_item_width = 'small--one-half medium-up--one-fifth'
+      endcase
+    -%}
+
+    {%- for product in collection.products -%}
+      {%- render 'collection-product-card', product: product, grid_item_width: grid_item_width,applyfilter:true -%}
+    {%- else -%}
+      <div class="grid__item">
+        <p>{{ 'collections.general.no_matches' | t }}</p>
+      </div>
+    {%- endfor -%}
+
+  </div>
+
+  {%- if paginate.pages > 1 -%}
+    {%- render 'pagination', paginate: paginate -%}
+  {%- endif -%}
+
+  {%- if settings.quick_shop_enable -%}
+    {%- for product in collection.products -%}
+      {%- if product.available -%}
+        {%- render 'quick-shop-modal', product: product -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+</div>
+
+{%- endpaginate -%}
+
+{% schema %}
+  {
+    "name": "Collection pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "description_position",
+        "label": "Collection description position",
+        "default": "top",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Subcollections"
+      },
+      {
+        "type": "paragraph",
+        "content": "Links to collections from your menu will appear here. [Learn more](https://archetypethemes.co/blogs/impulse/how-do-i-create-subcollections)"
+      },
+      {
+        "type": "select",
+        "id": "subcollection_style",
+        "label": "Subcollection style",
+        "default": "above",
+        "options": [
+          {
+            "value": "above",
+            "label": "Above products"
+          },
+          {
+            "value": "below",
+            "label": "Below products"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "subcollections_per_row",
+        "label": "Subcollections per row",
+        "default": 5,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_collection_count",
+        "label": "Enable collection count",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": 4,
+        "min": 2,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "rows_per_page",
+        "label": "Rows per page",
+        "default": 7,
+        "min": 3,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "mobile_flush_grid",
+        "label": "Flush grid on mobile",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,62 @@
+{%- assign show_announcement = false -%}
+{%- assign announcement_block_count = 0 -%}
+{% for block in section.blocks %}
+  {%- if block.type == 'announcement' -%}
+    {%- assign show_announcement = true -%}
+    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+  {%- endif -%}
+{% endfor %}
+
+{% if show_announcement %}
+  <div class="announcement-bar">
+    <div class="page-width">
+      <div
+        id="AnnouncementSlider"
+        class="announcement-slider{% if section.settings.announcement_compact %} announcement-slider--compact{% endif %}"
+        data-compact-style="{{ section.settings.announcement_compact }}"
+        data-block-count="{{ announcement_block_count }}">
+        {%- assign slide_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'announcement' -%}
+            <div
+              id="AnnouncementSlide-{{ block.id }}"
+              class="announcement-slider__slide"
+              data-index="{{ slide_index }}"
+              {{ block.shopify_attributes }}>
+              <div class="grid">
+                <div class="grid__item one-third medium--one-half small--one-whole small--text-center text-left medium--text-left">
+                {%- if block.settings.countdown_time != blank -%}
+                  <span class="countdown-wrapper announcement-text">{%- if block.settings.countdown_title != blank -%}<span class="countdown-title">{{block.settings.countdown_title}}</span>{%- endif -%}<span id="countdown-tracker" data-time="{{block.settings.countdown_time}}"></span></span>
+                {%- endif -%}
+                </div>
+                <div class="grid__item one-third medium--one-half text-center small--hide medium--text-right">
+                    {%- if block.settings.link != blank -%}
+                      <a class="announcement-link" href="{{ block.settings.link }}">
+                    {%- endif -%}
+                      {%- if block.settings.text != blank -%}
+                        <span class="announcement-text">{{ block.settings.text }}</span>
+                      {%- endif -%}
+                    {%- if block.settings.link != blank -%}
+                      </a>
+                    {%- endif -%}
+                </div>   
+                {%- if block.settings.button-link != blank -%}
+                <div class="grid__item one-third text-right small--hide dealer_btn">
+                <a class="btn btn-announcement text-link" href="{{block.settings.button-link}}">
+                  {{block.settings.button-text}}
+                  <span class="right-arrow">
+                    {% render 'icon-arrow' %}
+                  </span>
+                </a>
+                </div>
+                {%- endif -%}
+              </div>
+            </div>
+            {%- assign slide_index = slide_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+{% endif %}

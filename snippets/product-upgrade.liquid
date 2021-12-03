@@ -1,0 +1,60 @@
+{% if product.metafields.upsell.product != blank %}
+{% assign handle = product.metafields.upsell.product %}
+{% assign product1 =  all_products[handle] %}
+{% capture button_text %}
+  Go {% render 'enavi-icons' , name:'upsell-plus-outlined',class:'icon-upsell-plus',width:'56px',height:'21px',color:'none' %} for {{product1.price_min | minus:product.price_min | money}}
+{% endcapture %}
+{% if product1.available and product1.published_at != blank %}
+<div class="upsell-product-wrapper accordion-wrapper">
+  <div class="accordion-btn" data-target="upsell-accordion">
+    <div class="accordion-btn-inner">
+      Upgrade to {% render 'enavi-icons' , name:'upsell-plus',class:'icon-upsell-plus',width:'60px',height:'22px',color:'none' %}
+      {% render 'enavi-icons' , name:'arrow',class:'icon icon--wide icon-chevron-down',width:'10px',height:'10px',color:'none' %}
+    </div>
+  </div>
+  <div class="accordion-content upsell-accordion">
+    <div class="upsell-inner">
+        {%- if product1.featured_media.preview_image -%}
+        {%- liquid
+        assign preview_image = product1.featured_media.preview_image
+        assign img_url = preview_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+        -%}
+          <div class="left-upsell-wrapper">
+            <div class="image-wrap"
+              style="height: 0; padding-bottom: {{ 100 | divided_by: preview_image.aspect_ratio }}%;"
+              >
+              <img class="grid-product__image lazyload"
+                  data-src="{{ img_url }}"
+                  data-widths="[180, 360, 540, 720, 900, 1080]"
+                  data-aspectratio="{{ preview_image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ preview_image.alt | escape }}">
+      
+            </div>
+           </div>
+        {%- endif -%}
+        {% if product.metafields.upsell.benefits_list != blank %}
+        <div class="bg-sand upsell-benefit-content right-upsell-content">
+          <div class="right-benefits-wrapper">
+          <h5 class="upsell-product-title">{{ product1.title }}</h5>
+            <span class="benefits-header eyebrow-font">{{product.metafields.upsell.benefits_header}}</span>
+            {% assign lists = product.metafields.upsell.benefits_list | split:'|' %}
+            <ul class="benefits-ul">
+              {% for list in lists %}
+              <li><span class="checkmark-icon">{% render 'enavi-icons' , name:'handwritten-check',class:'icon-handwritten-check',width:'24px',height:'24px' %}</span>{{list}}</li>
+              {% endfor %}
+            </ul>
+            <div class="benefits-link">
+              <a href="{{product1.url}}" class="btn btn--primary btn--custom">
+                {{button_text}}
+                <span class="right-arrow">{% render 'enavi-icons' , name:'right-arrow',width:'24px',height:'24px' %}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+    </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}

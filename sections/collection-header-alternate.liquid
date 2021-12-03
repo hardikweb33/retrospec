@@ -1,0 +1,184 @@
+<div class="collection-alternate-template">
+  <div class="feature-row" data-aos>
+    {%- if collection.metafields.alternate_header.description -%}
+    <div class="feature-row__item feature-row__text">
+        <p class="h3 homepage_hero_title">{{ collection.title }}</p>
+      {%- if collection.metafields.alternate_header.subheader -%}
+        <p class="h5">{{ collection.metafields.alternate_header.subheader }}</p>
+      {%- endif -%}
+      {%- if collection.metafields.alternate_header.description -%}
+        <div class="rte featured-row__subtext">{{ collection.metafields.alternate_header.description }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+      <div class="grid grid--full small--text-center">  
+        <div class="grid__item widescreen--one-half">
+          <a href="/collections/help-me-choose" class="btn btn--secondary">
+            Help me choose
+            <span class="right-arrow">
+              {% render 'icon-arrow' %}
+            </span>
+          </a>
+        </div>
+        <div class="grid__item widescreen--one-half">
+          <div>
+            <a href="#grid-anchor" class="btn scroll-target">
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+          <div class="collection-grid-arrow text-center">
+            <a href="#grid-anchor" class="scroll-target">
+              <span class="down-arrow">
+                {% render 'illustration-down-arrow' %}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {%- endif -%}
+    </div>
+    {%- else -%}
+    <div class="feature-row__item feature-row__text">
+        <p class="h3 homepage_hero_title">{{ collection.title }}</p>
+      {%- if section.settings.subheader != blank -%}
+        <p class="h5">{{ section.settings.subheader }}</p>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}
+        <div class="rte featured-row__subtext">{{ section.settings.text }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+      <div class="grid grid--full small--text-center">  
+        <div class="grid__item widescreen--one-half">
+          <a href="/collections/help-me-choose" class="btn btn--secondary">
+            Help me choose
+            <span class="right-arrow">
+              {% render 'icon-arrow' %}
+            </span>
+          </a>
+        </div>
+        <div class="grid__item widescreen--one-half">
+          <div>
+            <a href="#grid-anchor" class="btn scroll-target">
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+          <div class="collection-grid-arrow text-center">
+            <a href="#grid-anchor" class="scroll-target">
+              <span class="down-arrow">
+                {% render 'illustration-down-arrow' %}
+              </span>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      {%- endif -%}
+    </div>
+    {%- endif -%}
+    <div class="feature-row__item feature-row__image">
+      <div class="homepage-hero-overflow">
+        <div class="illustration sun-2">
+          {% render 'illustration-sun-2' %}
+        </div>
+        {% if collection.metafields.alternate_header.image != blank %}
+          {% assign image = collection.metafields.alternate_header.image[0] %}
+          {% capture srcset %}{% for i in (1..10) %}{% assign width = 180 | times:i %}{{image.cloudinary_src | append:'w_' | append:width }} {{width}}w{% unless forloop.last %}, {% endunless %}{% endfor %}{% endcapture %}
+          {%- assign img_url = image.cloudinary_src -%}
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;">
+            <img class="feature-row__image lazyload"
+                 data-src="{{ img_url }}"
+                 data-srcset="{{srcset}}"
+                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                 data-aspectratio="{{ image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ image.alt }}">
+          </div>
+        {%- else =%}
+        <div style="margin: 0 auto; max-width: {{ section.settings.image_width }}px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+            {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <img class="feature-row__image lazyload"
+                 data-srcset="{{ img_url }}"
+                 data-widths="[180, 360, 540, 720, 900, 1080]"
+                 data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+                 data-sizes="auto"
+                 alt="{{ section.settings.image.alt }}">
+          </div>
+        </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  <div class="uvp_social_proof-wrapper">
+    <div class="">
+      <div class="uvp_social_proof">
+        <div class="flex-grid flex-grid--center ">
+          <div class="flex-grid__item flex-grid__item--50">
+            <div class="social-proof-content">
+              <p>Trusted By Our Loyal Customers</p>
+              <div id="stamped-reviews-widget" data-widget-type="site-badge" data-badge-type="minimal" data-color-stars="#000000" data-star-size="35" data-title-size="14"></div>
+            </div>
+          </div>
+          <div class="flex-grid__item flex-grid__item--50">
+            <ul class="uvp-content">
+              <li><span class="checkmark-icon">{% include 'icon-handwritten-check' %}</span> Free Shipping</li>
+              <li><span class="checkmark-icon">{% include 'icon-handwritten-check' %}</span> 50 Day Returns</li>
+              <li><span class="checkmark-icon">{% include 'icon-handwritten-check' %}</span> Better Quality for Fewer Dollars</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Alternate Header",
+	"class": "homepage-heros",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "label": "Image width",
+        "default": 1000,
+        "min": 100,
+        "max": 1000,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+	  {
+        "type": "text",
+        "id": "subheader",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label",
+        "default": "Find your new ride"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

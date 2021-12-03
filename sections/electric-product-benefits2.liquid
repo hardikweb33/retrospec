@@ -1,0 +1,21 @@
+{% if template contains 'product' %}
+{% assign object = product %}
+{% elsif template contains 'page' %}
+{% assign object = page %}
+{% endif %}
+{% render 'product-benefit-2' object:object %}
+{% schema %}
+{
+"name": "Product benefits",
+"class": "ready-to-outdoor benefit2-section-wrapper page-benefit-section",
+"settings": [
+
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

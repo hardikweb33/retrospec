@@ -1,0 +1,44 @@
+{%- if settings.need_help_bg_desktop -%}
+{%- style -%}
+@media only screen and (min-width: 769px) {
+  .need-help-bg {
+    background-size:cover;
+    background-position:bottom right;
+  }
+}
+{%- endstyle -%}
+{% endif %}
+{%- if settings.need_help_bg_mobile -%}
+{%- style -%}
+@media only screen and (max-width: 768px) {
+  .need-help-bg {
+    background-size:cover;
+    background-position:bottom right;
+  }
+.desktop-help-bg{
+	display:none;
+}
+}
+{%- endstyle -%}
+{% endif %}
+<div class="need-help-wrapper">
+  <div class="grid {{ css_styling }}">
+    <div class="grid__item medium-up--one-half">
+      <h3>{{ settings.need_help_header }}</h3>
+    </div>
+    <div class="grid__item medium-up--one-half">
+      <ul class="need-help-ul">
+        {%- for link in linklists[settings.need_help_links].links -%}
+        <li>
+          <a class="btn btn--secondary btn-help" href="{{ link.url }}">
+            {{ link.title }}
+            <span class="right-arrow">
+              {% render 'icon-arrow' %}
+            </span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

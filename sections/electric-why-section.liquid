@@ -1,0 +1,61 @@
+<div class="electric-why-section-wrapper">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+    <div class="section-header text-center">
+      <h5 class="section-header__title">{{ section.settings.title }}</h5>
+    </div>
+    <div class="checklist-blocks-main grid grid--full flex-grid">
+      <div class="grid__item medium-up--one-half">
+        <div class="image-wrap" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+          {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          <img class="lazyload"
+               data-src="{{ img_url }}"
+               data-widths="[180, 360, 540, 720, 900, 1080]"
+               data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+               data-sizes="auto"
+               alt="{{ section.settings.image.alt }}">
+        </div>
+      </div>
+      <div class="electric-checklist grid__item medium-up--one-half">
+        {% assign checks = section.settings.checklist | newline_to_br | split: '<br />' %}
+        {% for check in checks %}
+        <div class="check-points">
+          <span class="icon-handwritten-check">
+            {% render 'icon-handwritten-check' %}
+          </span>{{ check }}</div>
+        {% endfor %}
+      </div>
+    </div>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Why section",
+	"class": "electric-why-section index-section",
+    "settings": [
+      {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why you should get an e-bike"
+      },
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+      },
+      {
+      "type": "textarea",
+      "id": "checklist",
+      "label": "Checklist"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
