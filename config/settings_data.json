@@ -723,7 +723,7 @@
             "type": "collection",
             "settings": {
               "title": "bike",
-              "collection": "bike",
+              "collection": "bikes",
               "products": 10
             }
           },
@@ -802,7 +802,7 @@
           "a3197513-3e54-4d35-8834-4f3dac908046": {
             "type": "collection",
             "settings": {
-              "collection": "bike",
+              "collection": "bikes",
               "button_text": "Shop Adult Bikes",
               "background_illustration": "shopify:\/\/shop_images\/AdultBike.png"
             }
