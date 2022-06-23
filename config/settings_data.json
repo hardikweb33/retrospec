@@ -755,7 +755,7 @@
             "type": "collection",
             "settings": {
               "title": "paddleboard",
-              "collection": "paddleboards",
+              "collection": "summer-sale-collection-paddleboards",
               "products": 10
             }
           }
